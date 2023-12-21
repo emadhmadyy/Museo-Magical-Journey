@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-serschema.pre(
+userschema.pre(
   "save",
   async function (next) {
     try {
