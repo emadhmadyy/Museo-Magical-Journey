@@ -25,6 +25,11 @@ const inquirySchema = new mongoose.Schema({
     trim: true,
     minlength: 8,
   },
+  inquiry_text: {
+    type: String,
+    required: true,
+    minlength: 10,
+  },
 });
 
 const Inquiry = mongoose.model("Inquiry", inquirySchema);
