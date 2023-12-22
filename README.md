@@ -11,6 +11,8 @@
 
 ### User Stories
 
+-As an admin, I want to be able to add new characters and new artworks to the museum.
+
 - As an educator, I am looking for interactive exhibits that I can integrate into my lessons. It would be helpful to have virtual tours to engage my students in the subject matter.
 - As an art enthusiast, I want to explore the virtual galleries of the museum to discover and appreciate various art movements and styles. I hope to find detailed information about the artists and their creative processes.
 - As a historian, I am eager to delve into the virtual exhibits that showcase historical artifacts and cultural heritage. I want a fun experience where I can learn about different time periods and civilizations.
