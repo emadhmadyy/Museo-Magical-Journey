@@ -22,6 +22,9 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const userRoutes = require("./routes/user.routes.js");
 app.use("/user", userRoutes);
 
+const inquiryRoutes = require("./routes/inquiry.routes.js");
+app.use("/inquiry", inquiryRoutes);
+
 const authMiddleware = require("./middlewares/auth.middleware.js");
 
 app.get("/", function (req, res) {

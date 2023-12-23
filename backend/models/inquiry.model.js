@@ -11,7 +11,7 @@ const inquirySchema = new mongoose.Schema({
     required: true,
     minlength: 2,
   },
-  mail: {
+  email: {
     type: String,
     unique: true,
     required: true,
