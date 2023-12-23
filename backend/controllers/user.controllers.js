@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 const login = async (req, res) => {
-  console.log(req.body);
   const { email, password } = req.body;
 
   // check if user is available in DB

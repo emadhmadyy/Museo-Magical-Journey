@@ -1,9 +1,11 @@
 var express = require("express");
 var app = express();
 app.use(express.json());
-const path = require("path");
 require("dotenv").config();
+const path = require("path");
+
 const connectToMongoDb = require("./configs/mongoDb.configs.js");
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
@@ -19,6 +21,8 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const userRoutes = require("./routes/user.routes.js");
 app.use("/user", userRoutes);
+
+const authMiddleware = require("./middlewares/auth.middleware.js");
 
 app.get("/", function (req, res) {
   res.send("this is the main route");
