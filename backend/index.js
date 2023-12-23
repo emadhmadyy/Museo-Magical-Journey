@@ -17,6 +17,9 @@ app.use((req, res, next) => {
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+const userRoutes = require("./routes/user.routes.js");
+app.use("/user", userRoutes);
+
 app.get("/", function (req, res) {
   res.send("this is the main route");
 });
