@@ -9,7 +9,7 @@ const createMuseum = async (req, res) => {
       await museum.save();
       return res
         .status(200)
-        .send({ message: "Museum is created successfully" });
+        .send({ message: "Museum is created successfully", museum });
     } catch (e) {
       return res.status(500).send({ error: e });
     }
