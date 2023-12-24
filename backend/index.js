@@ -3,9 +3,10 @@ var app = express();
 app.use(express.json());
 require("dotenv").config();
 const path = require("path");
-const { generateFileUrls } = require("./middlewares/upload.middleware.js");
 
 const connectToMongoDb = require("./configs/mongoDb.configs.js");
+const authMiddleware = require("./middlewares/auth.middleware.js");
+const userTypeMiddleware = require("./middlewares/checkusertype.middleware.js");
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -20,7 +21,7 @@ app.use((req, res, next) => {
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const artworkRoutes = require("./routes/artwork.routes.js");
-app.use("/upload", artworkRoutes);
+app.use("/upload", authMiddleware, userTypeMiddleware, artworkRoutes);
 
 // 'profile' and 'background' should match the name attribute in your HTML form for the file inputs
 // req.files contains an object with keys 'profile' and 'background', each holding an array of uploaded files
@@ -39,8 +40,7 @@ const inquiryRoutes = require("./routes/inquiry.routes.js");
 app.use("/inquiry", inquiryRoutes);
 
 const museumRoutes = require("./routes/museum.routes.js");
-const authMiddleware = require("./middlewares/auth.middleware.js");
-app.use("/museum", authMiddleware, museumRoutes);
+app.use("/museum", authMiddleware, userTypeMiddleware, museumRoutes);
 
 app.get("/", function (req, res) {
   res.send("this is the main route");
