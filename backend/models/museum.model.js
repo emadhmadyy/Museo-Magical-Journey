@@ -3,6 +3,7 @@ const artworkSchema = require("./artwork.model");
 const roomSchema = require("./room.model");
 
 const museumSchema = new mongoose.Schema({
+  name: { type: String, required: true },
   artworks: [artworkSchema],
   rooms: [roomSchema],
 });
