@@ -13,7 +13,7 @@ Admin:
 
 - As an admin, I want to track user interactions with other users within rooms.
 
-- As an admin, I want to monetor the number of users interacting with the server.
+- As an admin, I want to monitor the number of users interacting with the server.
 
 User:
 
