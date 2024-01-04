@@ -23,7 +23,7 @@ const validateUsersArrayLength = function (users) {
 
 roomSchema.path("users").validate(validateUsersArrayLength, "Room is full");
 
-// const Room = mongoose.model("Room", roomSchema);
+const Room = mongoose.model("Room", roomSchema);
 
-module.exports = roomSchema;
+module.exports = Room;
 //autocreate autoindex set them both to false.

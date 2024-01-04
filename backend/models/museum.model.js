@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const Artwork = require("./artwork.model");
-const roomSchema = require("./room.model");
+const Room = require("./room.model");
 
 const museumSchema = new mongoose.Schema({
   name: { type: String, required: true },
   artworks: [Artwork.schema],
-  rooms: [roomSchema],
+  rooms: [Room.schema],
 });
 
 const Museum = mongoose.model("Museum", museumSchema);

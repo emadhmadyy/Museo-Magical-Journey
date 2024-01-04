@@ -5,16 +5,18 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> A mobile app for ordering coffee on-the-go, making it easier for coffee lovers to get their favorite beverages without waiting in line.
->
-> Coffee Express aims to streamline the coffee-ordering process by providing a user-friendly platform for customers to place orders and pick up their coffee at their convenience. We believe in enhancing the coffee experience by saving time and ensuring customer satisfaction.
+> A website that aims to provide users with a unique , three dimensional journey to explore and appreciate various artworks.
 
 ### User Stories
 
-- As an admin, I want to be able to add new characters and new artworks to the museum.
+- As an admin, I want to track user interactions with other users within rooms.
+
+Users:
 
 - As an educator, I am looking for interactive exhibits that I can integrate into my lessons. It would be helpful to have virtual tours to engage my students in the subject matter.
+
 - As an art enthusiast, I want to explore the virtual galleries of the museum to discover and appreciate various art movements and styles. I hope to find detailed information about the artists and their creative processes.
+
 - As a historian, I am eager to delve into the virtual exhibits that showcase historical artifacts and cultural heritage. I want a fun experience where I can learn about different time periods and civilizations.
 
 <br><br>
