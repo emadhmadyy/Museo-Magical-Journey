@@ -9,9 +9,13 @@
 
 ### User Stories
 
+Admin:
+
 - As an admin, I want to track user interactions with other users within rooms.
 
-Users:
+- As an admin, I want to monetor the number of users interacting with the server.
+
+User:
 
 - As an educator, I am looking for interactive exhibits that I can integrate into my lessons. It would be helpful to have virtual tours to engage my students in the subject matter.
 
