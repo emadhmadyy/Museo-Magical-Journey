@@ -1,0 +1,21 @@
+.logo{
+    width: 55px;
+    height: 60px;
+}
+
+.nav{
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D6C8B9;
+    padding: 10px 70px;
+}
+
+.gap{
+    gap: 50px;
+}
+
+div > p {
+    font-size: 22px;
+    cursor: pointer;
+    color: #333333;
+}
