@@ -1,0 +1,19 @@
+.icon{
+    width: 30px;
+    height: 30px;
+}
+
+.footer{
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
+    background-color: #333333;
+}
+.footer-text{
+    font-size: 10px;
+    color: white;
+}
+.logos{
+    display: flex;
+    gap: 20px;
+}
