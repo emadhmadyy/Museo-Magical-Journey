@@ -1,3 +1,4 @@
+import "./index.css";
 import Nav from "../../components/nav";
 const Landing = () => {
   return <Nav></Nav>;
