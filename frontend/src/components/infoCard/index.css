@@ -8,7 +8,7 @@
 }
 .card-description{
     font-size: 13px;
-    max-width: 100%;
+    max-width: 90%;
     word-wrap: break-word;
     text-align: center;
 }
@@ -19,10 +19,7 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background-color: #DCD0C3;
-    padding: 20px 10px;
     border-radius: 25px;
-    box-shadow: 0 0 10px 5px #B2A89E;
 }
 /*
 .cards-container{

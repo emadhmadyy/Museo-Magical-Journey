@@ -4,7 +4,7 @@ import logo from "../../assets/images/Emad_Hmady_Logo.webp";
 const Nav = () => {
   return (
     <>
-      <div className="flex nav">
+      <div className="flex nav main-color">
         <img className="logo" src={logo} alt="logo" />
         <div className="flex gap">
           <p>about</p>
