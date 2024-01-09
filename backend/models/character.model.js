@@ -5,10 +5,6 @@ const characterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  texture_url: {
-    type: String,
-    required: true,
-  },
 });
 
 const Character = mongoose.model("Character", characterSchema);
