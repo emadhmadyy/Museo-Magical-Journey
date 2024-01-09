@@ -21,6 +21,7 @@ function App() {
           <Route path="/options" element={<Options />} />
           <Route path="/tour" element={<Tour />} />
           <Route path="/time-travel" element={<TimeTravelMenu />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
       {/* <Nav></Nav>
