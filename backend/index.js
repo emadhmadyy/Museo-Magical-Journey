@@ -1,12 +1,10 @@
-var express = require("express");
-var app = express();
-app.use(express.json());
-require("dotenv").config();
-const path = require("path");
-
+const express = require("express");
+const app = express();
 const connectToMongoDb = require("./configs/mongoDb.configs.js");
-const authMiddleware = require("./middlewares/auth.middleware.js");
-const userTypeMiddleware = require("./middlewares/checkusertype.middleware.js");
+require("dotenv").config();
+app.use(express.json());
+const cors = require("cors");
+app.use(cors());
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -19,20 +17,22 @@ app.use((req, res, next) => {
   }
 });
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-const artworkRoutes = require("./routes/artwork.routes.js");
-app.use("/upload", authMiddleware, userTypeMiddleware, artworkRoutes);
-
+const authMiddleware = require("./middlewares/auth.middleware.js");
 const userRoutes = require("./routes/user.routes.js");
 app.use("/user", userRoutes);
 
-const inquiryRoutes = require("./routes/inquiry.routes.js");
-app.use("/inquiry", inquiryRoutes);
+const characterRoutes = require("./routes/character.routes.js");
+app.use("/character", characterRoutes);
 
-app.get("/", function (req, res) {
-  res.send("this is the main route");
+const roomRoutes = require("./routes/room.routes.js");
+app.use("/room", authMiddleware, roomRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Server is running");
 });
 
-app.listen(8000, () => console.log("listening on port " + 8000));
+app.listen(8000, () => {
+  console.log(`Server is running on port 8000`);
+});
 
 connectToMongoDb();
