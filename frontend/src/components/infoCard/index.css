@@ -20,8 +20,8 @@
     gap: 10px;
     background-color: #DCD0C3;
     padding: 20px 10px;
-    /* border-radius: 25px;
-    box-shadow: 0 0 10px 5px #B2A89E; */
+    border-radius: 25px;
+    box-shadow: 0 0 10px 5px #B2A89E;
 }
 /*
 .cards-container{
