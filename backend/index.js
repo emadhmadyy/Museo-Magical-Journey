@@ -39,9 +39,6 @@ app.use("/user", userRoutes);
 const inquiryRoutes = require("./routes/inquiry.routes.js");
 app.use("/inquiry", inquiryRoutes);
 
-const museumRoutes = require("./routes/museum.routes.js");
-app.use("/museum", authMiddleware, userTypeMiddleware, museumRoutes);
-
 app.get("/", function (req, res) {
   res.send("this is the main route");
 });
