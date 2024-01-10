@@ -36,26 +36,16 @@ const Features = () => {
       <p className="features-section-title">More Than A Regular Museum</p>
       <p className="features-section-subtitle">Explore Our Super Features</p>
       <div className="flex cards-container">
-        <InfoCard
-          icon={info[0].icon}
-          title={info[0].title}
-          description={info[0].description}
-        />
-        <InfoCard
-          icon={info[1].icon}
-          title={info[1].title}
-          description={info[1].description}
-        />
-        <InfoCard
-          icon={info[2].icon}
-          title={info[2].title}
-          description={info[2].description}
-        />
-        <InfoCard
-          icon={info[3].icon}
-          title={info[3].title}
-          description={info[3].description}
-        />
+        {info.map((i, index) => {
+          return (
+            <InfoCard
+              key={index}
+              icon={i.icon}
+              title={i.title}
+              description={i.description}
+            />
+          );
+        })}
       </div>
     </div>
   );
