@@ -1,5 +1,6 @@
 import "./index.css";
 import Nav from "../../components/nav";
+import Footer from "../../components/footer";
 import InfoCard from "../../components/infoCard";
 import Input from "../../components/inputField";
 import statue from "../../assets/images/icons8-statue.png";
@@ -141,6 +142,7 @@ const Landing = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
