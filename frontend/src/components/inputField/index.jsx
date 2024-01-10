@@ -14,7 +14,7 @@ const Input = ({
     onChange(value);
   };
   return (
-    <>
+    <div className="input-container flex column">
       <label htmlFor={name} className="input-field-label">
         {labelName}
       </label>
@@ -28,7 +28,7 @@ const Input = ({
         required
       />
       {error && <div className="error">{error}</div>}
-    </>
+    </div>
   );
 };
 
