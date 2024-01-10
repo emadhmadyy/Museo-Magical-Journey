@@ -1,0 +1,33 @@
+.login-container{
+    height: auto;
+    padding-top:56px;
+    padding-bottom: 56px;
+    justify-content: space-between;
+}
+
+.login-form{
+    padding: 40px 20px; 
+    border-radius: 25px;
+    justify-content: center;
+    width: 43%;
+    gap: 15px;
+}
+
+.login-title{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.login-btn{
+    width: 100%;
+    align-self: center;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 10px ;
+    cursor: pointer;
+}
+.signup-btn{
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -15,5 +15,6 @@
 }
 
 .input-container{
-    flex: 1;
+    flex-grow: 1;
+    gap:5px;
 }

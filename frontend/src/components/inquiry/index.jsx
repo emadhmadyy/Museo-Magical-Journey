@@ -48,7 +48,7 @@ const Inquiry = () => {
             labelName="phone number"
           />
         </div>
-        <div className="flex column">
+        <div className="flex column text-area-field">
           <label htmlFor="feedback" className="text-area-label">
             How can we enhance our museum?
           </label>

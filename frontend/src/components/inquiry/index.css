@@ -21,6 +21,10 @@
     flex-wrap: wrap;
 }
 
+.text-area-field{
+    gap:5px;
+}
+
 .text-area-label{
     padding-left: 10px ;
 }
