@@ -18,3 +18,18 @@
 .main-color{
     background-color: #DCD0C3;
 }
+
+.secondary-color{
+    background-color: #333;
+}
+
+.white-font{
+    color: #ffffff;
+}
+
+.black-font{
+    color:#333333;
+}
+.main-padding{
+    padding: 10px 70px;
+}
