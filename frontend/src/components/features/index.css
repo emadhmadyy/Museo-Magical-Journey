@@ -1,0 +1,23 @@
+.features{
+    padding: 40px 70px;
+    background-color: #DCD0C3;
+    align-items: center;
+    gap: 20px;
+  }
+.cards-container{
+    gap: 31px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+  
+.features-section-title{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.features-section-subtitle{
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
