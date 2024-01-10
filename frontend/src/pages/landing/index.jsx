@@ -53,7 +53,9 @@ const Landing = () => {
           Get Started
         </button>
       </div>
-      <div className="features">
+      <div className="features flex column">
+        <p className="features-section-title">More Than A Regular Museum</p>
+        <p className="features-section-subtitle">Explore Our Super Features</p>
         <div className="flex cards-container">
           <InfoCard
             icon={info[0].icon}
