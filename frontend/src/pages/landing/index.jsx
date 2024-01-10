@@ -33,11 +33,13 @@ const Landing = () => {
         </button>
       </div>
       <div className="features">
-        <InfoCard
-          icon={info[0].icon}
-          title={info[0].title}
-          description={info[0].description}
-        />
+        <div className="flex cards-container">
+          <InfoCard
+            icon={info[0].icon}
+            title={info[0].title}
+            description={info[0].description}
+          />
+        </div>
       </div>
     </>
   );
