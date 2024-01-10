@@ -79,6 +79,52 @@ const Landing = () => {
           />
         </div>
       </div>
+      <div className="inquiry-form">
+        <div>
+          <label htmlFor="first-name" className="input-field-title">
+            first name
+          </label>
+          <input
+            type="text"
+            name="first-name"
+            placeholder="First Name"
+            className="input-field"
+          />
+        </div>
+        <div>
+          <label htmlFor="last-name" className="input-field-title">
+            last name
+          </label>
+          <input
+            type="text"
+            name="last-name"
+            placeholder="Last Name"
+            className="input-field"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="input-field-title">
+            email
+          </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="input-field"
+          />
+        </div>
+        <div>
+          <label htmlFor="phone-number" className="input-field-title">
+            phone number
+          </label>
+          <input
+            type="text"
+            name="phone-number"
+            placeholder="Phone Number"
+            className="input-field"
+          />
+        </div>
+      </div>
     </>
   );
 };
