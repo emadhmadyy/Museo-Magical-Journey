@@ -49,12 +49,12 @@ const Inquiry = () => {
           />
         </div>
         <div className="flex column">
-          <label htmlFor="" className="text-area-label">
+          <label htmlFor="feedback" className="text-area-label">
             How can we enhance our museum?
           </label>
           <textarea
             name=""
-            id=""
+            id="feedback"
             cols="30"
             rows="10"
             className="text-area"

@@ -1,6 +1,7 @@
 import "./index.css";
+import Nav from "../../components/nav";
 const Login = () => {
-  return;
+  return <Nav />;
 };
 
 export default Login;

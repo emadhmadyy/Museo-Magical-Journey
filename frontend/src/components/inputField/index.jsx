@@ -21,7 +21,7 @@ const Input = ({
       <input
         className="input-field"
         type={type}
-        name={name}
+        id={name}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
