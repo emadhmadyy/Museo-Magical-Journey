@@ -127,3 +127,11 @@
     resize: none;
     outline: none;
 }
+
+.submit-btn{
+    height: 6vh;
+    width: 80px;
+    border-radius: 50px;
+    align-self: flex-end;
+    margin-right: 10px;
+}

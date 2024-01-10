@@ -136,6 +136,9 @@ const Landing = () => {
               placeholder="How can we enhance our museum?"
             ></textarea>
           </div>
+          <button className="submit-btn secondary-color white-font">
+            SUBMIT
+          </button>
         </div>
       </div>
     </>
