@@ -1,6 +1,7 @@
 import "./index.css";
 import Nav from "../../components/nav";
 import InfoCard from "../../components/infoCard";
+import Input from "../../components/inputField";
 import statue from "../../assets/images/icons8-statue.png";
 import team from "../../assets/images/icons8-team.png";
 import chat from "../../assets/images/icons8-chat.png";
@@ -79,51 +80,43 @@ const Landing = () => {
           />
         </div>
       </div>
-      <div className="inquiry-form">
-        <div>
-          <label htmlFor="first-name" className="input-field-title">
-            first name
-          </label>
-          <input
-            type="text"
-            name="first-name"
-            placeholder="First Name"
-            className="input-field"
-          />
-        </div>
-        <div>
-          <label htmlFor="last-name" className="input-field-title">
-            last name
-          </label>
-          <input
-            type="text"
-            name="last-name"
-            placeholder="Last Name"
-            className="input-field"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="input-field-title">
-            email
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="input-field"
-          />
-        </div>
-        <div>
-          <label htmlFor="phone-number" className="input-field-title">
-            phone number
-          </label>
-          <input
-            type="text"
-            name="phone-number"
-            placeholder="Phone Number"
-            className="input-field"
-          />
-        </div>
+      <div className="inquiry-form main-padding">
+        <Input
+          type="text"
+          placeholder="First Name"
+          value=""
+          onChange=""
+          error=""
+          name="first-name"
+          labelName="first name"
+        />
+        <Input
+          type="text"
+          placeholder="Last Name"
+          value=""
+          onChange=""
+          error=""
+          name="last-name"
+          labelName="last name"
+        />
+        <Input
+          type="email"
+          placeholder="Email"
+          value=""
+          onChange=""
+          error=""
+          name="email"
+          labelName="email"
+        />
+        <Input
+          type="text"
+          placeholder="Phone Number"
+          value=""
+          onChange=""
+          error=""
+          name="phone-number"
+          labelName="phone number"
+        />
       </div>
     </>
   );
