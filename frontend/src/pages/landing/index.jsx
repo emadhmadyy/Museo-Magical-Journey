@@ -1,6 +1,16 @@
 import "./index.css";
 import Nav from "../../components/nav";
+import InfoCard from "../../components/infoCard";
+import statue from "../../assets/images/icons8-statue.png";
 const Landing = () => {
+  const info = [
+    {
+      icon: statue,
+      title: "3D Masterpieces",
+      description:
+        "Immerse yourself in an extraordinary collection of 3D artworks that transcend time and space. Explore meticulously crafted sculptures and paintings, each brought to life in stunning detail within our digital museum",
+    },
+  ];
   return (
     <>
       <Nav></Nav>
@@ -21,6 +31,13 @@ const Landing = () => {
         <button className="get-started-btn secondary-color white-font">
           Get Started
         </button>
+      </div>
+      <div className="features">
+        <InfoCard
+          icon={info[0].icon}
+          title={info[0].title}
+          description={info[0].description}
+        />
       </div>
     </>
   );
