@@ -3,7 +3,7 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import About from "../../components/about";
 import Features from "../../components/features";
-import Input from "../../components/inputField";
+import Inquiry from "../../components/inquiry";
 
 const Landing = () => {
   return (
@@ -11,7 +11,8 @@ const Landing = () => {
       <Nav />
       <About />
       <Features />
-      <div className="main-padding main-color inquiry-form-container flex column">
+      <Inquiry />
+      {/* <div className="main-padding main-color inquiry-form-container flex column">
         <p className="contact-us-title">Contact Us</p>
         <div className="inquiry-form box-shadow flex column">
           <div className="flex form-row">
@@ -71,7 +72,7 @@ const Landing = () => {
             SUBMIT
           </button>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

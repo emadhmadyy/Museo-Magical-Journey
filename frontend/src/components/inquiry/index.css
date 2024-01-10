@@ -1,0 +1,40 @@
+.inquiry-form-container{
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    align-items: center;
+    gap: 20px;
+}
+.inquiry-form{
+    padding: 40px;
+    border-radius: 25px;
+    width: 80%;
+    gap: 20px;
+}
+.contact-us-title{
+    font-size: 22px;
+    font-weight: bold;
+}
+.form-row{
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.text-area-label{
+    padding-left: 10px ;
+}
+.text-area{
+    padding: 10px;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
+.submit-btn{
+    height: 6vh;
+    width: 80px;
+    border-radius: 50px;
+    align-self: flex-end;
+    cursor: pointer;
+}
