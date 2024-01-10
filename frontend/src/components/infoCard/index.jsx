@@ -12,38 +12,3 @@ const InfoCard = ({ icon, title, description }) => {
 };
 
 export default InfoCard;
-
-// <div className="flex cards-container">
-//   <div className="flex column card">
-//     <img src={icon} alt="icon" className="card-icon" />
-//     <p className="card-title">TITLE</p>
-//     <p className="card-description">
-//       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed
-//       molestie enim, vitae vehicula est. Nam ac nisl nisl.
-//     </p>
-//   </div>
-//   <div className="flex column card">
-//     <img src={icon} alt="icon" className="card-icon" />
-//     <p className="card-title">TITLE</p>
-//     <p className="card-description">
-//       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed
-//       molestie enim, vitae vehicula est. Nam ac nisl nisl.
-//     </p>
-//   </div>
-//   <div className="flex column card">
-//     <img src={icon} alt="icon" className="card-icon" />
-//     <p className="card-title">TITLE</p>
-//     <p className="card-description">
-//       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed
-//       molestie enim, vitae vehicula est. Nam ac nisl nisl.
-//     </p>
-//   </div>
-//   <div className="flex column card">
-//     <img src={icon} alt="icon" className="card-icon" />
-//     <p className="card-title">TITLE</p>
-//     <p className="card-description">
-//       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed
-//       molestie enim, vitae vehicula est. Nam ac nisl nisl.
-//     </p>
-//   </div>
-// </div>
