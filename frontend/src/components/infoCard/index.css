@@ -15,9 +15,12 @@
 
 .card{
     width: 20vw;
-    height:25vw;
+    min-width: 200px;
+    min-height:25vw;
     align-items: center;
     justify-content: center;
     gap: 15px;
     border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
