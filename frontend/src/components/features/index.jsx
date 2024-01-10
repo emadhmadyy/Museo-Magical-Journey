@@ -32,7 +32,7 @@ const Features = () => {
     },
   ];
   return (
-    <div className="features flex column">
+    <div className="features flex column" id="features">
       <p className="features-section-title">More Than A Regular Museum</p>
       <p className="features-section-subtitle">Explore Our Super Features</p>
       <div className="flex cards-container">

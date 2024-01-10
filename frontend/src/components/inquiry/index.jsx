@@ -2,7 +2,10 @@ import "./index.css";
 import Input from "../inputField";
 const Inquiry = () => {
   return (
-    <div className="main-padding main-color inquiry-form-container flex column">
+    <div
+      className="main-padding main-color inquiry-form-container flex column"
+      id="contact"
+    >
       <p className="contact-us-title">Contact Us</p>
       <div className="inquiry-form box-shadow flex column">
         <div className="flex form-row">

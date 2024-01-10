@@ -1,7 +1,7 @@
 import "./index.css";
 const About = () => {
   return (
-    <div className="flex column main-padding about-container">
+    <div className="flex column main-padding about-container" id="about">
       <div className="blur-container">
         <div className="blur-text">
           <p>
