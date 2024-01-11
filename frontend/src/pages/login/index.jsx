@@ -2,7 +2,9 @@ import "./index.css";
 import Nav from "../../components/nav";
 import Input from "../../components/inputField";
 import Footer from "../../components/footer";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Nav />
@@ -16,7 +18,7 @@ const Login = () => {
             value=""
             onChange=""
             error=""
-            name="email"
+            name="login-email"
             labelName="email"
           />
           <Input
@@ -25,14 +27,17 @@ const Login = () => {
             value=""
             onChange=""
             error=""
-            name="password"
+            name="login-password"
             labelName="password"
           />
           <button className="secondary-color white-font login-btn">
             LOG IN
           </button>
           <p className="">
-            dont have an account? <span className="signup-btn">sign up</span>
+            dont have an account?{" "}
+            <span className="signup-btn" onClick={() => navigate("/register")}>
+              sign up
+            </span>
           </p>
         </div>
         <div className="login-form flex column box-shadow">
