@@ -2,7 +2,9 @@ import "./index.css";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Input from "../../components/inputField";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Nav />
@@ -49,7 +51,15 @@ const Register = () => {
             SIGN UP
           </button>
           <p>
-            have an account? <span className="signin-btn">log in</span>
+            have an account?{" "}
+            <span
+              className="signin-btn"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              log in
+            </span>
           </p>
         </div>
         <div className="signup-form box-shadow flex column">
