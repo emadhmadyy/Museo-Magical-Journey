@@ -13,10 +13,12 @@ const Tour = () => {
   };
   const openGroupTourPopUp = () => {
     setOpenPopup(true);
-    console.log("Opening Group Tour Popup");
   };
   const closeGroupTourPopUp = () => {
     setOpenPopup(false);
+  };
+  const joinGroupTour = () => {
+    console.log("joining group tour");
   };
   const options = [
     {
@@ -63,7 +65,13 @@ const Tour = () => {
         })}
       </div>
       <Footer />
-      {openPopup && <Popup onClickClosePopup={closeGroupTourPopUp} />}
+      {openPopup && (
+        <Popup
+          onClickClosePopup={closeGroupTourPopUp}
+          onClickJoinTour={joinGroupTour}
+          onClickHostTour=""
+        />
+      )}
     </>
   );
 };
