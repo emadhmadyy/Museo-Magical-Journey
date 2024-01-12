@@ -1,13 +1,17 @@
 .login-container{
     height: auto;
     justify-content: space-between;
+    align-items: center;
     padding: 56px 170px;
+    flex-wrap: wrap;
+    gap:10px;
 }
 
 .login-form{
     padding: 40px 20px; 
     border-radius: 25px;
     justify-content: center;
+    min-width: 300px;
     width: 43%;
     gap: 15px;
 }
