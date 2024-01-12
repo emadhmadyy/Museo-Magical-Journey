@@ -10,20 +10,20 @@ const Nav = () => {
         <div className="flex gap">
           <p>
             <ScrollLink to="about" smooth={true} duration={500}>
-              about
+              About
             </ScrollLink>
           </p>
           <p>
             <ScrollLink to="features" smooth={true} duration={500}>
-              features
+              Features
             </ScrollLink>
           </p>
           <p>
             <ScrollLink to="contact" smooth={true} duration={500}>
-              contact us
+              Contact Us
             </ScrollLink>
           </p>
-          <p>login</p>
+          <p>Login</p>
         </div>
       </div>
     </>
