@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Kavoon';
+    src: url('./assets/fonts/Kavoon/Kavoon-Regular.ttf') format('ttf');
+    /* Add more formats if needed */
+    font-weight: normal;
+    font-style: normal;
+  }
