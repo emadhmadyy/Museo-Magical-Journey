@@ -2,7 +2,15 @@ import "./index.css";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Option from "../../components/option";
+// import { useNavigate } from "react-router-dom";
 const Tour = () => {
+  // const navigate = useNavigate();
+  const navigateToSoloVirtualTour = () => {
+    console.log("Navigating to Solo Virtual Tour");
+  };
+  const openGroupTourPopUp = () => {
+    console.log("Opening Group Tour Popup");
+  };
   const options = [
     {
       title: "Solo Virtual Tour",
@@ -11,6 +19,7 @@ const Tour = () => {
       paragraph2:
         "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being so close to these incredible works of art.",
       btn_text: "Go Solo",
+      navigation: navigateToSoloVirtualTour,
     },
     {
       title: "Group Virtual Tour",
@@ -19,6 +28,7 @@ const Tour = () => {
       paragraph2:
         "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being so close to these incredible works of art.",
       btn_text: "Join / Host",
+      navigation: openGroupTourPopUp,
     },
   ];
   return (
@@ -40,6 +50,7 @@ const Tour = () => {
               paragraph2={option.paragraph2}
               btn_text={option.btn_text}
               isMain={Main}
+              onClick={option.navigation}
             />
           );
         })}
