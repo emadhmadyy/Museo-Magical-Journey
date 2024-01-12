@@ -58,7 +58,7 @@ const Register = () => {
                 navigate("/login");
               }}
             >
-              log in
+              Log In
             </span>
           </p>
         </div>
@@ -111,7 +111,7 @@ const Register = () => {
                 navigate("/login");
               }}
             >
-              log in
+              Log In
             </span>
           </p>
         </div>
