@@ -62,7 +62,7 @@ const Inquiry = () => {
           ></textarea>
         </div>
         <button className="submit-btn secondary-color white-font">
-          SUBMIT
+          Submit
         </button>
       </div>
     </div>
