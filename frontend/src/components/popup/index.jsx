@@ -12,11 +12,12 @@ const Popup = () => {
           onChange=""
           error=""
           name="tour-id"
-          labelName="Tour Id"
+          labelName="Enter Tour Id"
         />
         <button className="popup-btn secondary-color white-font">
           Join Group Tour
         </button>
+        <p className="or">OR</p>
         <button className="popup-btn secondary-color white-font host-btn">
           Host Group Tour
         </button>
