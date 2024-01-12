@@ -25,20 +25,24 @@ const Options = () => {
     <>
       <Nav />
       <div className="flex">
-        <Option
-          title={options[0].title}
-          paragraph1={options[0].paragraph1}
-          paragraph2={options[0].paragraph2}
-          btn_text={options[0].btn_text}
-          isMain={true}
-        />
-        <Option
-          title={options[1].title}
-          paragraph1={options[1].paragraph1}
-          paragraph2={options[1].paragraph2}
-          btn_text={options[1].btn_text}
-          isMain={false}
-        />
+        {options.map((option, index) => {
+          let Main;
+          if (index % 2 == 0) {
+            Main = true;
+          } else {
+            Main = false;
+          }
+          return (
+            <Option
+              key={index}
+              title={option.title}
+              paragraph1={option.paragraph1}
+              paragraph2={option.paragraph2}
+              btn_text={option.btn_text}
+              isMain={Main}
+            />
+          );
+        })}
       </div>
       <Footer />
     </>
