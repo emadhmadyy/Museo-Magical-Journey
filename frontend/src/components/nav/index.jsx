@@ -1,8 +1,9 @@
 import "./index.css";
 import logo from "../../assets/images/Emad_Hmady_Logo.png";
 import { Link as ScrollLink } from "react-scroll";
-
+import { useNavigate } from "react-router-dom";
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex nav secondary-color main-padding">
@@ -23,7 +24,13 @@ const Nav = () => {
               Contact Us
             </ScrollLink>
           </p>
-          <p>Login</p>
+          <p
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login
+          </p>
         </div>
       </div>
     </>
