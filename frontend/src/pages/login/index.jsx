@@ -7,7 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Nav />
+      <Nav isLandingPage={false} isLoggedIn={true} />
       <div className="flex main-padding login-container main-color">
         {/* here goes the 3D model */}
         <div className="login-form flex column box-shadow">
