@@ -1,11 +1,17 @@
 import "./index.css";
 import Input from "../inputField";
 import closeIcon from "../../assets/images/icons8-close.png";
-const Popup = () => {
+// eslint-disable-next-line react/prop-types
+const Popup = ({ onClickClosePopup }) => {
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
-        <img src={closeIcon} alt="close-icon-button" className="close-icon" />
+        <img
+          src={closeIcon}
+          alt="close-icon-button"
+          className="close-icon"
+          onClick={onClickClosePopup}
+        />
         <Input
           type="text"
           placeholder="Tour Id"
