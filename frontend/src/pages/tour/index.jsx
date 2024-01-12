@@ -24,8 +24,26 @@ const Tour = () => {
   return (
     <>
       <Nav />
-      <Option />
-      <Option />
+      <div className="flex">
+        {options.map((option, index) => {
+          let Main;
+          if (index % 2 == 0) {
+            Main = false;
+          } else {
+            Main = true;
+          }
+          return (
+            <Option
+              key={index}
+              title={option.title}
+              paragraph1={option.paragraph1}
+              paragraph2={option.paragraph2}
+              btn_text={option.btn_text}
+              isMain={Main}
+            />
+          );
+        })}
+      </div>
       <Footer />
     </>
   );
