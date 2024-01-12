@@ -5,8 +5,8 @@ const Option = ({ title, paragraph1, paragraph2, btn_text, isMain }) => {
     <div
       className={
         isMain == true
-          ? "option-container flex column  main-color"
-          : "option-container flex column  secondary-color"
+          ? "option-container flex column  main-color main-color-border"
+          : "option-container flex column  secondary-color main-color-border"
       }
     >
       <p

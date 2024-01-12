@@ -34,7 +34,15 @@
     padding: 10px 70px;
 }
 
+.main-color-border{
+    border-top: 2px solid #dcd0c3 ;
+    border-bottom: 2px solid #dcd0c3 ;
 
+}
+.secondary-color-border{
+    border-top: 2px solid #333333;
+    border-bottom: 2px solid #333333 ;
+}
 .font-link {
     font-family: 'Kavoon', cursive;
   }
