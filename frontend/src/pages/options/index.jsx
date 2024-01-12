@@ -7,21 +7,31 @@ const Options = () => {
     {
       title: "Virtual Tour",
       paragraph1:
-        "Whether you’re an art enthusiast or simply looking for a fun and educational way to spend your time, our virtual museum tour is the perfect choice.",
+        "Whether you are an art enthusiast or simply looking for a fun and educational way to spend your time, a tour in our virtual museum is the perfect choice.",
       paragraph2:
-        "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being up close and personal with these incredible works of art.",
+        "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being so close to these incredible works of art.",
       btn_text: "TAKE A VIRTUAL TOUR",
     },
   ];
   return (
     <>
       <Nav />
-      <Option
-        title={options[0].title}
-        paragraph1={options[0].paragraph1}
-        paragraph2={options[0].paragraph2}
-        btn_text={options[0].btn_text}
-      />
+      <div className="flex">
+        <Option
+          title={options[0].title}
+          paragraph1={options[0].paragraph1}
+          paragraph2={options[0].paragraph2}
+          btn_text={options[0].btn_text}
+          isMain={true}
+        />
+        <Option
+          title={options[0].title}
+          paragraph1={options[0].paragraph1}
+          paragraph2={options[0].paragraph2}
+          btn_text={options[0].btn_text}
+          isMain={false}
+        />
+      </div>
       <Footer />
     </>
   );

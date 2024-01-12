@@ -5,7 +5,7 @@ import { Link as ScrollLink } from "react-scroll";
 const Nav = () => {
   return (
     <>
-      <div className="flex nav main-color main-padding">
+      <div className="flex nav secondary-color main-padding">
         <img className="logo" src={logo} alt="logo" />
         <div className="flex gap">
           <p>

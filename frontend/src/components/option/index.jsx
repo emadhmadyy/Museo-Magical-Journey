@@ -1,14 +1,44 @@
 /* eslint-disable react/prop-types */
 import "./index.css";
-const Option = ({ title, paragraph1, paragraph2, btn_text }) => {
+const Option = ({ title, paragraph1, paragraph2, btn_text, isMain }) => {
   return (
-    <div className="option-container flex column  main-color">
-      <p className="option-title">{title}</p>
-      <div className="paragraphs">
-        <p className="option-paragraph">{paragraph1}</p>
-        <p className="option-paragraph">{paragraph2}</p>
+    <div
+      className={
+        isMain == true
+          ? "option-container flex column  main-color"
+          : "option-container flex column  secondary-color"
+      }
+    >
+      <p
+        className={isMain == true ? "option-title" : "option-title white-font"}
+      >
+        {title}
+      </p>
+      <div className="paragraphs flex column">
+        <p
+          className={
+            isMain == true ? "option-paragraph" : "option-paragraph white-font"
+          }
+        >
+          {paragraph1}
+        </p>
+        <p
+          className={
+            isMain == true ? "option-paragraph" : "option-paragraph white-font"
+          }
+        >
+          {paragraph2}
+        </p>
       </div>
-      <button className="option-btn">{btn_text}</button>
+      <button
+        className={
+          isMain == true
+            ? "option-btn secondary-color white-font"
+            : "option-btn main-color"
+        }
+      >
+        {btn_text}
+      </button>
     </div>
   );
 };
