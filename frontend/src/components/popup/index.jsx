@@ -2,7 +2,7 @@ import "./index.css";
 import Input from "../inputField";
 import closeIcon from "../../assets/images/icons8-close.png";
 // eslint-disable-next-line react/prop-types
-const Popup = ({ onClickClosePopup }) => {
+const Popup = ({ onClickClosePopup, onClickJoinTour, onClickHostTour }) => {
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
