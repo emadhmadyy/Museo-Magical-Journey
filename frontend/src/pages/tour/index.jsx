@@ -2,14 +2,21 @@ import "./index.css";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Option from "../../components/option";
+import Popup from "../../components/popup";
+import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 const Tour = () => {
+  const [openPopup, setOpenPopup] = useState(false);
   // const navigate = useNavigate();
   const navigateToSoloVirtualTour = () => {
     console.log("Navigating to Solo Virtual Tour");
   };
   const openGroupTourPopUp = () => {
+    setOpenPopup(true);
     console.log("Opening Group Tour Popup");
+  };
+  const closeGroupTourPop = () => {
+    setOpenPopup(false);
   };
   const options = [
     {
@@ -56,6 +63,7 @@ const Tour = () => {
         })}
       </div>
       <Footer />
+      {openPopup && <Popup />}
     </>
   );
 };
