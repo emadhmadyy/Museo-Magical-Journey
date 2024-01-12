@@ -1,5 +1,5 @@
 import "./index.css";
-import logo from "../../assets/images/Emad_Hmady_Logo.png";
+import logo from "../../assets/images/Emad_Hmady_Logo_r.png";
 import { Link as ScrollLink } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 const Nav = () => {

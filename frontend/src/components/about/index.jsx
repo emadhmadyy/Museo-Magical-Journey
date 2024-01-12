@@ -1,5 +1,7 @@
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex column main-padding about-container" id="about">
       <div className="blur-container">
@@ -14,7 +16,12 @@ const About = () => {
         </div>
         <div className="blur-background"></div>
       </div>
-      <button className="get-started-btn secondary-color white-font">
+      <button
+        className="get-started-btn secondary-color white-font"
+        onClick={() => {
+          navigate("/register");
+        }}
+      >
         Get Started
       </button>
     </div>
