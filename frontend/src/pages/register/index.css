@@ -1,14 +1,16 @@
 .signup-container{
     height: auto;
-    padding-top:56px;
-    padding-bottom: 56px;
     justify-content: space-between;
+    padding: 56px 170px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .signup-form{
     padding: 40px 20px; 
     border-radius: 25px;
     justify-content: center;
+    min-width: 200px;
     width: 43%;
     gap: 15px;
 }

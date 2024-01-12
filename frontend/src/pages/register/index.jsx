@@ -10,7 +10,7 @@ const Register = () => {
       <Nav />
       <div className="signup-container main-color main-padding flex">
         <div className="signup-form box-shadow flex column">
-          <p className="signup-title">sign up</p>
+          <p className="signup-title">Sign Up</p>
           <Input
             type="text"
             placeholder="First Name"
@@ -48,7 +48,7 @@ const Register = () => {
             labelName="password"
           />
           <button className="signup-btn-register-form secondary-color white-font">
-            SIGN UP
+            Sign Up
           </button>
           <p>
             have an account?{" "}
@@ -63,7 +63,7 @@ const Register = () => {
           </p>
         </div>
         <div className="signup-form box-shadow flex column">
-          <p className="signup-title">sign up</p>
+          <p className="signup-title">Sign Up</p>
           <Input
             type="text"
             placeholder="First Name"
@@ -101,10 +101,10 @@ const Register = () => {
             labelName="password"
           />
           <button className="signup-btn-register-form secondary-color white-font">
-            SIGN UP
+            Sign Up
           </button>
           <p>
-            have an account? <span className="signin-btn">log in</span>
+            have an account? <span className="signin-btn">Log In</span>
           </p>
         </div>
       </div>
