@@ -5,6 +5,7 @@ import Register from "./pages/register";
 import Options from "./pages/options";
 import Tour from "./pages/tour";
 import TimeTravelMenu from "./pages/timeTravelMenu";
+import Popup from "./components/popup";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/options" element={<Options />} />
           <Route path="/tour" element={<Tour />} />
           <Route path="/time-travel" element={<TimeTravelMenu />} />
+          <Route path="/pop-up" element={<Popup />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
