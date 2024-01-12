@@ -13,7 +13,7 @@ const Register = () => {
           <p className="signup-title">Sign Up</p>
           <Input
             type="text"
-            placeholder="John"
+            placeholder="e.g. John"
             value=""
             onChange=""
             error=""
@@ -22,7 +22,7 @@ const Register = () => {
           />
           <Input
             type="text"
-            placeholder="Doe"
+            placeholder="e.g. Doe"
             value=""
             onChange=""
             error=""
@@ -31,7 +31,7 @@ const Register = () => {
           />
           <Input
             type="email"
-            placeholder="Email"
+            placeholder="e.g. johndoe@gmail.com"
             value=""
             onChange=""
             error=""
@@ -40,7 +40,7 @@ const Register = () => {
           />
           <Input
             type="password"
-            placeholder="Password"
+            placeholder="e.g. password123"
             value=""
             onChange=""
             error=""
