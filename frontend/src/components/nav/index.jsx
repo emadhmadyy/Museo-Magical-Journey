@@ -1,5 +1,5 @@
 import "./index.css";
-import logo from "../../assets/images/Emad_Hmady_Logo.webp";
+import logo from "../../assets/images/Emad_Hmady_Logo.png";
 import { Link as ScrollLink } from "react-scroll";
 
 const Nav = () => {
