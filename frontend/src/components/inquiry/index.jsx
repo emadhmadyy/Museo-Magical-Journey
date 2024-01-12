@@ -11,7 +11,7 @@ const Inquiry = () => {
         <div className="flex form-row">
           <Input
             type="text"
-            placeholder="First Name"
+            placeholder="e.g. John"
             value=""
             onChange=""
             error=""
@@ -20,7 +20,7 @@ const Inquiry = () => {
           />
           <Input
             type="text"
-            placeholder="Last Name"
+            placeholder="e.g. Doe"
             value=""
             onChange=""
             error=""
@@ -31,7 +31,7 @@ const Inquiry = () => {
         <div className="flex form-row">
           <Input
             type="email"
-            placeholder="Email"
+            placeholder="e.g. johndoe@gmail.com"
             value=""
             onChange=""
             error=""
@@ -40,7 +40,7 @@ const Inquiry = () => {
           />
           <Input
             type="text"
-            placeholder="Phone Number"
+            placeholder="e.g. +XXX-XXXXXXXX"
             value=""
             onChange=""
             error=""
