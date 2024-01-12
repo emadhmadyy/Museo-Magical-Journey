@@ -16,7 +16,7 @@ const Inquiry = () => {
             onChange=""
             error=""
             name="first-name"
-            labelName="first name"
+            labelName="First Name"
           />
           <Input
             type="text"
@@ -25,7 +25,7 @@ const Inquiry = () => {
             onChange=""
             error=""
             name="last-name"
-            labelName="last name"
+            labelName="Last Name"
           />
         </div>
         <div className="flex form-row">
@@ -36,7 +36,7 @@ const Inquiry = () => {
             onChange=""
             error=""
             name="email"
-            labelName="email"
+            labelName="Email"
           />
           <Input
             type="text"
@@ -45,12 +45,12 @@ const Inquiry = () => {
             onChange=""
             error=""
             name="phone-number"
-            labelName="phone number"
+            labelName="Phone Number"
           />
         </div>
         <div className="flex column text-area-field">
           <label htmlFor="feedback" className="text-area-label">
-            How can we enhance our museum?
+            How Can We Enhance Our Museum?
           </label>
           <textarea
             name=""
@@ -58,7 +58,7 @@ const Inquiry = () => {
             cols="30"
             rows="10"
             className="text-area"
-            placeholder="How can we enhance our museum?"
+            placeholder="How Can We Enhance Our Museum?"
           ></textarea>
         </div>
         <button className="submit-btn secondary-color white-font">
