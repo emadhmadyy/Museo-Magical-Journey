@@ -3,7 +3,14 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Option from "../../components/option";
 const Tour = () => {
-  return;
+  return (
+    <>
+      <Nav />
+      <Option />
+      <Option />
+      <Footer />
+    </>
+  );
 };
 
 export default Tour;
