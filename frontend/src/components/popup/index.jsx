@@ -21,11 +21,17 @@ const Popup = ({ onClickClosePopup, onClickJoinTour, onClickHostTour }) => {
           name="tour-id"
           labelName="Enter Tour Id"
         />
-        <button className="popup-btn secondary-color white-font">
+        <button
+          className="popup-btn secondary-color white-font"
+          onClick={onClickJoinTour}
+        >
           Join Group Tour
         </button>
         <p className="or">OR</p>
-        <button className="popup-btn secondary-color white-font host-btn">
+        <button
+          className="popup-btn secondary-color white-font host-btn"
+          onClick={onClickHostTour}
+        >
           Host Group Tour
         </button>
       </div>
