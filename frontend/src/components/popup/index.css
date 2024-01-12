@@ -13,7 +13,7 @@
 .popup{
     width: 30%;
     height: auto;
-    padding: 40px;
+    padding: 60px;
     position: relative;
     gap:10px;
 }
@@ -29,4 +29,10 @@
 
 .host-btn{
     margin-top: 30px;
+}
+
+.popup-btn{
+    padding: 10px 0;
+    border-radius: 50px;
+    cursor: pointer;
 }
