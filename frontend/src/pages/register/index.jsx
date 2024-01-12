@@ -13,7 +13,7 @@ const Register = () => {
           <p className="signup-title">Sign Up</p>
           <Input
             type="text"
-            placeholder="First Name"
+            placeholder="John"
             value=""
             onChange=""
             error=""
@@ -22,60 +22,7 @@ const Register = () => {
           />
           <Input
             type="text"
-            placeholder="Last Name"
-            value=""
-            onChange=""
-            error=""
-            name="last-name"
-            labelName="Last Name"
-          />
-          <Input
-            type="email"
-            placeholder="Email"
-            value=""
-            onChange=""
-            error=""
-            name="email"
-            labelName="Email"
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            value=""
-            onChange=""
-            error=""
-            name="password"
-            labelName="Password"
-          />
-          <button className="signup-btn-register-form secondary-color white-font">
-            Sign Up
-          </button>
-          <p>
-            have an account?{" "}
-            <span
-              className="signin-btn"
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              Log In
-            </span>
-          </p>
-        </div>
-        <div className="signup-form box-shadow flex column">
-          <p className="signup-title">Sign Up</p>
-          <Input
-            type="text"
-            placeholder="First Name"
-            value=""
-            onChange=""
-            error=""
-            name="first-name"
-            labelName="First Name"
-          />
-          <Input
-            type="text"
-            placeholder="Last Name"
+            placeholder="Doe"
             value=""
             onChange=""
             error=""
