@@ -18,13 +18,13 @@
     gap:10px;
 }
 
-.close-btn{
-    background-color: transparent;
-    border: none;
+.close-icon{
     position: absolute;
     top: 5px;
     left: 10px;
     cursor: pointer;
+    width: 25px;
+    height: 25px;
 }
 .or{
     align-self: center;

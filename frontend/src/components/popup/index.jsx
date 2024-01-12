@@ -1,10 +1,11 @@
 import "./index.css";
 import Input from "../inputField";
+import closeIcon from "../../assets/images/icons8-close.png";
 const Popup = () => {
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
-        <button className="close-btn"> x </button>
+        <img src={closeIcon} alt="close-icon-button" className="close-icon" />
         <Input
           type="text"
           placeholder="Tour Id"
