@@ -28,7 +28,7 @@ const Options = () => {
       paragraph2:
         "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being so close to these incredible works of art.",
       btn_text: "Travel In Time",
-      // navigation: navigateToTimeTravelPage,
+      navigation: navigateToTimeTravelPage,
     },
   ];
   return (
