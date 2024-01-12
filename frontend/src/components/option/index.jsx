@@ -1,6 +1,13 @@
 /* eslint-disable react/prop-types */
 import "./index.css";
-const Option = ({ title, paragraph1, paragraph2, btn_text, isMain }) => {
+const Option = ({
+  title,
+  paragraph1,
+  paragraph2,
+  btn_text,
+  isMain,
+  onClick,
+}) => {
   return (
     <div
       className={
@@ -36,6 +43,7 @@ const Option = ({ title, paragraph1, paragraph2, btn_text, isMain }) => {
             ? "option-btn secondary-color white-font"
             : "option-btn main-color"
         }
+        onClick={onClick}
       >
         {btn_text}
       </button>
