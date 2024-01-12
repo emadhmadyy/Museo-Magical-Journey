@@ -3,7 +3,7 @@ import "./index.css";
 import logo from "../../assets/images/Emad_Hmady_Logo_r.png";
 import { Link as ScrollLink } from "react-scroll";
 import { useNavigate } from "react-router-dom";
-const Nav = ({ isLandingPage, isLoggedIn }) => {
+const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
   const navigate = useNavigate();
   return (
     <>
@@ -31,23 +31,24 @@ const Nav = ({ isLandingPage, isLoggedIn }) => {
           ) : (
             <p>Home</p>
           )}
-          {isLoggedIn == false ? (
-            <p
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
-              Login
-            </p>
-          ) : (
-            <p
-              onClick={() => {
-                console.log("logging out");
-              }}
-            >
-              Logout
-            </p>
-          )}
+          {!isAuthPage &&
+            (isLoggedIn == false ? (
+              <p
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Login
+              </p>
+            ) : (
+              <p
+                onClick={() => {
+                  console.log("logging out");
+                }}
+              >
+                Logout
+              </p>
+            ))}
         </div>
       </div>
     </>

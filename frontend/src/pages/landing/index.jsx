@@ -8,7 +8,7 @@ import Inquiry from "../../components/inquiry";
 const Landing = () => {
   return (
     <>
-      <Nav isLandingPage={true} isLoggedIn={false} />
+      <Nav isLandingPage={true} isLoggedIn={false} isAuthPage={false} />
       <About />
       <Features />
       <Inquiry />
