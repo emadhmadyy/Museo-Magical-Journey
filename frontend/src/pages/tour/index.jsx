@@ -20,6 +20,9 @@ const Tour = () => {
   const joinGroupTour = () => {
     console.log("joining group tour");
   };
+  const hostGroupTour = () => {
+    console.log("hosting group tour");
+  };
   const options = [
     {
       title: "Solo Virtual Tour",
@@ -69,7 +72,7 @@ const Tour = () => {
         <Popup
           onClickClosePopup={closeGroupTourPopUp}
           onClickJoinTour={joinGroupTour}
-          onClickHostTour=""
+          onClickHostTour={hostGroupTour}
         />
       )}
     </>
