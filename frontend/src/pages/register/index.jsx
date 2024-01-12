@@ -18,7 +18,7 @@ const Register = () => {
             onChange=""
             error=""
             name="first-name"
-            labelName="first name"
+            labelName="First Name"
           />
           <Input
             type="text"
@@ -27,7 +27,7 @@ const Register = () => {
             onChange=""
             error=""
             name="last-name"
-            labelName="last name"
+            labelName="Last Name"
           />
           <Input
             type="email"
@@ -36,7 +36,7 @@ const Register = () => {
             onChange=""
             error=""
             name="email"
-            labelName="email"
+            labelName="Email"
           />
           <Input
             type="password"
@@ -45,7 +45,7 @@ const Register = () => {
             onChange=""
             error=""
             name="password"
-            labelName="password"
+            labelName="Password"
           />
           <button className="signup-btn-register-form secondary-color white-font">
             Sign Up
@@ -71,7 +71,7 @@ const Register = () => {
             onChange=""
             error=""
             name="first-name"
-            labelName="first name"
+            labelName="First Name"
           />
           <Input
             type="text"
@@ -80,7 +80,7 @@ const Register = () => {
             onChange=""
             error=""
             name="last-name"
-            labelName="last name"
+            labelName="Last Name"
           />
           <Input
             type="email"
@@ -89,7 +89,7 @@ const Register = () => {
             onChange=""
             error=""
             name="email"
-            labelName="email"
+            labelName="Email"
           />
           <Input
             type="password"
@@ -98,13 +98,21 @@ const Register = () => {
             onChange=""
             error=""
             name="password"
-            labelName="password"
+            labelName="Password"
           />
           <button className="signup-btn-register-form secondary-color white-font">
             Sign Up
           </button>
           <p>
-            have an account? <span className="signin-btn">Log In</span>
+            have an account?{" "}
+            <span
+              className="signin-btn"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              log in
+            </span>
           </p>
         </div>
       </div>
