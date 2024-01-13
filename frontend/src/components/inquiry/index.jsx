@@ -25,7 +25,15 @@ const Inquiry = () => {
       }
     );
   };
-
+  const clearInquiryInputFields = () => {
+    setFormData({
+      first_name: "",
+      last_name: "",
+      email: "",
+      phone_number: "",
+      inquiry_text: "",
+    });
+  };
   const handleSubmit = async () => {
     try {
       const response = await axios.request({
@@ -50,6 +58,7 @@ const Inquiry = () => {
       <div className="inquiry-form box-shadow flex column">
         <div className="flex form-row">
           <Input
+            value={formData.first_name}
             type="text"
             placeholder="e.g. John"
             onChange={handleInputChange}
@@ -58,6 +67,7 @@ const Inquiry = () => {
             labelName="First Name"
           />
           <Input
+            value={formData.last_name}
             type="text"
             placeholder="e.g. Doe"
             onChange={handleInputChange}
@@ -68,6 +78,7 @@ const Inquiry = () => {
         </div>
         <div className="flex form-row">
           <Input
+            value={formData.email}
             type="email"
             placeholder="e.g. johndoe@gmail.com"
             onChange={handleInputChange}
@@ -76,9 +87,9 @@ const Inquiry = () => {
             labelName="Email"
           />
           <Input
+            value={formData.phone_number}
             type="text"
             placeholder="e.g. +XXX-XXXXXXXX"
-            value=""
             onChange={handleInputChange}
             error=""
             name="phone_number"
@@ -90,6 +101,7 @@ const Inquiry = () => {
             How Can We Enhance Our Museum?
           </label>
           <textarea
+            value={formData.inquiry_text}
             name="inquiry_text"
             id="feedback"
             cols="30"
