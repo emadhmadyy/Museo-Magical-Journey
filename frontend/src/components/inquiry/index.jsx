@@ -80,18 +80,7 @@ const Inquiry = () => {
     });
   };
   const handleSubmit = async () => {
-    const first_name_error = validateInputField("first_name");
-    const last_name_error = validateInputField("last_name");
-    const email_error = validateInputField("email");
-    const phone_number_error = validateInputField("phone_number");
-    const inquiry_text_error = validateInputField("inquiry_text");
-    if (
-      first_name_error == "" &&
-      last_name_error == "" &&
-      email_error == "" &&
-      phone_number_error == "" &&
-      inquiry_text_error == ""
-    ) {
+    if (validateForm()) {
       try {
         const response = await axios.request({
           url: "http://localhost:8000/inquiry",
