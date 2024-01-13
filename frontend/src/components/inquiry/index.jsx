@@ -11,6 +11,13 @@ const Inquiry = () => {
     inquiry_text: "",
   });
 
+  const [formError, setFormError] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    inquiry_text: "",
+  });
   const handleInputChange = (e) => {
     const { value, name } = e.target;
     setFormData(
