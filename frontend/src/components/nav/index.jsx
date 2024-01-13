@@ -9,6 +9,9 @@ const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
   const navigateToHomePage = () => {
     navigate("/");
   };
+  const navigateToLoginPage = () => {
+    navigate("/login");
+  };
   return (
     <>
       <div className="flex nav secondary-color main-padding">
@@ -37,13 +40,7 @@ const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
           )}
           {!isAuthPage &&
             (isLoggedIn == false ? (
-              <p
-                onClick={() => {
-                  navigate("/login");
-                }}
-              >
-                Login
-              </p>
+              <p onClick={navigateToLoginPage}>Login</p>
             ) : (
               <p
                 onClick={() => {
