@@ -7,6 +7,7 @@ const Input = ({ type, placeholder, onChange, error, name, labelName }) => {
         {labelName}
       </label>
       <input
+        name={name}
         className="input-field"
         type={type}
         id={name}

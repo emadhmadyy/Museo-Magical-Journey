@@ -7,11 +7,22 @@ const Inquiry = () => {
     last_name: "",
     email: "",
     phone_number: "",
-    feedback: "",
+    inquiry_text: "",
   });
-  const inputChange = (e) => {
-    console.log(e.target.value);
+
+  const handleInputChange = (e) => {
+    const { value, name } = e.target;
+    //anonymous function that returns an object to setFormData
+    setFormData((prevData) => {
+      return {
+        ...prevData,
+        //dynamic key using [name]:value
+        //this allowed me to create only one function for all fields
+        [name]: value,
+      };
+    });
   };
+
   return (
     <div
       className="main-padding main-color inquiry-form-container flex column"
@@ -23,17 +34,17 @@ const Inquiry = () => {
           <Input
             type="text"
             placeholder="e.g. John"
-            onChange={inputChange}
+            onChange={handleInputChange}
             error=""
-            name="first-name"
+            name="first_name"
             labelName="First Name"
           />
           <Input
             type="text"
             placeholder="e.g. Doe"
-            onChange={inputChange}
+            onChange={handleInputChange}
             error=""
-            name="last-name"
+            name="last_name"
             labelName="Last Name"
           />
         </div>
@@ -41,7 +52,7 @@ const Inquiry = () => {
           <Input
             type="email"
             placeholder="e.g. johndoe@gmail.com"
-            onChange={inputChange}
+            onChange={handleInputChange}
             error=""
             name="email"
             labelName="Email"
@@ -50,9 +61,9 @@ const Inquiry = () => {
             type="text"
             placeholder="e.g. +XXX-XXXXXXXX"
             value=""
-            onChange={inputChange}
+            onChange={handleInputChange}
             error=""
-            name="phone-number"
+            name="phone_number"
             labelName="Phone Number"
           />
         </div>
@@ -61,15 +72,19 @@ const Inquiry = () => {
             How Can We Enhance Our Museum?
           </label>
           <textarea
-            name=""
+            name="inquiry_text"
             id="feedback"
             cols="30"
             rows="10"
             className="text-area"
             placeholder="How Can We Enhance Our Museum?"
+            onChange={handleInputChange}
           ></textarea>
         </div>
-        <button className="submit-btn secondary-color white-font">
+        <button
+          className="submit-btn secondary-color white-font"
+          onClick={() => console.log(formData)}
+        >
           Submit
         </button>
       </div>
