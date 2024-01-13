@@ -1,20 +1,13 @@
+/* eslint-disable react/prop-types */
 import "./index.css";
 import Input from "../inputField";
 import closeIcon from "../../assets/images/icons8-close.png";
-import { useState } from "react";
-// eslint-disable-next-line react/prop-types
-const Popup = ({ onClickClosePopup, onClickHostTour }) => {
-  const [id, setId] = useState("");
-  const handleIdChange = (e) => {
-    const id = e.target.value;
-    setId(id);
-  };
-  const handleJoinTour = () => {
-    console.log(id);
-  };
-  const handleHostTour = () => {
-    console.log("creating tour...");
-  };
+const Popup = ({
+  onClickClosePopup,
+  onClickJoinTour,
+  onClickHostTour,
+  onChange,
+}) => {
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
@@ -27,21 +20,21 @@ const Popup = ({ onClickClosePopup, onClickHostTour }) => {
         <Input
           type="text"
           placeholder="Tour Id"
-          onChange={handleIdChange}
+          onChange={onChange}
           error=""
           name="tour-id"
           labelName="Enter Tour Id"
         />
         <button
           className="popup-btn secondary-color white-font"
-          onClick={handleJoinTour}
+          onClick={onClickJoinTour}
         >
           Join Group Tour
         </button>
         <p className="or">OR</p>
         <button
           className="popup-btn secondary-color white-font host-btn"
-          onClick={handleHostTour}
+          onClick={onClickHostTour}
         >
           Host Group Tour
         </button>
