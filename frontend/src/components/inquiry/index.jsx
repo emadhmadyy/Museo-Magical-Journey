@@ -38,6 +38,20 @@ const Inquiry = () => {
     }));
     return value;
   };
+  const validateForm = () => {
+    const first_name_error = validateInputField("first_name");
+    const last_name_error = validateInputField("last_name");
+    const email_error = validateInputField("email");
+    const phone_number_error = validateInputField("phone_number");
+    const inquiry_text_error = validateInputField("inquiry_text");
+    return (
+      first_name_error == "" &&
+      last_name_error == "" &&
+      email_error == "" &&
+      phone_number_error == "" &&
+      inquiry_text_error == ""
+    );
+  };
   const handleInputChange = (e) => {
     const { value, name } = e.target;
     setFormError((prevData) => ({
