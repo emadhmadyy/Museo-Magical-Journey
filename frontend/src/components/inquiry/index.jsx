@@ -45,6 +45,7 @@ const Inquiry = () => {
         data: formData,
       });
       alert(response.data.message);
+      clearInquiryInputFields();
     } catch (e) {
       console.log(e.response.data);
     }
