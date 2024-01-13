@@ -18,6 +18,9 @@ const Register = () => {
       [name]: value,
     }));
   };
+  const handleRegister = () => {
+    console.log(JSON.stringify(formData));
+  };
   const navigate = useNavigate();
   return (
     <>
