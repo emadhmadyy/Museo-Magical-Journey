@@ -12,15 +12,17 @@ const Inquiry = () => {
 
   const handleInputChange = (e) => {
     const { value, name } = e.target;
-    //anonymous function that returns an object to setFormData
-    setFormData((prevData) => {
-      return {
-        ...prevData,
-        //dynamic key using [name]:value
-        //this allowed me to create only one function for all fields
-        [name]: value,
-      };
-    });
+    setFormData(
+      //anonymous function that returns an object to setFormData
+      (prevData) => {
+        return {
+          ...prevData,
+          //dynamic key using [name]:value
+          //this allowed me to create only one function for all fields
+          [name]: value,
+        };
+      }
+    );
   };
 
   return (
