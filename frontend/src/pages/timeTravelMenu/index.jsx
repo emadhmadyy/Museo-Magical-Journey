@@ -54,23 +54,26 @@ const TimeTravelMenu = () => {
   return (
     <>
       <Nav isAuthPage={false} isLoggedIn={true} isLandingPage={false} />
-      <div className="flex info-cards-container main-padding main-color">
-        {info.map((i, index) => {
-          return (
-            <InfoCard
-              key={index}
-              icon={i.icon}
-              title={i.title}
-              description={i.description}
-              isClickable={true}
-              onClick={() => {
-                console.log("clicked");
-              }}
-            />
-          );
-        })}
+      <div className="time-travel flex column main-padding main-color">
+        <p className="time-travel-main-title">Get Back In Time!</p>
+        <p className="time-travel-sub-title">Choose from the below options</p>
+        <div className="flex info-cards-container ">
+          {info.map((i, index) => {
+            return (
+              <InfoCard
+                key={index}
+                icon={i.icon}
+                title={i.title}
+                description={i.description}
+                isClickable={true}
+                onClick={() => {
+                  console.log("clicked");
+                }}
+              />
+            );
+          })}
+        </div>
       </div>
-
       <Footer />
     </>
   );
