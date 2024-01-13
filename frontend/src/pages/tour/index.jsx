@@ -7,7 +7,11 @@ import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 const Tour = () => {
   const [openPopup, setOpenPopup] = useState(false);
-  // const navigate = useNavigate();
+  const [id, setId] = useState("");
+  const handleIdChange = (e) => {
+    const id = e.target.value;
+    setId(id);
+  };
   const navigateToSoloVirtualTour = () => {
     console.log("Navigating to Solo Virtual Tour");
   };
@@ -18,7 +22,7 @@ const Tour = () => {
     setOpenPopup(false);
   };
   const joinGroupTour = () => {
-    console.log("joining group tour");
+    console.log(id);
   };
   const hostGroupTour = () => {
     console.log("hosting group tour");
@@ -73,6 +77,7 @@ const Tour = () => {
           onClickClosePopup={closeGroupTourPopUp}
           onClickJoinTour={joinGroupTour}
           onClickHostTour={hostGroupTour}
+          onChange={handleIdChange}
         />
       )}
     </>
