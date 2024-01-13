@@ -15,7 +15,6 @@ const Login = () => {
           <Input
             type="email"
             placeholder="e.g. johndoe@gmail.com"
-            value=""
             onChange=""
             error=""
             name="email"
@@ -24,7 +23,6 @@ const Login = () => {
           <Input
             type="password"
             placeholder="e.g. password123"
-            value=""
             onChange=""
             error=""
             name="password"

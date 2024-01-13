@@ -85,7 +85,7 @@ const Inquiry = () => {
         </div>
         <button
           className="submit-btn secondary-color white-font"
-          onClick={() => console.log(formData)}
+          onClick={() => console.log(JSON.stringify(formData))}
         >
           Submit
         </button>
