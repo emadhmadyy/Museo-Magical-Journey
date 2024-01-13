@@ -1,6 +1,7 @@
 import "./index.css";
 import Input from "../inputField";
 import { useState } from "react";
+import axios from "axios";
 const Inquiry = () => {
   const [formData, setFormData] = useState({
     first_name: "",
@@ -25,6 +26,13 @@ const Inquiry = () => {
     );
   };
 
+  const handleSubmit = async()=>{
+    try {
+      const response = await 
+    }catch(e){
+
+    }
+  }
   return (
     <div
       className="main-padding main-color inquiry-form-container flex column"
