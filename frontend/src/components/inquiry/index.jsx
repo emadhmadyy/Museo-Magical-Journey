@@ -18,12 +18,7 @@ const Inquiry = () => {
     phone_number: "",
     inquiry_text: "",
   });
-  // const validateFirstName = () => {
-  //   setFormError((prevData) => ({
-  //     ...prevData,
-  //     first_name: formData.first_name == "" ? "This field is required" : "",
-  //   }));
-  // };
+
   const validateInputField = (field_name) => {
     setFormError((prevData) => ({
       ...prevData,
