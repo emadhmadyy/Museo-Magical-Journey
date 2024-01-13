@@ -22,6 +22,9 @@ const Register = () => {
     console.log(JSON.stringify(formData));
   };
   const navigate = useNavigate();
+  const navigateToLoginPage = () => {
+    navigate("/login");
+  };
   return (
     <>
       <Nav isLandingPage={false} isAuthPage={true} isLoggedIn={false} />
@@ -60,17 +63,15 @@ const Register = () => {
             name="password"
             labelName="Password"
           />
-          <button className="signup-btn-register-form secondary-color white-font">
+          <button
+            className="signup-btn-register-form secondary-color white-font"
+            onClick={handleRegister}
+          >
             Sign Up
           </button>
           <p>
             have an account?{" "}
-            <span
-              className="signin-btn"
-              onClick={() => {
-                navigate("/login");
-              }}
-            >
+            <span className="signin-btn" onClick={navigateToLoginPage}>
               Log In
             </span>
           </p>
