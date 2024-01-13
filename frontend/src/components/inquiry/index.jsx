@@ -49,19 +49,27 @@ const Inquiry = () => {
   };
   const handleSubmit = async () => {
     validateFirstName();
-    try {
-      const response = await axios.request({
-        url: "http://localhost:8000/inquiry",
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: formData,
-      });
-      alert(response.data.message);
-      clearInquiryInputFields();
-    } catch (e) {
-      console.log(e.response.data);
+    if (
+      formError.first_name == "" &&
+      formError.last_name == "" &&
+      formError.email == "" &&
+      formError.phone_number == "" &&
+      formError.inquiry_text == ""
+    ) {
+      try {
+        const response = await axios.request({
+          url: "http://localhost:8000/inquiry",
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: formData,
+        });
+        alert(response.data.message);
+        clearInquiryInputFields();
+      } catch (e) {
+        console.log(e.response.data);
+      }
     }
   };
   return (
