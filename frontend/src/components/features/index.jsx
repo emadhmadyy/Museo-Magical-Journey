@@ -43,6 +43,7 @@ const Features = () => {
               icon={i.icon}
               title={i.title}
               description={i.description}
+              isClickable={false}
             />
           );
         })}
