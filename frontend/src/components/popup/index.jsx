@@ -3,11 +3,14 @@ import Input from "../inputField";
 import closeIcon from "../../assets/images/icons8-close.png";
 import { useState } from "react";
 // eslint-disable-next-line react/prop-types
-const Popup = ({ onClickClosePopup, onClickJoinTour, onClickHostTour }) => {
+const Popup = ({ onClickClosePopup, onClickHostTour }) => {
   const [id, setId] = useState("");
   const handleIdChange = (e) => {
     const id = e.target.value;
     setId(id);
+  };
+  const handleJoinTour = () => {
+    console.log(id);
   };
   return (
     <div className="overlay">
@@ -28,7 +31,7 @@ const Popup = ({ onClickClosePopup, onClickJoinTour, onClickHostTour }) => {
         />
         <button
           className="popup-btn secondary-color white-font"
-          onClick={onClickJoinTour}
+          onClick={handleJoinTour}
         >
           Join Group Tour
         </button>
