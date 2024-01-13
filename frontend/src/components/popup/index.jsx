@@ -1,8 +1,14 @@
 import "./index.css";
 import Input from "../inputField";
 import closeIcon from "../../assets/images/icons8-close.png";
+import { useState } from "react";
 // eslint-disable-next-line react/prop-types
 const Popup = ({ onClickClosePopup, onClickJoinTour, onClickHostTour }) => {
+  const [id, setId] = useState("");
+  const handleIdChange = (e) => {
+    const id = e.target.value;
+    setId(id);
+  };
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
@@ -15,8 +21,7 @@ const Popup = ({ onClickClosePopup, onClickJoinTour, onClickHostTour }) => {
         <Input
           type="text"
           placeholder="Tour Id"
-          value=""
-          onChange=""
+          onChange={handleIdChange}
           error=""
           name="tour-id"
           labelName="Enter Tour Id"
