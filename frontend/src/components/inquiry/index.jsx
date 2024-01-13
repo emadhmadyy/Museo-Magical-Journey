@@ -1,6 +1,14 @@
 import "./index.css";
 import Input from "../inputField";
+import { useState } from "react";
 const Inquiry = () => {
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    feedback: "",
+  });
   const inputChange = (e) => {
     console.log(e.target.value);
   };
