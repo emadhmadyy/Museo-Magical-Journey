@@ -3,8 +3,12 @@ import "./index.css";
 import logo from "../../assets/images/Emad_Hmady_Logo_r.png";
 import { Link as ScrollLink } from "react-scroll";
 import { useNavigate } from "react-router-dom";
+//isAuthPage Prop to check if the page is login/signup
 const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
   const navigate = useNavigate();
+  const navigateToHomePage = () => {
+    navigate("/");
+  };
   return (
     <>
       <div className="flex nav secondary-color main-padding">
@@ -29,7 +33,7 @@ const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
               </p>
             </>
           ) : (
-            <p>Home</p>
+            <p onClick={navigateToHomePage}>Home</p>
           )}
           {!isAuthPage &&
             (isLoggedIn == false ? (

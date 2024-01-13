@@ -5,7 +5,6 @@ import About from "../../components/about";
 import Features from "../../components/features";
 import Inquiry from "../../components/inquiry";
 
-//isAuthPage to check is the page is login/signup
 const Landing = () => {
   return (
     <>
