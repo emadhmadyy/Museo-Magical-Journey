@@ -1,6 +1,9 @@
 import "./index.css";
 import Input from "../inputField";
 const Inquiry = () => {
+  const inputChange = (e) => {
+    console.log(e.target.value);
+  };
   return (
     <div
       className="main-padding main-color inquiry-form-container flex column"
@@ -12,8 +15,7 @@ const Inquiry = () => {
           <Input
             type="text"
             placeholder="e.g. John"
-            value=""
-            onChange=""
+            onChange={inputChange}
             error=""
             name="first-name"
             labelName="First Name"
@@ -21,8 +23,7 @@ const Inquiry = () => {
           <Input
             type="text"
             placeholder="e.g. Doe"
-            value=""
-            onChange=""
+            onChange={inputChange}
             error=""
             name="last-name"
             labelName="Last Name"
@@ -32,8 +33,7 @@ const Inquiry = () => {
           <Input
             type="email"
             placeholder="e.g. johndoe@gmail.com"
-            value=""
-            onChange=""
+            onChange={inputChange}
             error=""
             name="email"
             labelName="Email"
@@ -42,7 +42,7 @@ const Inquiry = () => {
             type="text"
             placeholder="e.g. +XXX-XXXXXXXX"
             value=""
-            onChange=""
+            onChange={inputChange}
             error=""
             name="phone-number"
             labelName="Phone Number"
