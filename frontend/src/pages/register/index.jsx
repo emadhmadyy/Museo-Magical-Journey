@@ -14,7 +14,6 @@ const Register = () => {
           <Input
             type="text"
             placeholder="e.g. John"
-            value=""
             onChange=""
             error=""
             name="first-name"
@@ -23,7 +22,6 @@ const Register = () => {
           <Input
             type="text"
             placeholder="e.g. Doe"
-            value=""
             onChange=""
             error=""
             name="last-name"
@@ -32,7 +30,6 @@ const Register = () => {
           <Input
             type="email"
             placeholder="e.g. johndoe@gmail.com"
-            value=""
             onChange=""
             error=""
             name="email"
@@ -41,7 +38,6 @@ const Register = () => {
           <Input
             type="password"
             placeholder="e.g. password123"
-            value=""
             onChange=""
             error=""
             name="password"
