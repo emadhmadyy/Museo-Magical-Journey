@@ -12,6 +12,9 @@ const Popup = ({ onClickClosePopup, onClickHostTour }) => {
   const handleJoinTour = () => {
     console.log(id);
   };
+  const handleHostTour = () => {
+    console.log("creating tour...");
+  };
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
@@ -38,7 +41,7 @@ const Popup = ({ onClickClosePopup, onClickHostTour }) => {
         <p className="or">OR</p>
         <button
           className="popup-btn secondary-color white-font host-btn"
-          onClick={onClickHostTour}
+          onClick={handleHostTour}
         >
           Host Group Tour
         </button>
