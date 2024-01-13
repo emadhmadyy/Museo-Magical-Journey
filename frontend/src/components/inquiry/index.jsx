@@ -20,13 +20,19 @@ const Inquiry = () => {
   });
 
   const validateInputField = (field_name) => {
+    const value = formData[field_name] == "" ? "This field is required" : "";
     setFormError((prevData) => ({
       ...prevData,
-      [field_name]: formData[field_name] == "" ? "This field is required" : "",
+      [field_name]: value,
     }));
+    return value;
   };
   const handleInputChange = (e) => {
     const { value, name } = e.target;
+    setFormError((prevData) => ({
+      ...prevData,
+      [name]: "",
+    }));
     setFormData(
       //anonymous function that returns an object to setFormData
       (prevData) => {
@@ -49,14 +55,17 @@ const Inquiry = () => {
     });
   };
   const handleSubmit = async () => {
-    // validateFirstName();
-    validateInputField("first_name");
+    const first_name_error = validateInputField("first_name");
+    const last_name_error = validateInputField("last_name");
+    const email_error = validateInputField("email");
+    const phone_number_error = validateInputField("phone_number");
+    const inquiry_text_error = validateInputField("inquiry_text");
     if (
-      formError.first_name == "" &&
-      formError.last_name == "" &&
-      formError.email == "" &&
-      formError.phone_number == "" &&
-      formError.inquiry_text == ""
+      first_name_error == "" &&
+      last_name_error == "" &&
+      email_error == "" &&
+      phone_number_error == "" &&
+      inquiry_text_error == ""
     ) {
       try {
         const response = await axios.request({
