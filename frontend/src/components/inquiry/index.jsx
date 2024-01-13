@@ -26,13 +26,21 @@ const Inquiry = () => {
     );
   };
 
-  const handleSubmit = async()=>{
+  const handleSubmit = async () => {
     try {
-      const response = await 
-    }catch(e){
-
+      const response = await axios.request({
+        url: "http://localhost:8000/inquiry",
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: formData,
+      });
+      console.log(response.data);
+    } catch (e) {
+      console.log(e.response.data);
     }
-  }
+  };
   return (
     <div
       className="main-padding main-color inquiry-form-container flex column"
@@ -93,7 +101,7 @@ const Inquiry = () => {
         </div>
         <button
           className="submit-btn secondary-color white-font"
-          onClick={() => console.log(JSON.stringify(formData))}
+          onClick={handleSubmit}
         >
           Submit
         </button>
