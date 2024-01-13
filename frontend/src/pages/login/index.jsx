@@ -9,7 +9,20 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleLogin = () => {
+    console.log(JSON.stringify(formData));
+  };
   const navigate = useNavigate();
+  const navigateToRegisterPage = () => {
+    navigate("/register");
+  };
   return (
     <>
       <Nav isLandingPage={false} isLoggedIn={true} isAuthPage={true} />
@@ -20,7 +33,7 @@ const Login = () => {
           <Input
             type="email"
             placeholder="e.g. johndoe@gmail.com"
-            onChange=""
+            onChange={handleInputChange}
             error=""
             name="email"
             labelName="Email"
@@ -28,17 +41,20 @@ const Login = () => {
           <Input
             type="password"
             placeholder="e.g. password123"
-            onChange=""
+            onChange={handleInputChange}
             error=""
             name="password"
             labelName="Password"
           />
-          <button className="secondary-color white-font login-btn">
+          <button
+            className="secondary-color white-font login-btn"
+            onClick={handleLogin}
+          >
             LOG IN
           </button>
           <p className="">
             dont have an account?{" "}
-            <span className="signup-btn" onClick={() => navigate("/register")}>
+            <span className="signup-btn" onClick={navigateToRegisterPage}>
               Sign Up
             </span>
           </p>
