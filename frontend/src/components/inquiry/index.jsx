@@ -36,7 +36,7 @@ const Inquiry = () => {
         },
         data: formData,
       });
-      console.log(response.data);
+      console.log(response.data.message);
     } catch (e) {
       console.log(e.response.data);
     }
