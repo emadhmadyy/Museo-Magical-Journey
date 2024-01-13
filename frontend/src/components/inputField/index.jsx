@@ -26,6 +26,7 @@ const Input = ({
         value={value}
         onChange={handleChange}
         required
+        autoComplete="off"
       />
       {error && <div className="error">{error}</div>}
     </div>
