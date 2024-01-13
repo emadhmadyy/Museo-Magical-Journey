@@ -11,6 +11,13 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
   const navigate = useNavigate();
   return (
     <>
@@ -21,7 +28,7 @@ const Register = () => {
           <Input
             type="text"
             placeholder="e.g. John"
-            onChange=""
+            onChange={handleInputChange}
             error=""
             name="first_name"
             labelName="First Name"
@@ -29,7 +36,7 @@ const Register = () => {
           <Input
             type="text"
             placeholder="e.g. Doe"
-            onChange=""
+            onChange={handleInputChange}
             error=""
             name="last_name"
             labelName="Last Name"
@@ -37,7 +44,7 @@ const Register = () => {
           <Input
             type="email"
             placeholder="e.g. johndoe@gmail.com"
-            onChange=""
+            onChange={handleInputChange}
             error=""
             name="email"
             labelName="Email"
@@ -45,7 +52,7 @@ const Register = () => {
           <Input
             type="password"
             placeholder="e.g. password123"
-            onChange=""
+            onChange={handleInputChange}
             error=""
             name="password"
             labelName="Password"
