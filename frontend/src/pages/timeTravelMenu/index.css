@@ -3,3 +3,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.time-travel{
+    gap: 25px;
+    align-items: center;
+    padding: 56px 70px;
+}
