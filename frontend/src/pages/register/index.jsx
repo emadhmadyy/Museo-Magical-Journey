@@ -3,7 +3,14 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Input from "../../components/inputField";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Register = () => {
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
   return (
     <>
@@ -16,7 +23,7 @@ const Register = () => {
             placeholder="e.g. John"
             onChange=""
             error=""
-            name="first-name"
+            name="first_name"
             labelName="First Name"
           />
           <Input
@@ -24,7 +31,7 @@ const Register = () => {
             placeholder="e.g. Doe"
             onChange=""
             error=""
-            name="last-name"
+            name="last_name"
             labelName="Last Name"
           />
           <Input
