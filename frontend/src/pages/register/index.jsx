@@ -7,7 +7,7 @@ const Register = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Nav />
+      <Nav isLandingPage={false} />
       <div className="signup-container main-color main-padding flex">
         <div className="signup-form box-shadow flex column">
           <p className="signup-title">Sign Up</p>
