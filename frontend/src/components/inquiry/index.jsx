@@ -18,10 +18,16 @@ const Inquiry = () => {
     phone_number: "",
     inquiry_text: "",
   });
-  const validateFirstName = () => {
+  // const validateFirstName = () => {
+  //   setFormError((prevData) => ({
+  //     ...prevData,
+  //     first_name: formData.first_name == "" ? "This field is required" : "",
+  //   }));
+  // };
+  const validateInputField = (field_name) => {
     setFormError((prevData) => ({
       ...prevData,
-      first_name: formData.first_name == "" ? "This field is required" : "",
+      [field_name]: formData[field_name] == "" ? "This field is required" : "",
     }));
   };
   const handleInputChange = (e) => {
@@ -48,7 +54,8 @@ const Inquiry = () => {
     });
   };
   const handleSubmit = async () => {
-    validateFirstName();
+    // validateFirstName();
+    validateInputField("first_name");
     if (
       formError.first_name == "" &&
       formError.last_name == "" &&
