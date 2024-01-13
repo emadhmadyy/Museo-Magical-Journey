@@ -3,7 +3,12 @@ import Nav from "../../components/nav";
 import Input from "../../components/inputField";
 import Footer from "../../components/footer";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
   return (
     <>
