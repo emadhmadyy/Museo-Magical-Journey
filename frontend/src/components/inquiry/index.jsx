@@ -18,6 +18,12 @@ const Inquiry = () => {
     phone_number: "",
     inquiry_text: "",
   });
+  const validateFirstName = () => {
+    setFormError((prevData) => ({
+      ...prevData,
+      first_name: formData.first_name == "" ? "This field is required" : "",
+    }));
+  };
   const handleInputChange = (e) => {
     const { value, name } = e.target;
     setFormData(
@@ -42,6 +48,7 @@ const Inquiry = () => {
     });
   };
   const handleSubmit = async () => {
+    validateFirstName();
     try {
       const response = await axios.request({
         url: "http://localhost:8000/inquiry",
@@ -70,7 +77,7 @@ const Inquiry = () => {
             type="text"
             placeholder="e.g. John"
             onChange={handleInputChange}
-            error=""
+            error={formError.first_name}
             name="first_name"
             labelName="First Name"
           />
@@ -79,7 +86,7 @@ const Inquiry = () => {
             type="text"
             placeholder="e.g. Doe"
             onChange={handleInputChange}
-            error=""
+            error={formError.last_name}
             name="last_name"
             labelName="Last Name"
           />
@@ -90,7 +97,7 @@ const Inquiry = () => {
             type="email"
             placeholder="e.g. johndoe@gmail.com"
             onChange={handleInputChange}
-            error=""
+            error={formError.email}
             name="email"
             labelName="Email"
           />
@@ -99,7 +106,7 @@ const Inquiry = () => {
             type="text"
             placeholder="e.g. +XXX-XXXXXXXX"
             onChange={handleInputChange}
-            error=""
+            error={formError.phone_number}
             name="phone_number"
             labelName="Phone Number"
           />
