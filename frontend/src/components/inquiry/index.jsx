@@ -28,6 +28,9 @@ const Inquiry = () => {
       if (!isEmailValid) {
         value = "Invalid Email Adress";
       }
+    } else if (field_name == "phone_number" && formData[field_name] != "") {
+      const isPhoneNumberValid = formData[field_name] >= 11;
+      value = !isPhoneNumberValid ? "Invalid Phone Number" : "";
     }
     setFormError((prevData) => ({
       ...prevData,
