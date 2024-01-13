@@ -33,7 +33,7 @@ const Options = () => {
   ];
   return (
     <>
-      <Nav />
+      <Nav isLandingPage={false} isAuthPage={false} isLoggedIn={true} />
       <div className="flex">
         {options.map((option, index) => {
           let Main;
