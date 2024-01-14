@@ -32,6 +32,8 @@ const joinRoom = async (req, res) => {
       return res.status(400).send({ message: "Tour doesn't exist" });
     } else if (room.status == "Closed") {
       return res.status(400).send({ message: "Tour has ended" });
+    } else if (room.status == "Full") {
+      return res.status(400).send({ message: "Tour is full" });
     }
     await Room.findByIdAndUpdate(roomId, {
       $push: {
