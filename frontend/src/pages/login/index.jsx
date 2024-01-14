@@ -14,6 +14,13 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const validateInputField = (field_name) => {
+    let value = formData[field_name] == "" ? "This field is required" : "";
+    setFormError((prevData) => ({
+      ...prevData,
+      [field_name]: value,
+    }));
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -54,7 +61,7 @@ const Login = () => {
             placeholder="e.g. johndoe@gmail.com"
             onChange={handleInputChange}
             value={formData.email}
-            error=""
+            error={formError.email}
             name="email"
             labelName="Email"
           />
@@ -63,7 +70,7 @@ const Login = () => {
             placeholder="e.g. password123"
             onChange={handleInputChange}
             value={formData.password}
-            error=""
+            error={formError.password}
             name="password"
             labelName="Password"
           />
