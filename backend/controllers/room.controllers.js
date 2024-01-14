@@ -43,9 +43,6 @@ const joinRoom = async (req, res) => {
     });
     return res.status(200).send({ message: "User added to room successfully" });
   } catch (e) {
-    if (e.name == "ValidationError") {
-      return res.status(400).send({ message: "Tour is full" });
-    }
     return res.status(500).send({ message: "Server error", error: e });
   }
 };
