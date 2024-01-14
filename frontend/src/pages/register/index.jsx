@@ -11,6 +11,12 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const [formError, setFormError] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
