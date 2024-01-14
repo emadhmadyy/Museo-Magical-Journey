@@ -4,9 +4,10 @@ import Footer from "../../components/footer";
 import Option from "../../components/option";
 import Popup from "../../components/popup";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 const Tour = () => {
+  const navigate = useNavigate();
   const [openPopup, setOpenPopup] = useState(false);
   const [id, setId] = useState("");
   const [idError, setIdError] = useState("");
@@ -50,6 +51,9 @@ const Tour = () => {
       } catch (e) {
         if (e.response.status == 400) {
           setIdError(e.response.data.message);
+        } else if (e.response.status == 403) {
+          localStorage.clear();
+          navigate("/login");
         } else {
           console.log(e.response.data.message);
         }
