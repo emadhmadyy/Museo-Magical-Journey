@@ -15,7 +15,7 @@ const authMiddleware = async (req, res, next) => {
       next();
     }
   } catch (e) {
-    res.status(500).send({ message: "Forbidden" });
+    res.status(403).send({ message: "Forbidden" });
   }
 };
 
