@@ -20,28 +20,34 @@ const createRoom = async (req, res) => {
 const joinRoom = async (req, res) => {
   const { room_id } = req.body;
   if (!room_id) {
-    return res.status(400).send({ message: "room id is required" });
+    return res.status(400).send({ message: "Tour id is required" });
   }
   if (!ObjectId.isValid(room_id)) {
-    return res.status(400).send({ message: "Room doesn't exist" });
+    return res.status(400).send({ message: "Tour doesn't exist" });
   }
   try {
     const roomId = new ObjectId(room_id);
+    const room = await Room.findById(roomId);
+    if (!room) {
+      return res.status(400).send({ message: "Tour doesn't exist" });
+    } else if (room.status == "Closed") {
+      return res.status(400).send({ message: "Tour has ended" });
+    }
     const existingRoom = await Room.findByIdAndUpdate(roomId, {
       $push: {
         users: {
           user: req.user._id,
-          character: characterId,
           isHost: false,
         },
       },
     });
     if (!existingRoom) {
-      res.status(400).send({ message: "Room doesn't exist" });
+      return res.status(400).send({ message: "Tour doesn't exist" });
     }
-    res.status(200).send({ message: "User added to room successfully" });
+
+    return res.status(200).send({ message: "User added to room successfully" });
   } catch (e) {
-    res.status(500).send({ message: "Server error", error: e });
+    return res.status(500).send({ message: "Server error", error: e });
   }
 };
 
