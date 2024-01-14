@@ -2,14 +2,29 @@
 import "./index.css";
 import Input from "../inputField";
 import closeIcon from "../../assets/images/icons8-close.png";
+import axios from "axios";
 const Popup = ({
   onClickClosePopup,
   onClickJoinTour,
-  onClickHostTour,
   onChange,
   value,
   error,
 }) => {
+  const hostTour = async () => {
+    try {
+      const response = await axios.request({
+        url: "http://localhost:8000/room/create",
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      alert(response.data.message);
+    } catch (e) {
+      console.log(e.response.data.message);
+    }
+  };
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
@@ -37,7 +52,7 @@ const Popup = ({
         <p className="or">OR</p>
         <button
           className="popup-btn secondary-color white-font host-btn"
-          onClick={onClickHostTour}
+          onClick={hostTour}
         >
           Host Group Tour
         </button>
