@@ -34,6 +34,12 @@ io.on("connection", (socket) => {
   // Broadcast to all users
   io.emit("updateState", cubes);
 
+  socket.on("keydown", (position) => {
+    cubes[socket.id].x = position.x;
+    cubes[socket.id].z = position.z;
+    io.emit("updateState", cubes);
+  });
+
 const PORT = 3001;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
