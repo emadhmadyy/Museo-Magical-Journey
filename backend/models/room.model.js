@@ -11,12 +11,6 @@ const roomSchema = new mongoose.Schema({
   status: { type: String, default: "Open", enum: ["Open", "Closed", "Full"] },
 });
 
-const validateUsersArrayLength = function (users) {
-  return users.length <= 10;
-};
-
-roomSchema.path("users").validate(validateUsersArrayLength, "Room is full");
-
 const Room = mongoose.model("Room", roomSchema);
 
 module.exports = Room;
