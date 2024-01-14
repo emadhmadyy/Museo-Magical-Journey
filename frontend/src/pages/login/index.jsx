@@ -16,6 +16,14 @@ const Login = () => {
   });
   const validateInputField = (field_name) => {
     let value = formData[field_name] == "" ? "This field is required" : "";
+    if (field_name == "email" && formData[field_name] != "") {
+      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        formData[field_name]
+      );
+      if (!isEmailValid) {
+        value = "Invalid email adress";
+      }
+    }
     setFormError((prevData) => ({
       ...prevData,
       [field_name]: value,
