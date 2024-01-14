@@ -26,6 +26,18 @@ const Register = () => {
     }));
     return value;
   };
+  const validateForm = () => {
+    const first_name_error = validateInputField("first_name");
+    const last_name_error = validateInputField("last_name");
+    const email_error = validateInputField("email");
+    const password_error = validateInputField("password");
+    return (
+      first_name_error == "" &&
+      last_name_error == "" &&
+      email_error == "" &&
+      password_error == ""
+    );
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
