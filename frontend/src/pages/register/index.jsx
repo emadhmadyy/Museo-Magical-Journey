@@ -89,32 +89,36 @@ const Register = () => {
           <Input
             type="text"
             placeholder="e.g. John"
+            value={formData.first_name}
             onChange={handleInputChange}
-            error=""
+            error={formError.first_name}
             name="first_name"
             labelName="First Name"
           />
           <Input
             type="text"
             placeholder="e.g. Doe"
+            value={formData.last_name}
             onChange={handleInputChange}
-            error=""
+            error={formError.last_name}
             name="last_name"
             labelName="Last Name"
           />
           <Input
             type="email"
             placeholder="e.g. johndoe@gmail.com"
+            value={formData.email}
             onChange={handleInputChange}
-            error=""
+            error={formError.email}
             name="email"
             labelName="Email"
           />
           <Input
             type="password"
             placeholder="e.g. password123"
+            value={formData.password}
             onChange={handleInputChange}
-            error=""
+            error={formError.password}
             name="password"
             labelName="Password"
           />
