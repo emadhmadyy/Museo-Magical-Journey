@@ -7,6 +7,7 @@ import Tour from "./pages/tour";
 import TimeTravelMenu from "./pages/timeTravelMenu";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 function App() {
+  const isAuthenticated = localStorage.getItem("token") != null;
   return (
     <>
       <BrowserRouter>
@@ -14,9 +15,20 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/options" element={<Options />} />
-          <Route path="/tour" element={<Tour />} />
-          <Route path="/time-travel" element={<TimeTravelMenu />} />
+          <Route
+            path="/options"
+            element={isAuthenticated ? <Options /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/tour"
+            element={isAuthenticated ? <Tour /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/time-travel"
+            element={
+              isAuthenticated ? <TimeTravelMenu /> : <Navigate to="/login" />
+            }
+          />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
