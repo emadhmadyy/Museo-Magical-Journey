@@ -20,6 +20,14 @@ const Register = () => {
   });
   const validateInputField = (field_name) => {
     let value = formData[field_name] == "" ? "This field is required" : "";
+    if (field_name == "email" && formData[field_name] != "") {
+      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        formData[field_name]
+      );
+      if (!isEmailValid) {
+        value = "Invalid email adress";
+      }
+    }
     setFormError((prevData) => ({
       ...prevData,
       [field_name]: value,
@@ -46,21 +54,23 @@ const Register = () => {
     }));
   };
   const handleRegister = async () => {
-    try {
-      const response = await axios.request({
-        url: "http://localhost:8000/user/register",
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: formData,
-      });
-      alert(response.data.message);
-    } catch (e) {
-      alert(e.response.data.message);
+    if (validateForm()) {
+      try {
+        const response = await axios.request({
+          url: "http://localhost:8000/user/register",
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: formData,
+        });
+        alert(response.data.message);
+      } catch (e) {
+        alert(e.response.data.message);
+      }
     }
-    console.log(JSON.stringify(formData));
   };
+
   const navigate = useNavigate();
   const navigateToLoginPage = () => {
     navigate("/login");
