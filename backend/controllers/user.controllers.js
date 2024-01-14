@@ -13,27 +13,25 @@ const login = async (req, res) => {
   const isValidPassword = await bcrypt.compare(password, user.password);
   if (!isValidPassword)
     return res.status(400).send({ message: "Invalid email/password" });
+  try {
+    const { password: hashedPassword, _id, ...userDetails } = user.toJSON();
 
-  const {
-    password: hashedPassword,
-    _id,
-    profile_url,
-    ...userDetails
-  } = user.toJSON();
+    // generate JWT token
+    const token = jwt.sign(
+      {
+        ...userDetails,
+      },
+      process.env.SECRET_KEY,
+      { expiresIn: "2 days" }
+    );
 
-  // generate JWT token
-  const token = jwt.sign(
-    {
-      ...userDetails,
-    },
-    process.env.SECRET_KEY,
-    { expiresIn: "2 days" }
-  );
-
-  return res.status(200).send({
-    user: userDetails,
-    token,
-  });
+    return res.status(200).send({
+      user: userDetails,
+      token,
+    });
+  } catch (e) {
+    res.status(500).send({ message: "Internal Server Error", error: e });
+  }
 };
 
 const register = async (req, res) => {
