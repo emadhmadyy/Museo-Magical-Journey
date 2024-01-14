@@ -59,7 +59,7 @@ const register = async (req, res) => {
 
     return res.status(200).send({ message: "Registered Successfully" });
   } catch (e) {
-    return res.status(500).send({ error: e });
+    return res.status(500).send({ message: "Internal server error", error: e });
   }
 };
 
