@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import Option from "../../components/option";
 import Popup from "../../components/popup";
 import { useState } from "react";
+import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 const Tour = () => {
   const [openPopup, setOpenPopup] = useState(false);
@@ -22,8 +23,23 @@ const Tour = () => {
   const closeGroupTourPopUp = () => {
     setOpenPopup(false);
   };
-  const joinGroupTour = () => {
-    console.log(id);
+  const joinGroupTour = async () => {
+    try {
+      const response = await axios.request({
+        url: "http://localhost:8000/room/join",
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        data: {
+          room_id: id,
+        },
+      });
+      alert(response.data.message);
+    } catch (e) {
+      console.log(e.response.data.message);
+    }
   };
   const hostGroupTour = () => {
     console.log("hosting group tour");
