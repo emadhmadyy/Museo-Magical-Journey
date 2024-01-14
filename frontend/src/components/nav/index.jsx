@@ -38,6 +38,7 @@ const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
           ) : (
             <p onClick={navigateToHomePage}>Home</p>
           )}
+          {isLandingPage == true && isLoggedIn == true && <p>Options</p>}
           {!isAuthPage &&
             (isLoggedIn == false ? (
               <p onClick={navigateToLoginPage}>Login</p>
