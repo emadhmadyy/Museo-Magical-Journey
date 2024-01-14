@@ -51,6 +51,14 @@ const Register = () => {
       password_error == ""
     );
   };
+  const clearRegisterInputFields = () => {
+    setFormData({
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+    });
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -70,6 +78,7 @@ const Register = () => {
           data: formData,
         });
         alert(response.data.message);
+        clearRegisterInputFields();
       } catch (e) {
         alert(e.response.data.message);
       }
