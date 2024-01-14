@@ -26,6 +26,7 @@ const login = async (req, res) => {
     );
 
     return res.status(200).send({
+      message: "Loggedin Successfully",
       user: userDetails,
       token,
     });
@@ -56,7 +57,7 @@ const register = async (req, res) => {
 
     await user.save();
 
-    return res.status(200).send({ user });
+    return res.status(200).send({ message: "Registered Successfully" });
   } catch (e) {
     return res.status(500).send({ error: e });
   }
