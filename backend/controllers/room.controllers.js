@@ -13,7 +13,7 @@ const createRoom = async (req, res) => {
       .status(200)
       .send({ message: "room created successfully", room_id: room._id });
   } catch (e) {
-    return res.status(500).send({ message: "Error", error: e });
+    return res.status(500).send({ message: "Internal Server error", error: e });
   }
 };
 
