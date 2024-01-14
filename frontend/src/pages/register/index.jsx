@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import Input from "../../components/inputField";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 const Register = () => {
   const [formData, setFormData] = useState({
     first_name: "",
@@ -24,7 +25,20 @@ const Register = () => {
       [name]: value,
     }));
   };
-  const handleRegister = () => {
+  const handleRegister = async () => {
+    try {
+      const response = await axios.request({
+        url: "http://localhost:8000/user/register",
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: formData,
+      });
+      alert(response.data.message);
+    } catch (e) {
+      alert(e.response.data.message);
+    }
     console.log(JSON.stringify(formData));
   };
   const navigate = useNavigate();
