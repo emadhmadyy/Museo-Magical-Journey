@@ -4,7 +4,8 @@ import logo from "../../assets/images/Emad_Hmady_Logo_r.png";
 import { Link as ScrollLink } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 //isAuthPage Prop to check if the page is login/signup
-const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
+const Nav = ({ isLandingPage, isAuthPage }) => {
+  const isLoggedIn = localStorage.getItem("token") != null;
   const navigate = useNavigate();
   const navigateToHomePage = () => {
     navigate("/");
