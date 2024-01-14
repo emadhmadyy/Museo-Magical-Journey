@@ -30,7 +30,14 @@ const Inquiry = () => {
       }
     } else if (field_name == "phone_number" && formData[field_name] != "") {
       const isPhoneNumberValid = formData[field_name] >= 11;
-      value = !isPhoneNumberValid ? "Invalid Phone Number" : "";
+      if (!isPhoneNumberValid) {
+        value = "Invalid Phone Number";
+      }
+    } else if (field_name == "inquiry_text" && formData[field_name] != "") {
+      const isInquiryValid = formData[field_name] >= 10;
+      if (!isInquiryValid) {
+        value = "Inquiry must be 10 characters or more";
+      }
     }
     setFormError((prevData) => ({
       ...prevData,
