@@ -10,6 +10,10 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [formError, setFormError] = useState({
+    email: "",
+    password: "",
+  });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -29,7 +33,7 @@ const Login = () => {
       });
       alert(response.data.message);
     } catch (e) {
-      console.log(e.response.data);
+      alert(e.response.data.message);
     }
     console.log(JSON.stringify(formData));
   };
