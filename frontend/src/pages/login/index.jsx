@@ -53,6 +53,7 @@ const Login = () => {
             type="email"
             placeholder="e.g. johndoe@gmail.com"
             onChange={handleInputChange}
+            value={formData.email}
             error=""
             name="email"
             labelName="Email"
@@ -61,6 +62,7 @@ const Login = () => {
             type="password"
             placeholder="e.g. password123"
             onChange={handleInputChange}
+            value={formData.password}
             error=""
             name="password"
             labelName="Password"
