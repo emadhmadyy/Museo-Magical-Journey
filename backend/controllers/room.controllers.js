@@ -18,20 +18,15 @@ const createRoom = async (req, res) => {
 };
 
 const joinRoom = async (req, res) => {
-  const { room_id, character_id } = req.body;
-  if (!room_id || !character_id) {
-    res.status(400).send({ message: "All fields are required" });
+  const { room_id } = req.body;
+  if (!room_id) {
+    res.status(400).send({ message: "room id is required" });
   }
-  if (!ObjectId.isValid(room_id) || !ObjectId.isValid(character_id)) {
-    return res.status(400).send({ message: "Room or Character doesn't exist" });
+  if (!ObjectId.isValid(room_id)) {
+    return res.status(400).send({ message: "Room doesn't exist" });
   }
   try {
     const roomId = new ObjectId(room_id);
-    const characterId = new ObjectId(character_id);
-    const existingCharacter = Character.findById(characterId);
-    if (!existingCharacter) {
-      res.status(400).send({ message: "Character doesn't exist" });
-    }
     const existingRoom = await Room.findByIdAndUpdate(roomId, {
       $push: {
         users: {
@@ -46,7 +41,7 @@ const joinRoom = async (req, res) => {
     }
     res.status(200).send({ message: "User added to room successfully" });
   } catch (e) {
-    res.status(500).send({ message: "Error", error: e });
+    res.status(500).send({ message: "Server error", error: e });
   }
 };
 
@@ -58,7 +53,6 @@ const leaveRoom = async (req, res) => {
   if (!ObjectId.isValid(room_id)) {
     return res.status(400).send({ message: "Room doesn't exist" });
   }
-  //$pull: { users: { user: userId } }
   try {
     const roomId = new ObjectId(room_id);
     const existingRoom = await Room.findByIdAndUpdate(roomId, {
@@ -69,7 +63,7 @@ const leaveRoom = async (req, res) => {
     }
     res.status(200).send({ message: "User removed successfully" });
   } catch (e) {
-    res.status(500).send({ message: "Error", error: e });
+    res.status(500).send({ message: "Server error", error: e });
   }
 };
 module.exports = {
