@@ -43,6 +43,11 @@ const joinRoom = async (req, res) => {
         },
       },
     });
+    const updatedRoom = await Room.findById(roomId);
+    const usersArrayLength = updatedRoom.users.length;
+    if (usersArrayLength === 10) {
+      await Room.findByIdAndUpdate(roomId, { status: "Full" });
+    }
     return res.status(200).send({ message: "User added to room successfully" });
   } catch (e) {
     return res.status(500).send({ message: "Server error", error: e });
