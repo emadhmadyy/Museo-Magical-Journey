@@ -43,6 +43,10 @@ const Login = () => {
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    setFormError((prevData) => ({
+      ...prevData,
+      [name]: "",
+    }));
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
