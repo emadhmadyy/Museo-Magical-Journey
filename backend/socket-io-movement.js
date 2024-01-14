@@ -40,6 +40,15 @@ io.on("connection", (socket) => {
     io.emit("updateState", cubes);
   });
 
+  socket.on("mousemove", (v) => {
+    let a = Math.asin(v.y);
+    a = Math.cos(a);
+    cubes[socket.id].rotationX = v.x / a;
+    cubes[socket.id].rotationY = 0;
+    cubes[socket.id].rotationZ = v.z / a;
+    io.emit("updateState", cubes);
+  });
+  
 const PORT = 3001;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
