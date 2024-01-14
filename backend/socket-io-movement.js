@@ -4,6 +4,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 app.use(cors());
+const { instrument } = require("@socket.io/admin-ui");
 
 app.get("/", (req, res) => {
   res.send("server is running");
@@ -55,6 +56,14 @@ io.on("connection", (socket) => {
     delete cubes[socket.id];
     io.emit("updateState", cubes);
   });
+});
+
+instrument(io, {
+  auth: {
+    type: "basic",
+    username: "admin",
+    password: "$2b$10$Z7kFtEfA/nT/B9AQmD8EC.Isks3JQpaOmHUCyKULLChWGFeyCza.O",
+  },
 });
 
 const PORT = 3001;
