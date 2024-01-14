@@ -14,6 +14,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+
   const validateInputField = (field_name) => {
     let value = formData[field_name] == "" ? "This field is required" : "";
     if (field_name == "email" && formData[field_name] != "") {
@@ -41,6 +42,13 @@ const Login = () => {
     const passwordError = validateInputField("password");
     return emailError == "" && passwordError == "";
   };
+
+  const clearLoginInputFields = () => {
+    setFormData({
+      email: "",
+      password: "",
+    });
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormError((prevData) => ({
@@ -64,6 +72,7 @@ const Login = () => {
           },
         });
         alert(response.data.message);
+        clearLoginInputFields();
       } catch (e) {
         alert(e.response.data.message);
       }
