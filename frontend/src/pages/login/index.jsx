@@ -18,6 +18,16 @@ const Login = () => {
     }));
   };
   const handleLogin = async () => {
+    try {
+      const response = await axios.request({
+        url: "http://localhost:8000/user/login",
+        method: "post",
+        data: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (e) {}
     console.log(JSON.stringify(formData));
   };
   const navigate = useNavigate();
