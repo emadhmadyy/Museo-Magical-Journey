@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -76,6 +77,7 @@ const Login = () => {
           clearLoginInputFields();
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.user));
+          navigate("/options");
           // console.log(localStorage.getItem("token"));
           // const user = JSON.parse(localStorage.getItem("user"));
           // console.log(user.first_name);
@@ -85,7 +87,6 @@ const Login = () => {
       }
     }
   };
-  const navigate = useNavigate();
   const navigateToRegisterPage = () => {
     navigate("/register");
   };
