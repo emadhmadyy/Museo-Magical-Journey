@@ -48,7 +48,15 @@ io.on("connection", (socket) => {
     cubes[socket.id].rotationZ = v.z / a;
     io.emit("updateState", cubes);
   });
-  
+
+  // Listen for disconnection
+  socket.on("disconnect", () => {
+    console.log("A user disconnected");
+    delete cubes[socket.id];
+    io.emit("updateState", cubes);
+  });
+});
+
 const PORT = 3001;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
