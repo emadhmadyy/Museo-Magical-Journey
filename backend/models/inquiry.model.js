@@ -4,26 +4,25 @@ const inquirySchema = new mongoose.Schema({
   first_name: {
     type: String,
     required: true,
-    minlength: 2,
+    minlength: 1,
   },
   last_name: {
     type: String,
     required: true,
-    minlength: 2,
+    minlength: 1,
   },
   email: {
     type: String,
-    unique: true,
     required: true,
     trim: true,
-    minlength: 3,
+    minlength: 6,
     maxlength: 26,
   },
   phone_number: {
     type: String,
     required: true,
     trim: true,
-    minlength: 8,
+    minlength: 11,
   },
   inquiry_text: {
     type: String,

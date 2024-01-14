@@ -27,6 +27,8 @@ app.use("/character", characterRoutes);
 const roomRoutes = require("./routes/room.routes.js");
 app.use("/room", authMiddleware, roomRoutes);
 
+const inquiryRoutes = require("./routes/inquiry.routes.js");
+app.use("/inquiry", inquiryRoutes);
 app.get("/", (req, res) => {
   res.send("Server is running");
 });

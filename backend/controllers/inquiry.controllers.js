@@ -16,7 +16,7 @@ const addInquiry = async (req, res) => {
     await inquiry.save();
     return res.status(200).send({ message: "Inquiry added successfully" });
   } catch (e) {
-    return res.status(500).send({ error: e });
+    return res.status(500).send({ message: "Error from the server", error: e });
   }
 };
 
