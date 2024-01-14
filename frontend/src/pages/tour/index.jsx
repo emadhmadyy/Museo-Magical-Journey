@@ -17,6 +17,7 @@ const Tour = () => {
     return value == "";
   };
   const handleIdChange = (e) => {
+    setIdError("");
     const id = e.target.value;
     setId(id);
   };
@@ -43,9 +44,15 @@ const Tour = () => {
             room_id: id,
           },
         });
-        alert(response.data.message);
+        if (response.status == 200) {
+          alert(response.data.message);
+        }
       } catch (e) {
-        console.log(e.response.data.message);
+        if (e.response.status == 400) {
+          setIdError(e.response.data.message);
+        } else {
+          console.log(e.response.data.message);
+        }
       }
     }
   };
