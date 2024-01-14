@@ -33,7 +33,7 @@ const joinRoom = async (req, res) => {
     } else if (room.status == "Closed") {
       return res.status(400).send({ message: "Tour has ended" });
     }
-    const existingRoom = await Room.findByIdAndUpdate(roomId, {
+    await Room.findByIdAndUpdate(roomId, {
       $push: {
         users: {
           user: req.user._id,
@@ -43,6 +43,9 @@ const joinRoom = async (req, res) => {
     });
     return res.status(200).send({ message: "User added to room successfully" });
   } catch (e) {
+    if (e.name == "ValidationError") {
+      return res.status(400).send({ message: "Tour is full" });
+    }
     return res.status(500).send({ message: "Server error", error: e });
   }
 };
@@ -58,7 +61,7 @@ const leaveRoom = async (req, res) => {
   try {
     const roomId = new ObjectId(room_id);
     const existingRoom = await Room.findByIdAndUpdate(roomId, {
-      $$pull: { users: { user: req.user._id } },
+      $pull: { users: { user: req.user._id } },
     });
     if (!existingRoom) {
       res.status(400).send({ message: "Room doesn't exist" });
