@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -61,6 +62,10 @@ const Register = () => {
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    setFormError((prevData) => ({
+      ...prevData,
+      [name]: "",
+    }));
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -77,15 +82,17 @@ const Register = () => {
           },
           data: formData,
         });
-        alert(response.data.message);
-        clearRegisterInputFields();
+        if (response.status == 200) {
+          alert(response.data.message);
+          clearRegisterInputFields();
+          navigate("/login");
+        }
       } catch (e) {
         alert(e.response.data.message);
       }
     }
   };
 
-  const navigate = useNavigate();
   const navigateToLoginPage = () => {
     navigate("/login");
   };
