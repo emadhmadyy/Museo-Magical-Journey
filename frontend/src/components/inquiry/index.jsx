@@ -158,6 +158,9 @@ const Inquiry = () => {
             placeholder="How Can We Enhance Our Museum?"
             onChange={handleInputChange}
           ></textarea>
+          {formError.inquiry_text && (
+            <div className="error">{formError.inquiry_text}</div>
+          )}
         </div>
         <button
           className="submit-btn secondary-color white-font"
