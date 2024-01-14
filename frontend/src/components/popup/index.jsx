@@ -7,6 +7,8 @@ const Popup = ({
   onClickJoinTour,
   onClickHostTour,
   onChange,
+  value,
+  error,
 }) => {
   return (
     <div className="overlay">
@@ -21,7 +23,8 @@ const Popup = ({
           type="text"
           placeholder="Tour Id"
           onChange={onChange}
-          error=""
+          value={value}
+          error={error}
           name="tour-id"
           labelName="Enter Tour Id"
         />

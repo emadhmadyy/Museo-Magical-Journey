@@ -8,6 +8,7 @@ import { useState } from "react";
 const Tour = () => {
   const [openPopup, setOpenPopup] = useState(false);
   const [id, setId] = useState("");
+  const [idError, setIdError] = useState("");
   const handleIdChange = (e) => {
     const id = e.target.value;
     setId(id);
@@ -78,6 +79,8 @@ const Tour = () => {
           onClickJoinTour={joinGroupTour}
           onClickHostTour={hostGroupTour}
           onChange={handleIdChange}
+          value={id}
+          error={idError}
         />
       )}
     </>
