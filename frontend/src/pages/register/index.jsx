@@ -18,6 +18,14 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const validateInputField = (field_name) => {
+    let value = formData[field_name] == "" ? "This field is required" : "";
+    setFormError((prevData) => ({
+      ...prevData,
+      [field_name]: value,
+    }));
+    return value;
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
