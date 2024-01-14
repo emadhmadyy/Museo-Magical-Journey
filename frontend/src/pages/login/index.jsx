@@ -4,6 +4,7 @@ import Input from "../../components/inputField";
 import Footer from "../../components/footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -16,13 +17,14 @@ const Login = () => {
       [name]: value,
     }));
   };
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log(JSON.stringify(formData));
   };
   const navigate = useNavigate();
   const navigateToRegisterPage = () => {
     navigate("/register");
   };
+
   return (
     <>
       <Nav isLandingPage={false} isLoggedIn={true} isAuthPage={true} />
