@@ -16,8 +16,14 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-    console.log(`A user connected with id: ${socket.id}`);
-    // data will include user name and message
+  console.log(`A user connected with id: ${socket.id}`);
+  // data will include user name and message
   socket.on("newMessage", (data) => {
     io.emit("neMessage", data);
   });
+
+  // Listen for disconnection
+  socket.on("disconnect", () => {
+    console.log("A user disconnected");
+  });
+});
