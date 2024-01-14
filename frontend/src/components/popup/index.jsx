@@ -32,7 +32,10 @@ const Popup = ({ onClickClosePopup }) => {
       });
       alert(response.data.message);
     } catch (e) {
-      console.log(e.response.data.message);
+      if (e.response.status == 403) {
+        localStorage.clear();
+        navigate("/login");
+      }
     }
   };
   const joinGroupTour = async () => {
