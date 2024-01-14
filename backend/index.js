@@ -21,9 +21,6 @@ const authMiddleware = require("./middlewares/auth.middleware.js");
 const userRoutes = require("./routes/user.routes.js");
 app.use("/user", userRoutes);
 
-const characterRoutes = require("./routes/character.routes.js");
-app.use("/character", characterRoutes);
-
 const roomRoutes = require("./routes/room.routes.js");
 app.use("/room", authMiddleware, roomRoutes);
 
