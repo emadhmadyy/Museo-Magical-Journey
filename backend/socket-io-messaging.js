@@ -28,6 +28,14 @@ io.on("connection", (socket) => {
   });
 });
 
+instrument(io, {
+  auth: {
+    type: "basic",
+    username: "admin",
+    password: "$2b$10$Z7kFtEfA/nT/B9AQmD8EC.Isks3JQpaOmHUCyKULLChWGFeyCza.O",
+  },
+});
+
 const PORT = 4000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
