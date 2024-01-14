@@ -12,6 +12,10 @@ const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
   const navigateToLoginPage = () => {
     navigate("/login");
   };
+  const logOut = () => {
+    localStorage.clear();
+    navigate("/");
+  };
   return (
     <>
       <div className="flex nav secondary-color main-padding">
@@ -43,13 +47,7 @@ const Nav = ({ isLandingPage, isLoggedIn, isAuthPage }) => {
             (isLoggedIn == false ? (
               <p onClick={navigateToLoginPage}>Login</p>
             ) : (
-              <p
-                onClick={() => {
-                  console.log("logging out");
-                }}
-              >
-                Logout
-              </p>
+              <p onClick={logOut}>Logout</p>
             ))}
         </div>
       </div>
