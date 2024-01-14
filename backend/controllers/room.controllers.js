@@ -20,7 +20,7 @@ const createRoom = async (req, res) => {
 const joinRoom = async (req, res) => {
   const { room_id } = req.body;
   if (!room_id) {
-    res.status(400).send({ message: "room id is required" });
+    return res.status(400).send({ message: "room id is required" });
   }
   if (!ObjectId.isValid(room_id)) {
     return res.status(400).send({ message: "Room doesn't exist" });
