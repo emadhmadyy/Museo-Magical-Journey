@@ -100,7 +100,7 @@ const Inquiry = () => {
         alert(response.data.message);
         clearInquiryInputFields();
       } catch (e) {
-        console.log(e.response.data);
+        alert(e.response.data.message);
       }
     }
   };
