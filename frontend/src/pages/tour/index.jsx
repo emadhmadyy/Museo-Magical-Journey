@@ -10,6 +10,12 @@ const Tour = () => {
   const [openPopup, setOpenPopup] = useState(false);
   const [id, setId] = useState("");
   const [idError, setIdError] = useState("");
+
+  const validateId = () => {
+    const value = id == "" ? "This field is required" : "";
+    setIdError(value);
+    return value == "";
+  };
   const handleIdChange = (e) => {
     const id = e.target.value;
     setId(id);
@@ -24,21 +30,23 @@ const Tour = () => {
     setOpenPopup(false);
   };
   const joinGroupTour = async () => {
-    try {
-      const response = await axios.request({
-        url: "http://localhost:8000/room/join",
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        data: {
-          room_id: id,
-        },
-      });
-      alert(response.data.message);
-    } catch (e) {
-      console.log(e.response.data.message);
+    if (validateId()) {
+      try {
+        const response = await axios.request({
+          url: "http://localhost:8000/room/join",
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          data: {
+            room_id: id,
+          },
+        });
+        alert(response.data.message);
+      } catch (e) {
+        console.log(e.response.data.message);
+      }
     }
   };
   const hostGroupTour = () => {
