@@ -27,7 +27,10 @@ const Login = () => {
           "Content-Type": "application/json",
         },
       });
-    } catch (e) {}
+      alert(response.data.message);
+    } catch (e) {
+      console.log(e.response.data);
+    }
     console.log(JSON.stringify(formData));
   };
   const navigate = useNavigate();
