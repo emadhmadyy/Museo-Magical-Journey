@@ -4,24 +4,8 @@ import Footer from "../../components/footer";
 import Option from "../../components/option";
 import Popup from "../../components/popup";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 const Tour = () => {
-  const navigate = useNavigate();
   const [openPopup, setOpenPopup] = useState(false);
-  const [id, setId] = useState("");
-  const [idError, setIdError] = useState("");
-
-  const validateId = () => {
-    const value = id == "" ? "This field is required" : "";
-    setIdError(value);
-    return value == "";
-  };
-  const handleIdChange = (e) => {
-    setIdError("");
-    const id = e.target.value;
-    setId(id);
-  };
   const navigateToSoloVirtualTour = () => {
     console.log("Navigating to Solo Virtual Tour");
   };
@@ -30,35 +14,6 @@ const Tour = () => {
   };
   const closeGroupTourPopUp = () => {
     setOpenPopup(false);
-  };
-  const joinGroupTour = async () => {
-    if (validateId()) {
-      try {
-        const response = await axios.request({
-          url: "http://localhost:8000/room/join",
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          data: {
-            room_id: id,
-          },
-        });
-        if (response.status == 200) {
-          alert(response.data.message);
-        }
-      } catch (e) {
-        if (e.response.status == 400) {
-          setIdError(e.response.data.message);
-        } else if (e.response.status == 403) {
-          localStorage.clear();
-          navigate("/login");
-        } else {
-          console.log(e.response.data.message);
-        }
-      }
-    }
   };
   const options = [
     {
