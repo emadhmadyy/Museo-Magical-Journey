@@ -83,7 +83,7 @@ const Login = () => {
           // console.log(user.first_name);
         }
       } catch (e) {
-        alert(e);
+        alert(e.response.data.message);
       }
     }
   };

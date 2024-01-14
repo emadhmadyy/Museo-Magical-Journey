@@ -3,13 +3,23 @@ import "./index.css";
 import Input from "../inputField";
 import closeIcon from "../../assets/images/icons8-close.png";
 import axios from "axios";
-const Popup = ({
-  onClickClosePopup,
-  onClickJoinTour,
-  onChange,
-  value,
-  error,
-}) => {
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+const Popup = ({ onClickClosePopup }) => {
+  const navigate = useNavigate();
+  const [id, setId] = useState("");
+  const [idError, setIdError] = useState("");
+
+  const validateId = () => {
+    const value = id == "" ? "This field is required" : "";
+    setIdError(value);
+    return value == "";
+  };
+  const handleIdChange = (e) => {
+    setIdError("");
+    const id = e.target.value;
+    setId(id);
+  };
   const hostTour = async () => {
     try {
       const response = await axios.request({
@@ -25,6 +35,35 @@ const Popup = ({
       console.log(e.response.data.message);
     }
   };
+  const joinGroupTour = async () => {
+    if (validateId()) {
+      try {
+        const response = await axios.request({
+          url: "http://localhost:8000/room/join",
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          data: {
+            room_id: id,
+          },
+        });
+        if (response.status == 200) {
+          alert(response.data.message);
+        }
+      } catch (e) {
+        if (e.response.status == 400) {
+          setIdError(e.response.data.message);
+        } else if (e.response.status == 403) {
+          localStorage.clear();
+          navigate("/login");
+        } else {
+          console.log(e.response.data.message);
+        }
+      }
+    }
+  };
   return (
     <div className="overlay">
       <div className="popup flex column main-color">
@@ -37,15 +76,15 @@ const Popup = ({
         <Input
           type="text"
           placeholder="Tour Id"
-          onChange={onChange}
-          value={value}
-          error={error}
+          onChange={handleIdChange}
+          value={id}
+          error={idError}
           name="tour-id"
           labelName="Enter Tour Id"
         />
         <button
           className="popup-btn secondary-color white-font"
-          onClick={onClickJoinTour}
+          onClick={joinGroupTour}
         >
           Join Group Tour
         </button>

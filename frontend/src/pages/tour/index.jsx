@@ -105,15 +105,7 @@ const Tour = () => {
         })}
       </div>
       <Footer />
-      {openPopup && (
-        <Popup
-          onClickClosePopup={closeGroupTourPopUp}
-          onClickJoinTour={joinGroupTour}
-          onChange={handleIdChange}
-          value={id}
-          error={idError}
-        />
-      )}
+      {openPopup && <Popup onClickClosePopup={closeGroupTourPopUp} />}
     </>
   );
 };
