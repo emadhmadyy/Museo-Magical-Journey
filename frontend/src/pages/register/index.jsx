@@ -82,8 +82,8 @@ const Register = () => {
           },
           data: formData,
         });
+        alert(response.data.message);
         if (response.status == 200) {
-          alert(response.data.message);
           clearRegisterInputFields();
           navigate("/login");
         }

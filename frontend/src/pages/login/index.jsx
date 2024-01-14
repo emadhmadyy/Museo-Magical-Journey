@@ -72,9 +72,16 @@ const Login = () => {
           },
         });
         alert(response.data.message);
-        clearLoginInputFields();
+        if (response.status == 200) {
+          clearLoginInputFields();
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("user", JSON.stringify(response.data.user));
+          // console.log(localStorage.getItem("token"));
+          // const user = JSON.parse(localStorage.getItem("user"));
+          // console.log(user.first_name);
+        }
       } catch (e) {
-        alert(e.response.data.message);
+        alert(e);
       }
     }
   };
