@@ -20,6 +20,13 @@ const Login = () => {
       ...prevData,
       [field_name]: value,
     }));
+    return value;
+  };
+
+  const validateForm = () => {
+    const emailError = validateInputField("email");
+    const passwordError = validateInputField("password");
+    return emailError == "" && passwordError == "";
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,20 +36,21 @@ const Login = () => {
     }));
   };
   const handleLogin = async () => {
-    try {
-      const response = await axios.request({
-        url: "http://localhost:8000/user/login",
-        method: "post",
-        data: formData,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      alert(response.data.message);
-    } catch (e) {
-      alert(e.response.data.message);
+    if (validateForm()) {
+      try {
+        const response = await axios.request({
+          url: "http://localhost:8000/user/login",
+          method: "post",
+          data: formData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        alert(response.data.message);
+      } catch (e) {
+        alert(e.response.data.message);
+      }
     }
-    console.log(JSON.stringify(formData));
   };
   const navigate = useNavigate();
   const navigateToRegisterPage = () => {
