@@ -41,10 +41,6 @@ const joinRoom = async (req, res) => {
         },
       },
     });
-    if (!existingRoom) {
-      return res.status(400).send({ message: "Tour doesn't exist" });
-    }
-
     return res.status(200).send({ message: "User added to room successfully" });
   } catch (e) {
     return res.status(500).send({ message: "Server error", error: e });

@@ -8,7 +8,7 @@ const roomSchema = new mongoose.Schema({
       isHost: { type: Boolean },
     },
   ],
-  status: { type: String, default: "Open", enum: ["Open", "Closed"] },
+  status: { type: String, default: "Open", enum: ["Open", "Closed", "Full"] },
 });
 
 const validateUsersArrayLength = function (users) {
