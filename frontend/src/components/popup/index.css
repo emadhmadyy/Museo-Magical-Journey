@@ -16,6 +16,7 @@
     padding: 60px;
     position: relative;
     gap:10px;
+    border-radius: 8px;
 }
 
 .close-icon{

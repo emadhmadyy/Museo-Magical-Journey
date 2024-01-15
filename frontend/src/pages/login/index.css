@@ -19,6 +19,7 @@
 .login-title{
     font-size: 22px;
     font-weight: bold;
+    align-self: center;
 }
 
 .login-btn{

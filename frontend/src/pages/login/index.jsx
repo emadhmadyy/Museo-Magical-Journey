@@ -130,7 +130,7 @@ const Login = () => {
             LOG IN
           </button>
           <p className="">
-            dont have an account?{" "}
+            Don&apos;t have an account?{" "}
             <span className="signup-btn" onClick={navigateToRegisterPage}>
               Sign Up
             </span>

@@ -34,7 +34,7 @@ const Nav = ({ isLandingPage, isAuthPage }) => {
         <img className="logo" src={logo} alt="logo" />
         <div className="flex gap">
           {isLandingPage == true && isLoggedIn == true && (
-            <p onClick={navigateToOptionsPage}> Options</p>
+            <p onClick={navigateToOptionsPage}> Tours</p>
           )}
           {isLandingPage == true ? (
             <>
