@@ -25,6 +25,10 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const [formStatus, setFormStatus] = useState({
+    status: "",
+    message: "",
+  });
   const validateInputField = (field_name) => {
     let value = formData[field_name] == "" ? "This field is required" : "";
     if (field_name == "email" && formData[field_name] != "") {
@@ -88,13 +92,31 @@ const Register = () => {
           },
           data: formData,
         });
-        alert(response.data.message);
         if (response.status == 200) {
+          setFormStatus({
+            status: response.status,
+            message: "Success",
+          });
+          setTimeout(() => {
+            setFormStatus({
+              status: "",
+              message: "",
+            });
+          }, 2500);
           clearRegisterInputFields();
           navigate("/login");
         }
       } catch (e) {
-        alert(e.response.data.message);
+        setFormStatus({
+          status: e.response.status,
+          message: e.response.data.message,
+        });
+        setTimeout(() => {
+          setFormStatus({
+            status: "",
+            message: "",
+          });
+        }, 2500);
       }
     }
   };
@@ -150,6 +172,15 @@ const Register = () => {
           >
             Sign Up
           </button>
+          {formStatus.status != "" && (
+            <p
+              className={
+                formStatus.status == 200 ? "status success" : "status failed"
+              }
+            >
+              {formStatus.message}
+            </p>
+          )}
           <p>
             Have an account?{" "}
             <span className="signin-btn" onClick={navigateToLoginPage}>
