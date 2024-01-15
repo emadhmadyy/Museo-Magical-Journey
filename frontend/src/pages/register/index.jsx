@@ -35,7 +35,7 @@ const Register = () => {
         value = "Invalid email adress";
       }
     } else if (field_name == "password" && formData[field_name] != "") {
-      const isPasswordValid = formData[field_name] >= 8;
+      const isPasswordValid = formData[field_name].length >= 8;
       if (!isPasswordValid) {
         value = "Password must be 8 characters or more";
       }

@@ -29,12 +29,12 @@ const Inquiry = () => {
         value = "Invalid Email Adress";
       }
     } else if (field_name == "phone_number" && formData[field_name] != "") {
-      const isPhoneNumberValid = formData[field_name] >= 11;
+      const isPhoneNumberValid = formData[field_name].length >= 11;
       if (!isPhoneNumberValid) {
         value = "Invalid Phone Number";
       }
     } else if (field_name == "inquiry_text" && formData[field_name] != "") {
-      const isInquiryValid = formData[field_name] >= 10;
+      const isInquiryValid = formData[field_name].length >= 10;
       if (!isInquiryValid) {
         value = "Inquiry must be 10 characters or more";
       }
