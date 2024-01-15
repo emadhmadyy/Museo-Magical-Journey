@@ -43,3 +43,16 @@
     cursor: pointer;
     border: none;
 }
+
+.status{
+    align-self: center;
+    font-size: 15px;
+}
+
+.success {
+    color: green;
+}
+
+.failed {
+    color :rgb(242, 69, 69);
+}

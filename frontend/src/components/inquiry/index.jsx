@@ -18,7 +18,10 @@ const Inquiry = () => {
     phone_number: "",
     inquiry_text: "",
   });
-
+  const [formStatus, setFormStatus] = useState({
+    status: "",
+    message: "",
+  });
   const validateInputField = (field_name) => {
     let value = formData[field_name] == "" ? "This field is required" : "";
     if (field_name == "email" && formData[field_name] != "") {
@@ -97,10 +100,30 @@ const Inquiry = () => {
           },
           data: formData,
         });
-        alert(response.data.message);
-        clearInquiryInputFields();
+        if (response.status == 200) {
+          setFormStatus({
+            status: response.status,
+            message: response.data.message,
+          });
+          setTimeout(() => {
+            setFormStatus({
+              status: "",
+              message: "",
+            });
+          }, 2500);
+          clearInquiryInputFields();
+        }
       } catch (e) {
-        alert(e.response.data.message);
+        setFormStatus({
+          status: e.response.status,
+          message: e.response.data.message,
+        });
+        setTimeout(() => {
+          setFormStatus({
+            status: "",
+            message: "",
+          });
+        }, 2500);
       }
     }
   };
@@ -111,6 +134,15 @@ const Inquiry = () => {
     >
       <p className="contact-us-title">Contact Us</p>
       <div className="inquiry-form box-shadow flex column">
+        {formStatus.status != "" && (
+          <p
+            className={
+              formStatus.status == 200 ? "status success" : "status failed"
+            }
+          >
+            {formStatus.message}
+          </p>
+        )}
         <div className="flex form-row">
           <Input
             value={formData.first_name}
