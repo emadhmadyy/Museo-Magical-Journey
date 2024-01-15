@@ -18,6 +18,7 @@
 .signup-title{
     font-size: 22px;
     font-weight: bold;
+    align-self: center;
 }
 
 .signup-btn-register-form {

@@ -151,7 +151,7 @@ const Register = () => {
             Sign Up
           </button>
           <p>
-            have an account?{" "}
+            Have an account?{" "}
             <span className="signin-btn" onClick={navigateToLoginPage}>
               Log In
             </span>
