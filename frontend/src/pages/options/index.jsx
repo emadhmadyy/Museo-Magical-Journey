@@ -3,8 +3,15 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Option from "../../components/option";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Options = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("token") == null) {
+      navigate("/login");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const navigateToTourPage = () => {
     navigate("/tour");
   };
@@ -33,7 +40,7 @@ const Options = () => {
   ];
   return (
     <>
-      <Nav isLandingPage={false} isAuthPage={false} isLoggedIn={true} />
+      <Nav isLandingPage={false} isAuthPage={false} />
       <div className="flex">
         {options.map((option, index) => {
           let Main;

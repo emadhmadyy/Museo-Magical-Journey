@@ -6,7 +6,16 @@ import statue from "../../assets/images/icons8-statue.png";
 import team from "../../assets/images/icons8-team.png";
 import chat from "../../assets/images/icons8-chat.png";
 import time from "../../assets/images/icons8-time-machine.png";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const TimeTravelMenu = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("token") == null) {
+      navigate("/login");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const info = [
     {
       icon: statue,
@@ -53,7 +62,7 @@ const TimeTravelMenu = () => {
   ];
   return (
     <>
-      <Nav isAuthPage={false} isLoggedIn={true} isLandingPage={false} />
+      <Nav isAuthPage={false} isLandingPage={false} />
       <div className="time-travel flex column main-padding main-color">
         <p className="time-travel-main-title">Get Back In Time!</p>
         <p className="time-travel-sub-title">Choose from the below options</p>

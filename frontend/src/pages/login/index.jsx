@@ -100,7 +100,7 @@ const Login = () => {
 
   return (
     <>
-      <Nav isLandingPage={false} isLoggedIn={true} isAuthPage={true} />
+      <Nav isLandingPage={false} isAuthPage={true} />
       <div className="flex main-padding login-container main-color">
         {/* here goes the 3D model */}
         <div className="login-form flex column box-shadow">

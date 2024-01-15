@@ -104,7 +104,7 @@ const Register = () => {
   };
   return (
     <>
-      <Nav isLandingPage={false} isAuthPage={true} isLoggedIn={false} />
+      <Nav isLandingPage={false} isAuthPage={true} />
       <div className="signup-container main-color main-padding flex">
         <div className="signup-form box-shadow flex column">
           <p className="signup-title">Sign Up</p>

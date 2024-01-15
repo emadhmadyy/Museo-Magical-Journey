@@ -3,8 +3,16 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Option from "../../components/option";
 import Popup from "../../components/popup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Tour = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("token") == null) {
+      navigate("/login");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [openPopup, setOpenPopup] = useState(false);
   const navigateToSoloVirtualTour = () => {
     console.log("Navigating to Solo Virtual Tour");
@@ -37,7 +45,7 @@ const Tour = () => {
   ];
   return (
     <>
-      <Nav isLandingPage={false} isAuthPage={false} isLoggedIn={true} />
+      <Nav isLandingPage={false} isAuthPage={false} />
       <div className="flex">
         {options.map((option, index) => {
           let Main;
