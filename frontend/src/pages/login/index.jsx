@@ -5,8 +5,14 @@ import Footer from "../../components/footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 const Login = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("token") != null) {
+      navigate("/options");
+    }
+  }, []);
   const [formData, setFormData] = useState({
     email: "",
     password: "",

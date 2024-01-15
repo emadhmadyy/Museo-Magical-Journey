@@ -12,7 +12,6 @@ const Nav = ({ isLandingPage, isAuthPage }) => {
     localStorage.getItem("token") != null
       ? setIsLoggedin(true)
       : setIsLoggedin(false);
-    console.log("triggered");
   }, []);
 
   const navigateToHomePage = () => {
