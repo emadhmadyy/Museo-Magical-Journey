@@ -13,6 +13,9 @@ const Nav = ({ isLandingPage, isAuthPage }) => {
   const navigateToLoginPage = () => {
     navigate("/login");
   };
+  const navigateToOptionsPage = () => {
+    navigate("/options");
+  };
   const logOut = () => {
     localStorage.clear();
     navigate("/");
@@ -22,6 +25,9 @@ const Nav = ({ isLandingPage, isAuthPage }) => {
       <div className="flex nav secondary-color main-padding">
         <img className="logo" src={logo} alt="logo" />
         <div className="flex gap">
+          {isLandingPage == true && isLoggedIn == true && (
+            <p onClick={navigateToOptionsPage}> Options</p>
+          )}
           {isLandingPage == true ? (
             <>
               <p>
@@ -43,7 +49,6 @@ const Nav = ({ isLandingPage, isAuthPage }) => {
           ) : (
             <p onClick={navigateToHomePage}>Home</p>
           )}
-          {isLandingPage == true && isLoggedIn == true && <p>Options</p>}
           {!isAuthPage &&
             (isLoggedIn == false ? (
               <p onClick={navigateToLoginPage}>Login</p>

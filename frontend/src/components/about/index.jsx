@@ -1,6 +1,7 @@
 import "./index.css";
 import { useNavigate } from "react-router-dom";
 const About = () => {
+  const isAuthenticated = localStorage.getItem("token") != null;
   const navigate = useNavigate();
   return (
     <div className="flex column main-padding about-container" id="about">
@@ -19,7 +20,7 @@ const About = () => {
       <button
         className="get-started-btn secondary-color white-font"
         onClick={() => {
-          navigate("/register");
+          isAuthenticated ? navigate("/options") : navigate("/register");
         }}
       >
         Get Started
