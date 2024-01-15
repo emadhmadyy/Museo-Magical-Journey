@@ -6,13 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 //isAuthPage Prop to check if the page is login/signup
 const Nav = ({ isLandingPage, isAuthPage }) => {
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedin] = useState();
   useEffect(() => {
     localStorage.getItem("token") != null
       ? setIsLoggedin(true)
       : setIsLoggedin(false);
+    console.log("triggered");
   }, []);
-  const navigate = useNavigate();
+
   const navigateToHomePage = () => {
     navigate("/");
   };
@@ -24,6 +26,7 @@ const Nav = ({ isLandingPage, isAuthPage }) => {
   };
   const logOut = () => {
     localStorage.clear();
+    setIsLoggedin(false);
     navigate("/");
   };
   return (
