@@ -12,6 +12,7 @@ const Login = () => {
     if (localStorage.getItem("token") != null) {
       navigate("/options");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const [formData, setFormData] = useState({
     email: "",

@@ -3,10 +3,16 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Input from "../../components/inputField";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 const Register = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("token") != null) {
+      navigate("/options");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
