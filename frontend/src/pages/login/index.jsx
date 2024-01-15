@@ -22,6 +22,10 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [formStatus, setFormStatus] = useState({
+    status: "",
+    message: "",
+  });
 
   const validateInputField = (field_name) => {
     let value = formData[field_name] == "" ? "This field is required" : "";
@@ -79,8 +83,11 @@ const Login = () => {
             "Content-Type": "application/json",
           },
         });
-        alert(response.data.message);
         if (response.status == 200) {
+          setFormStatus({
+            status: response.status,
+            message: "Success",
+          });
           clearLoginInputFields();
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.user));
@@ -90,7 +97,16 @@ const Login = () => {
           // console.log(user.first_name);
         }
       } catch (e) {
-        alert(e.response.data.message);
+        setFormStatus({
+          status: e.response.status,
+          message: e.response.data.message,
+        });
+        setTimeout(() => {
+          setFormStatus({
+            status: "",
+            message: "",
+          });
+        }, 2500);
       }
     }
   };
@@ -129,6 +145,15 @@ const Login = () => {
           >
             LOG IN
           </button>
+          {formStatus.status != "" && (
+            <p
+              className={
+                formStatus.status == 200 ? "status success" : "status failed"
+              }
+            >
+              {formStatus.message}
+            </p>
+          )}
           <p className="">
             Don&apos;t have an account?{" "}
             <span className="signup-btn" onClick={navigateToRegisterPage}>
