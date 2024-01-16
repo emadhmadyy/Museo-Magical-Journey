@@ -30,6 +30,7 @@ const Popup = ({ onClickClosePopup }) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
+      //i should add a loading indicator that stays untill all models are loaded
       alert(response.data.message);
     } catch (e) {
       if (e.response.status == 403) {
