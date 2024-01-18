@@ -1,5 +1,10 @@
+/* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
 const LoginScene = () => {
+  const login_model = useGLTF(
+    "./nefertitis_bust_like_in_the_museum/scene.gltf"
+  );
   return (
     <Canvas
       style={{
@@ -7,7 +12,9 @@ const LoginScene = () => {
         minWidth: "300px",
         width: "43%",
       }}
-    ></Canvas>
+    >
+      <primitive object={login_model.scene}></primitive>
+    </Canvas>
   );
 };
 
