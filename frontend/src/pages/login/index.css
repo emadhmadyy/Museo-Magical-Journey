@@ -2,6 +2,7 @@
     height: auto;
     justify-content: space-between;
     align-items: center;
+    /* justify-content: center; */
     padding: 56px 170px;
     flex-wrap: wrap;
     gap:10px;
@@ -37,3 +38,4 @@
     cursor: pointer;
     font-weight: bold;
 }
+

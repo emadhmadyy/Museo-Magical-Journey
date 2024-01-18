@@ -6,6 +6,7 @@ import Options from "./pages/options";
 import Tour from "./pages/tour";
 import TimeTravelMenu from "./pages/timeTravelMenu";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import Scene from "./pages/scene";
 function App() {
   return (
     <>
@@ -17,6 +18,8 @@ function App() {
           <Route path="/options" element={<Options />} />
           <Route path="/tour" element={<Tour />} />
           <Route path="/time-travel" element={<TimeTravelMenu />} />
+          <Route path="/scene" element={<Scene />} />
+          {/* <Route path="/scene/:data" element={<Scene />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

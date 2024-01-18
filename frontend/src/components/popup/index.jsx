@@ -31,7 +31,10 @@ const Popup = ({ onClickClosePopup }) => {
         },
       });
       //i should add a loading indicator that stays untill all models are loaded
-      alert(response.data.message);
+      // alert(response.data.message);
+      if (response.status == 200) {
+        navigate("/scene");
+      }
     } catch (e) {
       if (e.response.status == 403) {
         localStorage.clear();
@@ -62,6 +65,7 @@ const Popup = ({ onClickClosePopup }) => {
         } else if (e.response.status == 403) {
           localStorage.clear();
           navigate("/login");
+          // navigate("/login/true");
         } else {
           console.log(e.response.data.message);
         }

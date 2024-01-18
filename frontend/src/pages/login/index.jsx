@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
 const Login = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -124,7 +125,20 @@ const Login = () => {
     <>
       <Nav isLandingPage={false} isAuthPage={true} />
       <div className="flex main-padding login-container main-color">
-        {/* here goes the 3D model */}
+        <Canvas
+          className="canvas"
+          style={{
+            height: "60vh",
+            backgroundColor: "blue",
+            minWidth: "300px",
+            width: "43%",
+          }}
+        >
+          <mesh>
+            <boxGeometry />
+            <meshBasicMaterial color="red" />
+          </mesh>
+        </Canvas>
         <div className="login-form flex column box-shadow">
           <p className="login-title">Log In</p>
           <Input
