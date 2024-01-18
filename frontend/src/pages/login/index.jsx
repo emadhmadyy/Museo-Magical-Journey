@@ -126,20 +126,6 @@ const Login = () => {
     <>
       <Nav isLandingPage={false} isAuthPage={true} />
       <div className="flex main-padding login-container main-color">
-        {/* <Canvas
-          style={{
-            height: "60vh",
-            minWidth: "300px",
-            width: "43%",
-          }}
-        >
-          <directionalLight intensity={6} />
-          <Model
-            url="./nefertitis_bust_like_in_the_museum/scene.gltf"
-            position={[4, -1, 0]}
-            scale={8}
-          />
-        </Canvas> */}
         <LoginScene />
         <div className="login-form flex column box-shadow">
           <p className="login-title">Log In</p>

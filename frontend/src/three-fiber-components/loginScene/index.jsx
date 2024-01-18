@@ -13,6 +13,7 @@ const LoginScene = () => {
         width: "43%",
       }}
     >
+      <directionalLight />
       <primitive object={login_model.scene}></primitive>
     </Canvas>
   );
