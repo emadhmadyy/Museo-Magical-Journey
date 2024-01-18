@@ -8,6 +8,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import LoginScene from "../../three-fiber-components/loginScene";
+import { Canvas } from "@react-three/fiber";
 const Login = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -126,7 +127,16 @@ const Login = () => {
     <>
       <Nav isLandingPage={false} isAuthPage={true} />
       <div className="flex main-padding login-container main-color">
-        <LoginScene />
+        <Canvas
+          style={{
+            height: "60vh",
+            minWidth: "300px",
+            width: "43%",
+          }}
+        >
+          <LoginScene />
+        </Canvas>
+
         <div className="login-form flex column box-shadow">
           <p className="login-title">Log In</p>
           <Input
