@@ -2,7 +2,7 @@
 import { useFrame } from "@react-three/fiber";
 //import { useGLTF } from "@react-three/drei";
 import { MeshReflectorMaterial } from "@react-three/drei";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import Model from "../model";
 const LoginScene = () => {
   const login_model_ref = useRef();
@@ -15,11 +15,14 @@ const LoginScene = () => {
     <>
       <directionalLight intensity={9} position={[0, 0, 1]} />
       <ambientLight position={[0, 0, 2]} intensity={9} />
-      <Model
-        url="./statue_of_edward_snowden/scene.gltf"
-        ref={login_model_ref}
-        scale={0.6}
-      />
+      <Suspense>
+        <Model
+          url="./statue_of_edward_snowden/scene.gltf"
+          ref={login_model_ref}
+          scale={0.6}
+        />
+      </Suspense>
+
       {/* <primitive
         object={login_model.scene}
         ref={login_model_ref}
