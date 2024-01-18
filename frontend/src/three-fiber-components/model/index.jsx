@@ -4,10 +4,17 @@
 import { useGLTF } from "@react-three/drei";
 import { forwardRef, useMemo } from "react";
 
-const Model = forwardRef(({ url, scale }, ref) => {
+const Model = forwardRef(({ url, scale, position }, ref) => {
   const model = useGLTF(url);
   const memorizedModel = useMemo(() => model.scene, [model.scene]);
-  return <primitive object={memorizedModel} scale={scale} ref={ref} />;
+  return (
+    <primitive
+      object={memorizedModel}
+      scale={scale}
+      ref={ref}
+      position={position}
+    />
+  );
 });
 
 export default Model;

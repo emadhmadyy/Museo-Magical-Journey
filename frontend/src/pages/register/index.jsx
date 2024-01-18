@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Canvas } from "@react-three/fiber";
+import RegisterScene from "../../three-fiber-components/registerScene";
 const Register = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -131,12 +132,13 @@ const Register = () => {
       <div className="signup-container main-color main-padding flex">
         <Canvas
           style={{
-            height: "80vh",
+            height: "85vh",
             minWidth: "300px",
-            backgroundColor: "red",
             width: "43%",
           }}
-        ></Canvas>
+        >
+          <RegisterScene />
+        </Canvas>
         <div className="signup-form box-shadow flex column">
           <p className="signup-title">Sign Up</p>
           <Input
