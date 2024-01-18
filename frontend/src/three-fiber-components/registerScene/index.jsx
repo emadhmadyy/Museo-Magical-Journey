@@ -27,6 +27,7 @@ const RegisterScene = () => {
           url="./ramses_ii_egyptian_statue_louvre/scene.gltf"
           ref={register_model_ref}
           scale={2}
+          position={[0, -2.5, 0]}
         />
       </Suspense>
 
@@ -35,14 +36,17 @@ const RegisterScene = () => {
         ref={login_model_ref}
         scale={0.6}
       ></primitive> */}
-      <mesh scale={10} rotation-x={-Math.PI * 0.5} position={[0, -2, 0]}>
+      <mesh
+        scale={[3.3, 5, 4]}
+        rotation-x={-Math.PI * 0.5}
+        position={[0, -2, 0]}
+      >
         <planeGeometry />
         <MeshReflectorMaterial
           resolution={512}
           blur={[1000, 1000]}
-          mixBlur={0.5}
-          mirror={0.75}
-          color="#dcd0c3"
+          mixBlur={0.7}
+          mirror={1}
         />
       </mesh>
     </>

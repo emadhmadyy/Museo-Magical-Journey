@@ -17,7 +17,7 @@ const LoginScene = () => {
       <ambientLight position={[0, 0, 2]} intensity={9} />
       <Suspense
         fallback={
-          <mesh position={[0, 0, 1]} scale={[1.2, 3, 2]}>
+          <mesh position={[0, 0, 1]} scale={[1, 3, 2]}>
             <boxGeometry args={[2, 1, 1, 2, 2, 2]} />
             <meshBasicMaterial color="black" wireframe />
           </mesh>
@@ -26,7 +26,7 @@ const LoginScene = () => {
         <Model
           url="./statue_of_edward_snowden/scene.gltf"
           ref={login_model_ref}
-          scale={0.6}
+          scale={0.62}
         />
       </Suspense>
 
@@ -35,7 +35,7 @@ const LoginScene = () => {
         ref={login_model_ref}
         scale={0.6}
       ></primitive> */}
-      <mesh scale={10} rotation-x={-Math.PI * 0.5} position={[0, -2, 0]}>
+      <mesh scale={[5, 5, 4]} rotation-x={-Math.PI * 0.5} position={[0, -2, 0]}>
         <planeGeometry />
         <MeshReflectorMaterial
           resolution={512}
