@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import "./index.css";
 import Nav from "../../components/nav";
 import Input from "../../components/inputField";
@@ -7,6 +8,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
+import Model from "../../three-fiber-components/model";
 const Login = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -126,18 +128,18 @@ const Login = () => {
       <Nav isLandingPage={false} isAuthPage={true} />
       <div className="flex main-padding login-container main-color">
         <Canvas
-          className="canvas"
           style={{
             height: "60vh",
-            backgroundColor: "blue",
             minWidth: "300px",
             width: "43%",
           }}
         >
-          <mesh>
-            <boxGeometry />
-            <meshBasicMaterial color="red" />
-          </mesh>
+          <directionalLight intensity={6} />
+          <Model
+            url="./nefertitis_bust_like_in_the_museum/scene.gltf"
+            position={[4, -1, 0]}
+            scale={8}
+          />
         </Canvas>
         <div className="login-form flex column box-shadow">
           <p className="login-title">Log In</p>
