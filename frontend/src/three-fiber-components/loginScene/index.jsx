@@ -15,7 +15,14 @@ const LoginScene = () => {
     <>
       <directionalLight intensity={9} position={[0, 0, 1]} />
       <ambientLight position={[0, 0, 2]} intensity={9} />
-      <Suspense>
+      <Suspense
+        fallback={
+          <mesh position={[0, 0, 1]} scale={[1.2, 3, 2]}>
+            <boxGeometry args={[2, 1, 1, 2, 2, 2]} />
+            <meshBasicMaterial color="black" wireframe />
+          </mesh>
+        }
+      >
         <Model
           url="./statue_of_edward_snowden/scene.gltf"
           ref={login_model_ref}
