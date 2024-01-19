@@ -1,5 +1,4 @@
 import { Html, useProgress } from "@react-three/drei";
-import ProgressBar from "react-bootstrap/ProgressBar";
 const LoadingIndicator = () => {
   const { progress } = useProgress();
   return (
