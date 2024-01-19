@@ -4,6 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 import Model from "../model";
+import LoadingIndicator from "../loadingIndicator";
 const RegisterScene = () => {
   const register_model_ref = useRef();
   useFrame((state, delta) => {
@@ -15,14 +16,7 @@ const RegisterScene = () => {
     <>
       <directionalLight intensity={4} position={[0, 0, 1]} />
       <ambientLight position={[0, 0, 2]} intensity={9} />
-      <Suspense
-        fallback={
-          <mesh position={[0, 0, 1]} scale={[1.2, 3, 2]}>
-            <boxGeometry args={[2, 1, 1, 2, 2, 2]} />
-            <meshBasicMaterial color="white" wireframe />
-          </mesh>
-        }
-      >
+      <Suspense fallback={<LoadingIndicator />}>
         <Model
           url="./albert_einstein/scene.gltf"
           ref={register_model_ref}
