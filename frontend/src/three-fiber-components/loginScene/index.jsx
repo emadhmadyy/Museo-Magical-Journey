@@ -19,7 +19,7 @@ const LoginScene = () => {
         fallback={
           <mesh position={[0, 0, 1]} scale={[1, 3, 2]}>
             <boxGeometry args={[2, 1, 1, 2, 2, 2]} />
-            <meshBasicMaterial color="black" wireframe />
+            <meshBasicMaterial color="white" wireframe />
           </mesh>
         }
       >
