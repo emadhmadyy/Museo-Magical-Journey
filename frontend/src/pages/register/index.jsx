@@ -135,6 +135,8 @@ const Register = () => {
             height: "85vh",
             minWidth: "300px",
             width: "43%",
+            backgroundColor: "#dcd0c3",
+            minHeight: "500px",
           }}
         >
           <RegisterScene />
