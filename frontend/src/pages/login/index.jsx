@@ -132,6 +132,8 @@ const Login = () => {
             height: "60vh",
             minWidth: "300px",
             width: "43%",
+            backgroundColor: "#dcd0c3",
+            minHeight: "340px",
           }}
         >
           <LoginScene />
