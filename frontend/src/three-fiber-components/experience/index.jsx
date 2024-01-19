@@ -3,6 +3,7 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "../model";
 import { Suspense } from "react";
 import Fallback from "../modelfallback";
+import Character from "../character";
 
 const Experience = () => {
   return (
@@ -15,7 +16,7 @@ const Experience = () => {
         <planeGeometry />
         <meshStandardMaterial />
       </mesh>
-      <Suspense fallback={<Fallback position={[1, 1, 1]} scale={[2, 3, 2]} />}>
+      {/* <Suspense fallback={<Fallback position={[1, 1, 1]} scale={[2, 3, 2]} />}>
         <Model url="./hamburger.glb" position={[1, 1, 1]} scale={0.35} />
       </Suspense>
       <Suspense fallback={<Fallback position={[0, 0, 0]} scale={[2, 3, 2]} />}>
@@ -24,7 +25,8 @@ const Experience = () => {
           position={[0, 0, 0]}
           scale={5}
         />
-      </Suspense>
+      </Suspense> */}
+      <Character />
     </>
   );
 };

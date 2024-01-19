@@ -4,7 +4,7 @@
 import { useGLTF } from "@react-three/drei";
 import { forwardRef, useMemo } from "react";
 
-const Model = forwardRef(({ url, scale, position }, ref) => {
+const Model = forwardRef(({ url, scale, position, rotation }, ref) => {
   const model = useGLTF(url);
   const memorizedModel = useMemo(() => model.scene, [model.scene]);
   return (
@@ -13,8 +13,10 @@ const Model = forwardRef(({ url, scale, position }, ref) => {
       scale={scale}
       ref={ref}
       position={position}
+      rotation={rotation}
     />
   );
 });
 
+// useGLTF.preload(url)
 export default Model;
