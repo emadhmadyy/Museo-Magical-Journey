@@ -1,15 +1,16 @@
 /* eslint-disable react/no-unknown-property */
-import { OrbitControls } from "@react-three/drei";
-import Model from "../model";
-import { Suspense } from "react";
-import Fallback from "../modelfallback";
+// import { OrbitControls } from "@react-three/drei";
+// import Model from "../model";
+// import { Suspense } from "react";
+// import Fallback from "../modelfallback";
+import { PointerLockControls } from "@react-three/drei";
 import Character from "../character";
 
 const Experience = () => {
   return (
     <>
-      <OrbitControls makeDefault />
-
+      {/* <OrbitControls makeDefault /> */}
+      <PointerLockControls />
       <directionalLight intensity={5} />
       <ambientLight intensity={1.5} />
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>

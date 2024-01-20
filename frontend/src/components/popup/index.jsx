@@ -33,7 +33,7 @@ const Popup = ({ onClickClosePopup }) => {
       //i should add a loading indicator that stays untill all models are loaded
       // alert(response.data.message);
       if (response.status == 200) {
-        navigate("/scene");
+        navigate("/museum");
       }
     } catch (e) {
       if (e.response.status == 403) {
