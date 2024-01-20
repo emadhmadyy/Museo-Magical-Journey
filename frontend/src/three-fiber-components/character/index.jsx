@@ -2,7 +2,7 @@
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
 const Character = () => {
-  const character_model = useGLTF("./male_avatar_voxel/scene.gltf");
+  const character_model = useGLTF("./character_walk/scene.gltf");
   const animations = useAnimations(
     character_model.animations,
     character_model.scene

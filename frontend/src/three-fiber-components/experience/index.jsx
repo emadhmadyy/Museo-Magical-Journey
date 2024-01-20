@@ -5,12 +5,22 @@
 // import Fallback from "../modelfallback";
 import { PointerLockControls } from "@react-three/drei";
 import Character from "../character";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 const Experience = () => {
+  const controls = useRef();
+  const moveForward = useRef(false);
+  const moveBackward = useRef(false);
+  const moveRight = useRef(false);
+  const moveLeft = useRef(false);
+  useFrame(() => {
+    // console.log(moveBackward.current);
+  });
   return (
     <>
       {/* <OrbitControls makeDefault /> */}
-      <PointerLockControls />
+      <PointerLockControls ref={controls} />
       <directionalLight intensity={5} />
       <ambientLight intensity={1.5} />
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
