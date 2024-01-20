@@ -27,18 +27,18 @@ const Tour = () => {
     {
       title: "Solo Virtual Tour",
       paragraph1:
-        "Whether you are an art enthusiast or simply looking for a fun and educational way to spend your time, a tour in our virtual museum is the perfect choice.",
+        "Start your solo adventure in our 3D museum tour, tailored just for you. Enjoy the benefits of solitude as you delve into the details of each artifact, immersing yourself fully without distractions.",
       paragraph2:
-        "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being so close to these incredible works of art.",
+        "Our 3D museum offers a personalized journey through time and culture, ensuring a fulfilling exploration within the comfort of your own virtual space. Begin your solo adventure today!",
       btn_text: "Go Solo",
       navigation: navigateToSoloVirtualTour,
     },
     {
       title: "Group Virtual Tour",
       paragraph1:
-        "Whether you are an art enthusiast or simply looking for a fun and educational way to spend your time, a tour in our virtual museum is the perfect choice.",
+        "Start your group adventure in our 3D museum tour, from the comfort of your homes. Enjoy real-time communication and shared excitement with fellow participants, fostering a sense of community. ",
       paragraph2:
-        "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being so close to these incredible works of art.",
+        " Immerse yourselves in the beauty of incredible artworks while engaging in lively discussions. Join the virtual tour as a group, creating memorable moments and enriching your appreciation for art together!",
       btn_text: "Join / Host",
       navigation: openGroupTourPopUp,
     },
