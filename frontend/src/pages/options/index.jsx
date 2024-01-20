@@ -31,9 +31,9 @@ const Options = () => {
     {
       title: "Time Travel",
       paragraph1:
-        "Whether you are an art enthusiast or simply looking for a fun and educational way to spend your time, a tour in our virtual museum is the perfect choice.",
+        "Whether you love history or just seeking an engaging way to immerse yourself in the evolution of human innovation, our virtual exhibition is the ideal destination for you.",
       paragraph2:
-        "With our cutting-edge technology, you can explore the museum from the comfort of your own home and experience the thrill of being so close to these incredible works of art.",
+        "Our time travel feature allows you to marvel at the birth of revolutionary items, tracing their development through various eras until today.",
       btn_text: "Travel In Time",
       navigation: navigateToTimeTravelPage,
     },
