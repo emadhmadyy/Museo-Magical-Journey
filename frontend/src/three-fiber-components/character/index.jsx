@@ -8,8 +8,8 @@ const Character = () => {
     character_model.scene
   );
   useEffect(() => {
-    const action = animations.actions["mixamo.com"];
-    action.play();
+    const action = animations.actions["Armature|Walk"];
+    //action.play();
   }, []);
   return <primitive object={character_model.scene} />;
 };
