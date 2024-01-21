@@ -4,4 +4,5 @@ const Achilles = (props) => {
   const { scene } = useGLTF("./achilles_heel/scene.gltf");
   return <primitive object={scene} {...props} />;
 };
+useGLTF.preload("./achilles_heel/scene.gltf");
 export default Achilles;
