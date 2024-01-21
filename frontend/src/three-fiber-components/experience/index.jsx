@@ -23,6 +23,7 @@ import AthenaPergamon from "../models/athena_pergamon";
 import Apollo from "../models/apollo";
 import Alexander from "../models/alexander";
 import Achilles from "../models/achilles";
+import Rope from "../models/rope";
 
 const Experience = () => {
   const playerPosition = [1, 0, 0];
@@ -46,14 +47,19 @@ const Experience = () => {
       </mesh>
       {/* <Zeus /> */}
       {/* <Temple /> */}
-      {/* <Pillar scale={0.02} position={[0, 1, 0]} /> */}
+      <Pillar scale={0.02} position={[0, 1, 0]} />
       {/* <Nike scale={0.06} position={[0, -0.06, 0]} /> */}
       {/* <Hermes position={[0, 32, -30]} /> */}
-      <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} />
-      {/* <Hera /> */}
+      {/* <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} /> */}
+      {/* <Rope /> */}
+      {/* <Hera position={[0, 13.1, -10]} /> */}
       {/* <Fights /> */}
-      {/* <BustZeus /> */}
-      {/* <BustRhetorician /> */}
+      {/* <BustZeus scale={0.04} position={[0, 1, 0]} /> */}
+      <BustRhetorician
+        scale={0.04}
+        position={[0.01, 1.32, 0.51]}
+        rotation={[Math.PI * 0.09, 0, -Math.PI * 0.03]}
+      />
       {/* <BustGorgon /> */}
       {/* <BustPerikles /> */}
       {/* <AthenaPergamon /> */}
