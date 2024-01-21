@@ -4,4 +4,5 @@ const Temple = (props) => {
   const { scene } = useGLTF("./greek_temple/scene.gltf");
   return <primitive object={scene} {...props} />;
 };
+useGLTF.preload("./greek_temple/scene.gltf");
 export default Temple;
