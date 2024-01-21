@@ -1,11 +1,7 @@
 /* eslint-disable react/no-unknown-property */
-//import { OrbitControls } from "@react-three/drei";
-// import Model from "../model";
-// import { Suspense } from "react";
-// import Fallback from "../modelfallback";
 import { PointerLockControls } from "@react-three/drei";
 import Character from "../character";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import Zeus from "../models/zeus";
 import Temple from "../models/temple";
@@ -57,7 +53,6 @@ const Experience = () => {
   });
   return (
     <>
-      {/* <OrbitControls makeDefault /> */}
       <PointerLockControls ref={controls} />
       <directionalLight intensity={10} />
       <ambientLight intensity={1} />
