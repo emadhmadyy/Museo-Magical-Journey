@@ -67,9 +67,9 @@ const Experience = () => {
         scale={0.7}
       /> */}
       {/* <AthenaPergamon scale={0.01} /> */}
-      <Apollo scale={0.1} position={[0, 1.1, 0]} />
-      {/* <Alexander /> */}
-      {/* <Achilles /> */}
+      {/* <Apollo scale={0.1} position={[0, 1.1, 0]} /> */}
+      {/* <Alexander scale={10} /> */}
+      <Achilles scale={15} />
 
       <Character position={playerPosition} />
     </>
