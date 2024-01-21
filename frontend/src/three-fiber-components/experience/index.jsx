@@ -6,7 +6,7 @@
 import { PointerLockControls } from "@react-three/drei";
 import Character from "../character";
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Zeus from "../models/zeus";
 import Temple from "../models/temple";
 import Pillar from "../models/pillar";
@@ -26,6 +26,18 @@ import Achilles from "../models/achilles";
 import Rope from "../models/rope";
 
 const Experience = () => {
+  const handleKeyPress = (event) => {
+    if (controls.current.isLocked) {
+      switch (event.code) {
+        case "KeyW":
+          controls.current.moveForward(0.1);
+      }
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("keypress", handleKeyPress);
+    return () => document.removeEventListener("keypress", handleKeyPress);
+  }, []);
   const playerPosition = [1, 0, 0];
   const controls = useRef();
   //   const moveForward = useRef(false);
