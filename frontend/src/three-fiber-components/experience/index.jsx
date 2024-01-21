@@ -47,7 +47,7 @@ const Experience = () => {
       </mesh>
       {/* <Zeus /> */}
       {/* <Temple /> */}
-      <Pillar scale={0.02} position={[0, 1, 0]} />
+      {/* <Pillar scale={0.02} position={[0, 1, 0]} /> */}
       {/* <Nike scale={0.06} position={[0, -0.06, 0]} /> */}
       {/* <Hermes position={[0, 32, -30]} /> */}
       {/* <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} /> */}
@@ -61,13 +61,13 @@ const Experience = () => {
         rotation={[Math.PI * 0.09, 0, -Math.PI * 0.03]}
       /> */}
       {/* <BustGorgon scale={0.02 / 5} position={[-0.783, 1, 0]} /> */}
-      <BustPerikles
+      {/* <BustPerikles
         position={[-0.01, 1.175, 0]}
         rotation={[0, 0, -Math.PI * 0.015]}
         scale={0.7}
-      />
-      {/* <AthenaPergamon /> */}
-      {/* <Apollo /> */}
+      /> */}
+      {/* <AthenaPergamon scale={0.01} /> */}
+      <Apollo scale={0.1} position={[0, 1.1, 0]} />
       {/* <Alexander /> */}
       {/* <Achilles /> */}
 
