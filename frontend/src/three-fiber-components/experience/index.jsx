@@ -31,6 +31,16 @@ const Experience = () => {
       switch (event.code) {
         case "KeyW":
           controls.current.moveForward(0.1);
+          break;
+        case "KeyS":
+          controls.current.moveForward(-0.1);
+          break;
+        case "KeyD":
+          controls.current.moveRight(0.1);
+          break;
+        case "KeyA":
+          controls.current.moveRight(-0.1);
+          break;
       }
     }
   };
@@ -40,10 +50,6 @@ const Experience = () => {
   }, []);
   const playerPosition = [1, 0, 0];
   const controls = useRef();
-  //   const moveForward = useRef(false);
-  //   const moveBackward = useRef(false);
-  //   const moveRight = useRef(false);
-  //   const moveLeft = useRef(false);
   useFrame(() => {
     // console.log(controls);
     // console.log(moveBackward.current);
