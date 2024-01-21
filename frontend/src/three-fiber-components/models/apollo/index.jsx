@@ -4,4 +4,5 @@ const Apollo = (props) => {
   const { scene } = useGLTF("./apollo_und_daphne/scene.gltf");
   return <primitive object={scene} {...props} />;
 };
+useGLTF.preload("./apollo_und_daphne/scene.gltf");
 export default Apollo;
