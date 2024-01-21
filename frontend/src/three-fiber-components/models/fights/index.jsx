@@ -4,4 +4,5 @@ const Fights = (props) => {
   const { scene } = useGLTF("./fights/scene.gltf");
   return <primitive object={scene} {...props} />;
 };
+useGLTF.preload("./fights/scene.gltf");
 export default Fights;
