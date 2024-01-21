@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unknown-property */
-import { OrbitControls } from "@react-three/drei";
+//import { OrbitControls } from "@react-three/drei";
 // import Model from "../model";
 // import { Suspense } from "react";
 // import Fallback from "../modelfallback";
-// import { PointerLockControls } from "@react-three/drei";
+import { PointerLockControls } from "@react-three/drei";
 import Character from "../character";
 import { useFrame } from "@react-three/fiber";
-//import { useRef } from "react";
+import { useRef } from "react";
 import Zeus from "../models/zeus";
 import Temple from "../models/temple";
 import Pillar from "../models/pillar";
@@ -27,19 +27,20 @@ import Rope from "../models/rope";
 
 const Experience = () => {
   const playerPosition = [1, 0, 0];
-  //const controls = useRef();
+  const controls = useRef();
   //   const moveForward = useRef(false);
   //   const moveBackward = useRef(false);
   //   const moveRight = useRef(false);
   //   const moveLeft = useRef(false);
   useFrame(() => {
+    // console.log(controls);
     // console.log(moveBackward.current);
   });
   return (
     <>
-      <OrbitControls makeDefault />
-      {/* <PointerLockControls ref={controls} /> */}
-      <directionalLight intensity={5} />
+      {/* <OrbitControls makeDefault /> */}
+      <PointerLockControls ref={controls} />
+      <directionalLight intensity={10} />
       <ambientLight intensity={1} />
       <mesh rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
@@ -68,8 +69,8 @@ const Experience = () => {
       /> */}
       {/* <AthenaPergamon scale={0.01} /> */}
       {/* <Apollo scale={0.1} position={[0, 1.1, 0]} /> */}
-      {/* <Alexander scale={10} /> */}
-      <Achilles scale={15} position={[0, 0.5, 0]} />
+      {/* <Alexander /> */}
+      {/* <Achilles scale={15} position={[0, 0.5, 0]} /> */}
 
       <Character position={playerPosition} />
     </>
