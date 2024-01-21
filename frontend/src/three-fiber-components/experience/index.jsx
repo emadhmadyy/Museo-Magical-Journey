@@ -5,7 +5,7 @@
 // import Fallback from "../modelfallback";
 import { PointerLockControls } from "@react-three/drei";
 import Character from "../character";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import Zeus from "../models/zeus";
 import Temple from "../models/temple";
@@ -45,6 +45,7 @@ const Experience = () => {
     }
   };
   useEffect(() => {
+    controls.current.camera.position.y = 1.5;
     document.addEventListener("keypress", handleKeyPress);
     return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
