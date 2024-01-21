@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unknown-property */
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
@@ -9,7 +10,7 @@ const Character = () => {
   );
   useEffect(() => {
     const action = animations.actions["Armature|Walk"];
-    //action.play();
+    action.play();
   }, []);
   return <primitive object={character_model.scene} />;
 };

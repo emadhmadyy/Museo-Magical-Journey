@@ -16,7 +16,7 @@ const LoginScene = () => {
     <>
       <directionalLight intensity={9} position={[0, 0, 1]} />
       <ambientLight position={[0, 0, 2]} intensity={9} />
-      <Suspense
+      {/* <Suspense
         fallback={
           <LoadingIndicator />
           //   <mesh position={[0, 0, 1]} scale={[1, 3, 2]}>
@@ -30,7 +30,7 @@ const LoginScene = () => {
           ref={login_model_ref}
           scale={0.62}
         />
-      </Suspense>
+      </Suspense> */}
 
       {/* <primitive
         object={login_model.scene}

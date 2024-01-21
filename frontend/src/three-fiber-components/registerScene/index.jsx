@@ -16,7 +16,7 @@ const RegisterScene = () => {
     <>
       <directionalLight intensity={4} position={[0, 0, 1]} />
       <ambientLight position={[0, 0, 2]} intensity={9} />
-      <Suspense fallback={<LoadingIndicator />}>
+      {/* <Suspense fallback={<LoadingIndicator />}>
         <Model
           url="./albert_einstein/scene.gltf"
           ref={register_model_ref}
@@ -24,7 +24,7 @@ const RegisterScene = () => {
           position={[0, -0.4, 1]}
           // rotation={[-Math.PI * 0.5, 0, 0]}
         />
-      </Suspense>
+      </Suspense> */}
 
       {/* <primitive
         object={login_model.scene}
