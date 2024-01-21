@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 // import { Suspense } from "react";
 // import Fallback from "../modelfallback";
 // import { PointerLockControls } from "@react-three/drei";
-//import Character from "../character";
+import Character from "../character";
 import { useFrame } from "@react-three/fiber";
 //import { useRef } from "react";
 import Zeus from "../models/zeus";
@@ -14,8 +14,18 @@ import Nike from "../models/nike";
 import Hermes from "../models/hermes";
 import HerculesGiambologna from "../models/hercules_giambologna";
 import Hera from "../models/hera";
+import Fights from "../models/fights";
+import BustZeus from "../models/bust_zeus";
+import BustRhetorician from "../models/bust_rhetorician";
+import BustGorgon from "../models/bust_gorgon";
+import BustPerikles from "../models/bust_perikles";
+import AthenaPergamon from "../models/athena_pergamon";
+import Apollo from "../models/apollo";
+import Alexander from "../models/alexander";
+import Achilles from "../models/achilles";
 
 const Experience = () => {
+  const playerPosition = [1, 0, 0];
   //const controls = useRef();
   //   const moveForward = useRef(false);
   //   const moveBackward = useRef(false);
@@ -28,20 +38,30 @@ const Experience = () => {
     <>
       <OrbitControls makeDefault />
       {/* <PointerLockControls ref={controls} /> */}
-      <directionalLight intensity={1.5} />
-      <ambientLight intensity={0.5} />
-      <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
+      <directionalLight intensity={5} />
+      <ambientLight intensity={1} />
+      <mesh rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry />
         <meshStandardMaterial />
       </mesh>
-      <Zeus position-x={12} scale={10} />
-      <Temple />
-      <Pillar />
-      <Nike position-x={-50} />
-      <Hermes position-y={30} />
-      <HerculesGiambologna position-y={-50} />
-      <Hera />
-      {/* <Character /> */}
+      {/* <Zeus /> */}
+      {/* <Temple /> */}
+      {/* <Pillar scale={0.02} position={[0, 1, 0]} /> */}
+      {/* <Nike scale={0.06} position={[0, -0.06, 0]} /> */}
+      {/* <Hermes position={[0, 32, -30]} /> */}
+      <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} />
+      {/* <Hera /> */}
+      {/* <Fights /> */}
+      {/* <BustZeus /> */}
+      {/* <BustRhetorician /> */}
+      {/* <BustGorgon /> */}
+      {/* <BustPerikles /> */}
+      {/* <AthenaPergamon /> */}
+      {/* <Apollo /> */}
+      {/* <Alexander /> */}
+      {/* <Achilles /> */}
+
+      <Character position={playerPosition} />
     </>
   );
 };
