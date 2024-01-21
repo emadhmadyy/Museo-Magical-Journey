@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { PointerLockControls } from "@react-three/drei";
+import { PointerLockControls, useTexture } from "@react-three/drei";
 import Character from "../character";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
@@ -20,8 +20,21 @@ import Apollo from "../models/apollo";
 import Alexander from "../models/alexander";
 import Achilles from "../models/achilles";
 import Rope from "../models/rope";
+import { DoubleSide } from "three";
+import * as THREE from "three";
 
 const Experience = () => {
+  const textures = useTexture([
+    "laminate-flooring-brown/laminate-flooring-brown_albedo.png",
+    "laminate-flooring-brown/laminate-flooring-brown_ao.png",
+    "laminate-flooring-brown/laminate-flooring-brown_normal-ogl.png",
+    "laminate-flooring-brown/laminate-flooring-brown_metallic.png",
+  ]);
+  textures.map((texture) => {
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(10, 10);
+  });
+
   const handleKeyPress = (event) => {
     if (controls.current.isLocked) {
       switch (event.code) {
@@ -42,23 +55,37 @@ const Experience = () => {
   };
   useEffect(() => {
     controls.current.camera.position.y = 1.5;
+    console.log(floor.current.geometry.attributes.uv.array[0]);
     document.addEventListener("keypress", handleKeyPress);
     return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
   const playerPosition = [1, 0, 0];
   const controls = useRef();
+  const floor = useRef();
+  const spotlight = useRef();
   useFrame(() => {
-    // console.log(controls);
-    // console.log(moveBackward.current);
+    // console.log(spotlight.current);
+    console.log(floor.current);
   });
   return (
     <>
       <PointerLockControls ref={controls} />
-      <directionalLight intensity={10} />
+      <pointLight
+        intensity={10}
+        position={[0, 2, 0]}
+        ref={spotlight}
+        decay={1}
+      />
       <ambientLight intensity={1} />
-      <mesh rotation-x={-Math.PI * 0.5} scale={10}>
+      <mesh rotation-x={-Math.PI * 0.5} scale={10} ref={floor}>
         <planeGeometry />
-        <meshStandardMaterial />
+        <meshPhysicalMaterial
+          map={textures[0]}
+          aoMap={textures[1]}
+          //   normalMap={textures[2]}
+          metalnessMap={textures[3]}
+          side={DoubleSide}
+        />
       </mesh>
       {/* <Zeus /> */}
       {/* <Temple /> */}
@@ -86,7 +113,7 @@ const Experience = () => {
       {/* <Alexander /> */}
       {/* <Achilles scale={15} position={[0, 0.5, 0]} /> */}
 
-      <Character position={playerPosition} />
+      {/* <Character position={playerPosition} /> */}
     </>
   );
 };
