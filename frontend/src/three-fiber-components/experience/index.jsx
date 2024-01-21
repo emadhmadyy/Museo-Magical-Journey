@@ -55,13 +55,13 @@ const Experience = () => {
       {/* <Hera position={[0, 13.1, -10]} /> */}
       {/* <Fights /> */}
       {/* <BustZeus scale={0.04} position={[0, 1, 0]} /> */}
-      <BustRhetorician
+      {/* <BustRhetorician
         scale={0.04}
         position={[0.01, 1.32, 0.51]}
         rotation={[Math.PI * 0.09, 0, -Math.PI * 0.03]}
-      />
-      {/* <BustGorgon /> */}
-      {/* <BustPerikles /> */}
+      /> */}
+      {/* <BustGorgon scale={0.02 / 5} position={[-0.783, 1, 0]} /> */}
+      <BustPerikles />
       {/* <AthenaPergamon /> */}
       {/* <Apollo /> */}
       {/* <Alexander /> */}
