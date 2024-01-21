@@ -6,4 +6,5 @@ const Alexander = (props) => {
   );
   return <primitive object={scene} {...props} />;
 };
+useGLTF.preload("./alexander_the_great_sets_fire_to_persepolis/scene.gltf");
 export default Alexander;
