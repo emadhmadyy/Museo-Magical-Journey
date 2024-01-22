@@ -1,8 +1,10 @@
 import "./index.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
 
 const MessageBox = () => {
+  const navigate = useNavigate();
   const socket = io.connect("http://localhost:4000");
   const [messages, setMessages] = useState([
     { name: "emad", message: "Hello", id: 1 },
@@ -12,11 +14,22 @@ const MessageBox = () => {
     name: "",
     message: "",
   });
-  const handleNewMessage = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+  const handleNewMessage = () => {};
+  const addUserInfo = () => {
+    if (localStorage.getItem("user")) {
+      const user_info = JSON.parse(localStorage.getItem("user"));
+      const user_name = user_info.first_name + " " + user_info.last_name;
+      setMessage((prevData) => ({
+        ...prevData,
+        name: user_name,
+      }));
+    } else {
+      localStorage.clear();
+      navigate("/");
+    }
   };
   useEffect(() => {
-    handleNewMessage();
+    addUserInfo();
   }, []);
   //   socket.on("newMessage",)
   return (
@@ -29,6 +42,7 @@ const MessageBox = () => {
           </div>
         );
       })}
+      <p>{message.name}</p>
     </div>
   );
 };
