@@ -130,7 +130,7 @@ const Experience = () => {
       <axesHelper />
       <Zeus position={[0, 0, -5]} />
       {/* <Temple scale={0.3} position={[0, 0, 0]} /> */}
-      <Pillar scale={0.02} position={[0, 1, 0]} />
+      <Pillar />
       <Nike scale={0.06} position={[0, -0.06, 5]} />
       <Hermes position={[0 + 7, 32, -30]} />
       {/* <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} /> */}
