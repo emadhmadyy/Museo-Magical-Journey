@@ -5,7 +5,6 @@ import io from "socket.io-client";
 
 const MessageBox = () => {
   const navigate = useNavigate();
-  const socket = io.connect("http://localhost:4000");
   const [messages, setMessages] = useState([
     { name: "emad", message: "Hello", id: 1 },
     { name: "khaled", message: "Hello everyone", id: 2 },
@@ -14,8 +13,21 @@ const MessageBox = () => {
     name: "",
     message: "",
   });
+
+  const sendMessage = () => {
+    socket.emit("newMessage", message);
+  };
+  const handleInputChange = (e) => {
+    const new_message = e.target.value;
+    setMessage((prevData) => ({
+      ...prevData,
+      message: new_message,
+    }));
+  };
   const handleNewMessage = (data) => {
-    const new_message = [...messages, data];
+    const id = messages.length + 1;
+    const m = { ...data, id: id };
+    const new_message = [...messages, m];
     setMessages(new_message);
   };
   const addUserInfo = () => {
@@ -31,23 +43,28 @@ const MessageBox = () => {
       navigate("/");
     }
   };
+  const socket = io("http://localhost:4000");
   useEffect(() => {
     addUserInfo();
-    handleNewMessage({ name: "ali", id: 3, message: "emad" });
   }, []);
-  //   socket.on("newMessage",)
+  socket.on("newMessage", handleNewMessage);
   return (
-    <div className="messages-container">
-      {messages.map((message) => {
-        return (
-          <div key={message.id} className="message-box">
-            <p className="sender-name">{message.name}</p>
-            <p className="message">{message.message}</p>
-          </div>
-        );
-      })}
-      <p>{message.name}</p>
-    </div>
+    <>
+      <div className="messages-container">
+        {messages.map((message) => {
+          return (
+            <div key={message.id} className="message-box">
+              <p className="sender-name">{message.name}</p>
+              <p className="message">{message.message}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        <textarea onChange={handleInputChange}></textarea>
+        <button onClick={sendMessage}>send message</button>
+      </div>
+    </>
   );
 };
 
