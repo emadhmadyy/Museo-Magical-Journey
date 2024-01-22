@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Experience from "../../three-fiber-components/experience";
 import { Suspense } from "react";
+import MessageBox from "../../components/messagebox";
 
 const Museum = () => {
   return (
@@ -8,6 +9,7 @@ const Museum = () => {
       <Canvas>
         <Experience />
       </Canvas>
+      <MessageBox />
     </Suspense>
   );
 };

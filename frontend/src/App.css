@@ -8,7 +8,7 @@ html,body,#root{
     height: 100%;
 }
 body{
-    font-family: 'Kavoon' !important;
+    font-family: 'Kavoon',Arial, sans-serif;;
 }
 ::placeholder {
     font-family: 'Kavoon', monospace;
