@@ -7,6 +7,7 @@ import io from "socket.io-client";
 const MessageBox = () => {
   const navigate = useNavigate();
   const [socket, setSocket] = useState(null);
+  const [roomId, setRoomId] = useState("");
   const [messages, setMessages] = useState([
     { name: "emad", message: "Hello", id: 1 },
     { name: "khaled", message: "Hello everyone", id: 2 },
@@ -17,7 +18,7 @@ const MessageBox = () => {
   });
 
   const sendMessage = () => {
-    socket.emit("newMessage", message);
+    socket.to(roomId).emit("newMessage", message);
     setMessage((prevData) => ({
       ...prevData,
       message: "",
@@ -51,7 +52,10 @@ const MessageBox = () => {
   };
   useEffect(() => {
     const newsocket = io.connect("http://localhost:4000");
+    const room_id = localStorage.getItem("room_id");
+    setRoomId(room_id);
     newsocket.on("newMessage", handleNewMessage);
+    newsocket.emit("joinRoom", room_id);
     setSocket(newsocket);
     return () => socket.disconnect();
   }, []);
