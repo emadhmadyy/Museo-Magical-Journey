@@ -17,9 +17,12 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {
   console.log(`A user connected with id: ${socket.id}`);
+  socket.on("joinRoom", (id) => {
+    socket.join(id);
+  });
   // data will include user name and message
-  socket.on("newMessage", (data) => {
-    io.emit("newMessage", data);
+  socket.on("newMessage", (id, data) => {
+    io.to(id).emit("newMessage", data);
   });
 
   // Listen for disconnection
