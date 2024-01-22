@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 const MessageBox = () => {
-  const messages = [
+  const [messages, setMessages] = useState([
     { name: "emad", message: "Hello", id: 1 },
     { name: "khaled", message: "Hello everyone", id: 2 },
-  ];
+  ]);
   return (
     <div>
       {messages.map((message) => {
