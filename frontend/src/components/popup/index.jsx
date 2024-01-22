@@ -30,9 +30,8 @@ const Popup = ({ onClickClosePopup }) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      //i should add a loading indicator that stays untill all models are loaded
-      // alert(response.data.message);
       if (response.status == 200) {
+        localStorage.setItem("room_id", response.data.room_id);
         navigate("/museum");
       }
     } catch (e) {
@@ -57,7 +56,7 @@ const Popup = ({ onClickClosePopup }) => {
           },
         });
         if (response.status == 200) {
-          alert(response.data.message);
+          localStorage.setItem("room_id", response.data.room_id);
         }
       } catch (e) {
         if (e.response.status == 400) {
@@ -65,7 +64,6 @@ const Popup = ({ onClickClosePopup }) => {
         } else if (e.response.status == 403) {
           localStorage.clear();
           navigate("/login");
-          // navigate("/login/true");
         } else {
           console.log(e.response.data.message);
         }
