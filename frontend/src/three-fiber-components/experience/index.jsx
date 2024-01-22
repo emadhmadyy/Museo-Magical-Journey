@@ -1,5 +1,9 @@
 /* eslint-disable react/no-unknown-property */
-import { PointerLockControls, useTexture } from "@react-three/drei";
+import {
+  OrbitControls,
+  PointerLockControls,
+  useTexture,
+} from "@react-three/drei";
 import Character from "../character";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
@@ -54,10 +58,10 @@ const Experience = () => {
     }
   };
   useEffect(() => {
-    controls.current.camera.position.y = 1.5;
+    // controls.current.camera.position.y = 1.5;
     console.log(floor.current.geometry.attributes.uv.array[0]);
-    document.addEventListener("keypress", handleKeyPress);
-    return () => document.removeEventListener("keypress", handleKeyPress);
+    // document.addEventListener("keypress", handleKeyPress);
+    // return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
   const playerPosition = [1, 0, 0];
   const controls = useRef();
@@ -69,49 +73,94 @@ const Experience = () => {
   });
   return (
     <>
-      <PointerLockControls ref={controls} />
-      <pointLight
+      {/* <PointerLockControls ref={controls} /> */}
+      <OrbitControls />
+      <directionalLight intensity={10} />
+      {/* <pointLight
         intensity={10}
         position={[0, 2, 0]}
         ref={spotlight}
         decay={1}
-      />
+      /> */}
       <ambientLight intensity={1} />
-      <mesh rotation-x={-Math.PI * 0.5} scale={10} ref={floor}>
+      <mesh rotation-x={-Math.PI * 0.5} scale={50} ref={floor}>
         <planeGeometry />
         <meshPhysicalMaterial
           map={textures[0]}
           aoMap={textures[1]}
-          //   normalMap={textures[2]}
+          normalMap={textures[2]}
           metalnessMap={textures[3]}
           side={DoubleSide}
         />
       </mesh>
-      {/* <Zeus /> */}
-      {/* <Temple /> */}
-      {/* <Pillar scale={0.02} position={[0, 1, 0]} /> */}
-      {/* <Nike scale={0.06} position={[0, -0.06, 0]} /> */}
-      {/* <Hermes position={[0, 32, -30]} /> */}
+      <mesh
+        rotation-x={Math.PI}
+        scale={50}
+        ref={floor}
+        position={[0, 0, 7]}
+        name="positive z"
+      >
+        <planeGeometry />
+        <meshBasicMaterial />
+      </mesh>
+      <mesh scale={50} ref={floor} position={[0, 0, -7]} name="negative z">
+        <planeGeometry />
+        <meshBasicMaterial />
+      </mesh>
+      <mesh
+        scale={50}
+        ref={floor}
+        rotation={[0, Math.PI * 0.5, 0]}
+        position={[8, 0, 0]}
+        name="positive x"
+      >
+        <planeGeometry />
+        <meshBasicMaterial side={DoubleSide} />
+      </mesh>
+      <mesh
+        scale={50}
+        ref={floor}
+        rotation={[0, Math.PI * 0.5, 0]}
+        position={[-8, 0, 0]}
+        name="negative x"
+      >
+        <planeGeometry />
+        <meshBasicMaterial side={DoubleSide} />
+      </mesh>
+      <axesHelper />
+      <Zeus position={[0, 0, -5]} />
+      {/* <Temple scale={0.3} position={[0, 0, 0]} /> */}
+      <Pillar scale={0.02} position={[0, 1, 0]} />
+      <Nike scale={0.06} position={[0, -0.06, 5]} />
+      <Hermes position={[0 + 7, 32, -30]} />
       {/* <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} /> */}
       {/* <Rope /> */}
-      {/* <Hera position={[0, 13.1, -10]} /> */}
-      {/* <Fights /> */}
-      {/* <BustZeus scale={0.04} position={[0, 1, 0]} /> */}
-      {/* <BustRhetorician
+      <Hera position={[0, 13.1, -10 - 6.75]} />
+      <Fights rotation={[0, Math.PI * 0.5, 0]} position={[-7.5, 1.5, 0]} />
+      <BustZeus scale={0.04} position={[0 - 2, 1, 0 - 5]} />
+      <BustRhetorician
         scale={0.04}
-        position={[0.01, 1.32, 0.51]}
+        position={[0.01 - 4, 1.32, 0.51 - 5]}
         rotation={[Math.PI * 0.09, 0, -Math.PI * 0.03]}
-      /> */}
-      {/* <BustGorgon scale={0.02 / 5} position={[-0.783, 1, 0]} /> */}
-      {/* <BustPerikles
-        position={[-0.01, 1.175, 0]}
+      />
+      <BustGorgon position={[0.18, 0.62, 0.6]} />
+      <BustPerikles
+        position={[-0.01 + 5, 1.175, 0 - 5]}
         rotation={[0, 0, -Math.PI * 0.015]}
         scale={0.7}
-      /> */}
+      />
       {/* <AthenaPergamon scale={0.01} /> */}
-      {/* <Apollo scale={0.1} position={[0, 1.1, 0]} /> */}
+      <Apollo
+        scale={0.1}
+        rotation={[0, -Math.PI * 0.75, 0]}
+        position={[6.5, 1.1, 6.5]}
+      />
       {/* <Alexander /> */}
-      {/* <Achilles scale={15} position={[0, 0.5, 0]} /> */}
+      <Achilles
+        scale={15}
+        position={[6.5, 0.5, -6]}
+        rotation={[0, -Math.PI * 0.25, 0]}
+      />
 
       {/* <Character position={playerPosition} /> */}
     </>
