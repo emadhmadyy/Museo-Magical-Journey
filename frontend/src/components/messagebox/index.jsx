@@ -18,7 +18,7 @@ const MessageBox = () => {
   });
 
   const sendMessage = () => {
-    socket.to(roomId).emit("newMessage", message);
+    socket.emit("newMessage", roomId, message);
     setMessage((prevData) => ({
       ...prevData,
       message: "",
