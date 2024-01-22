@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./index.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +17,10 @@ const MessageBox = () => {
 
   const sendMessage = () => {
     socket.emit("newMessage", message);
+    setMessage((prevData) => ({
+      ...prevData,
+      message: "",
+    }));
   };
   const handleInputChange = (e) => {
     const new_message = e.target.value;
@@ -61,7 +66,10 @@ const MessageBox = () => {
         })}
       </div>
       <div>
-        <textarea onChange={handleInputChange}></textarea>
+        <textarea
+          onChange={handleInputChange}
+          value={message.message}
+        ></textarea>
         <button onClick={sendMessage}>send message</button>
       </div>
     </>
