@@ -65,7 +65,7 @@ const Experience = () => {
   const spotlight = useRef();
   useFrame(() => {
     // console.log(spotlight.current);
-    console.log(floor.current);
+    // console.log(floor.current);
   });
   return (
     <>
