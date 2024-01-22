@@ -14,7 +14,10 @@ const MessageBox = () => {
     name: "",
     message: "",
   });
-  const handleNewMessage = () => {};
+  const handleNewMessage = (data) => {
+    const new_message = [...messages, data];
+    setMessages(new_message);
+  };
   const addUserInfo = () => {
     if (localStorage.getItem("user")) {
       const user_info = JSON.parse(localStorage.getItem("user"));
@@ -30,6 +33,7 @@ const MessageBox = () => {
   };
   useEffect(() => {
     addUserInfo();
+    handleNewMessage({ name: "ali", id: 3, message: "emad" });
   }, []);
   //   socket.on("newMessage",)
   return (
