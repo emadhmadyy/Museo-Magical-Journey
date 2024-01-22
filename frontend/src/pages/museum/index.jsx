@@ -7,7 +7,11 @@ import { useNavigate } from "react-router-dom";
 const Museum = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    if (!localStorage.getItem("token") || !localStorage.getItem("user")) {
+    if (
+      !localStorage.getItem("token") ||
+      !localStorage.getItem("user") ||
+      !localStorage.getItem("room_id")
+    ) {
       navigate("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
