@@ -6,6 +6,7 @@ import io from "socket.io-client";
 
 const MessageBox = () => {
   const navigate = useNavigate();
+  const [socket, setSocket] = useState(null);
   const [messages, setMessages] = useState([
     { name: "emad", message: "Hello", id: 1 },
     { name: "khaled", message: "Hello everyone", id: 2 },
@@ -48,11 +49,16 @@ const MessageBox = () => {
       navigate("/");
     }
   };
-  const socket = io("http://localhost:4000");
+  useEffect(() => {
+    const newsocket = io.connect("http://localhost:4000");
+    newsocket.on("newMessage", handleNewMessage);
+    setSocket(newsocket);
+    return () => socket.disconnect();
+  }, []);
   useEffect(() => {
     addUserInfo();
   }, []);
-  socket.on("newMessage", handleNewMessage);
+
   return (
     <>
       <div className="messages-container">
@@ -65,7 +71,7 @@ const MessageBox = () => {
           );
         })}
       </div>
-      <div>
+      <div className="flex send-message">
         <textarea
           onChange={handleInputChange}
           value={message.message}

@@ -1,3 +1,16 @@
 .message{
     font-family: Arial, sans-serif !important;
 }
+
+.messages-container {
+    height: 90vh;
+    padding: 20px;
+}
+
+.message-box{
+
+}
+
+.send-message{
+    padding: 10px;
+}
