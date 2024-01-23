@@ -21,7 +21,7 @@ const Museum = () => {
       <Canvas>
         <Experience />
       </Canvas>
-      {/* <MessageBox /> */}
+      <MessageBox />
     </Suspense>
   );
 };

@@ -8,11 +8,14 @@
     width: 25vw;
     min-width: 300px;
     padding: 20px;
-    background-color: #dcd0c3;
+    background-color: rgba(220, 208, 195, 0.4);
     flex-direction: column;
     gap: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    right: 2px;
 }
 .messages{
     min-height: 300px;
