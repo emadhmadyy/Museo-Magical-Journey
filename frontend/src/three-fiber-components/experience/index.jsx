@@ -136,10 +136,10 @@ const Experience = () => {
         position={[0, -0.06, 5.5]}
         rotation-y={Math.PI * 0.1}
       />
-      <Hermes position={[0 + 7, 32, -30]} />
+      <Hermes rotation={[0, -Math.PI * 0.5, 0]} position={[39.3, 33.5, 0]} />
       {/* <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} /> */}
       {/* <Rope /> */}
-      {/* <Hera position={[0, 13.1, -10 - 6.75]} /> */}
+      {/* <Hera position={[0, 42, 0]} /> */}
       <Fights rotation={[0, Math.PI * 0.5, 0]} position={[-7.5, 1.5, 0]} />
       <BustZeus
         scale={0.06}
@@ -163,8 +163,8 @@ const Experience = () => {
       {/* <AthenaPergamon scale={0.01} /> */}
       <Apollo
         scale={0.1}
-        rotation={[0, -Math.PI * 0.75, 0]}
-        position={[6.5, 1.1, 6.5]}
+        rotation={[0, -Math.PI * 0.7, 0]}
+        position={[8, 1.1, 6.4]}
       />
       {/* <Alexander /> */}
       <Achilles

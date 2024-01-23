@@ -16,15 +16,15 @@ const RegisterScene = () => {
     <>
       <directionalLight intensity={4} position={[0, 0, 1]} />
       <ambientLight position={[0, 0, 2]} intensity={9} />
-      {/* <Suspense fallback={<LoadingIndicator />}>
+      <Suspense fallback={<LoadingIndicator />}>
         <Model
-          url="./albert_einstein/scene.gltf"
+          url="./zeus/scene.gltf"
           ref={register_model_ref}
-          scale={0.5}
-          position={[0, -0.4, 1]}
+          scale={2.5}
+          position={[0, -2, 0]}
           // rotation={[-Math.PI * 0.5, 0, 0]}
         />
-      </Suspense> */}
+      </Suspense>
 
       {/* <primitive
         object={login_model.scene}
