@@ -21,7 +21,6 @@ function App() {
           <Route path="/tour" element={<Tour />} />
           <Route path="/time-travel" element={<TimeTravelMenu />} />
           <Route path="/museum" element={<Museum />} />
-          <Route path="/spinner" element={<LoadingSpinner />} />
           {/* <Route path="/scene/:data" element={<Scene />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
