@@ -58,10 +58,10 @@ const Experience = () => {
     }
   };
   useEffect(() => {
-    // controls.current.camera.position.y = 1.5;
+    controls.current.camera.position.y = 1.5;
     console.log(floor.current.geometry.attributes.uv.array[0]);
-    // document.addEventListener("keypress", handleKeyPress);
-    // return () => document.removeEventListener("keypress", handleKeyPress);
+    document.addEventListener("keypress", handleKeyPress);
+    return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
   const playerPosition = [1, 0, 0];
   const controls = useRef();
@@ -73,8 +73,8 @@ const Experience = () => {
   });
   return (
     <>
-      {/* <PointerLockControls ref={controls} /> */}
-      <OrbitControls />
+      <PointerLockControls ref={controls} />
+      {/* <OrbitControls /> */}
       <directionalLight intensity={10} />
       {/* <pointLight
         intensity={10}
@@ -128,25 +128,36 @@ const Experience = () => {
         <meshBasicMaterial side={DoubleSide} />
       </mesh>
       <axesHelper />
-      <Zeus position={[0, 0, -5]} />
-      {/* <Temple scale={0.3} position={[0, 0, 0]} /> */}
+      <Zeus position={[0, 0, -6]} />
+      <Temple scale={0.3} position={[0, 0, 0]} />
       <Pillar />
-      <Nike scale={0.06} position={[0, -0.06, 5]} />
+      <Nike
+        scale={0.06}
+        position={[0, -0.06, 5.5]}
+        rotation-y={Math.PI * 0.1}
+      />
       <Hermes position={[0 + 7, 32, -30]} />
       {/* <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} /> */}
       {/* <Rope /> */}
-      <Hera position={[0, 13.1, -10 - 6.75]} />
+      {/* <Hera position={[0, 13.1, -10 - 6.75]} /> */}
       <Fights rotation={[0, Math.PI * 0.5, 0]} position={[-7.5, 1.5, 0]} />
-      <BustZeus scale={0.04} position={[0 - 2, 1, 0 - 5]} />
-      <BustRhetorician
-        scale={0.04}
-        position={[0.01 - 4, 1.32, 0.51 - 5]}
-        rotation={[Math.PI * 0.09, 0, -Math.PI * 0.03]}
+      <BustZeus
+        scale={0.06}
+        position={[-3.2, 1, 2]}
+        rotation-y={-Math.PI * 0.25}
       />
-      <BustGorgon position={[0.18, 0.62, 0.6]} />
+      <BustRhetorician
+        scale={0.05}
+        position={[-3.63, 1.44, -2.45]}
+        rotation={[-Math.PI * 0.095, -Math.PI * 0.75, -Math.PI * 0.08]}
+      />
+      <BustGorgon
+        position={[3.8, 0.62, 2.26]}
+        rotation={[0, Math.PI * 0.3, 0]}
+      />
       <BustPerikles
-        position={[-0.01 + 5, 1.175, 0 - 5]}
-        rotation={[0, 0, -Math.PI * 0.015]}
+        position={[-0.01 + 3.2, 1.175, -2]}
+        rotation={[0, Math.PI * 0.75, -Math.PI * 0.015]}
         scale={0.7}
       />
       {/* <AthenaPergamon scale={0.01} /> */}
