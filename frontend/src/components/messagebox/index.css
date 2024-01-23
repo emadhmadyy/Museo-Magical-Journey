@@ -1,22 +1,42 @@
 .message{
     font-family: Arial, sans-serif !important;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .messages-container {
-    width: 20vw;
+    width: 25vw;
+    min-width: 300px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #dcd0c3;
     flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .messages{
-    height: 80vh;
+    min-height: 300px;
+    height: 60vh;
+    overflow-y: auto;
+}
+.messages-title{
+    font-size: 20px;
+}
+.sender-name{
+    font-size: 13px;
 }
 .send-message{
    gap: 10px;
 }
 
 .send{
-    padding: 10px;
+    padding: 15px;
     border-radius: 50px;
     border: none;
+    cursor: pointer;
+}
+
+.message-textArea{
+    resize: none;
+    padding: 3px;
 }

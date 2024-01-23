@@ -63,6 +63,7 @@ const MessageBox = () => {
 
   return (
     <div className="messages-container flex">
+      <p className="messages-title">Messages</p>
       <div className="messages">
         {messages.map((message) => {
           return (
@@ -75,8 +76,12 @@ const MessageBox = () => {
       </div>
       <div className="flex send-message">
         <textarea
+          className="message-textArea"
           onChange={handleInputChange}
           value={message.message}
+          rows={3}
+          cols={30}
+          placeholder="send a message"
         ></textarea>
         <button
           onClick={sendMessage}
