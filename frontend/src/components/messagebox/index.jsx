@@ -8,10 +8,7 @@ const MessageBox = () => {
   const navigate = useNavigate();
   const [socket, setSocket] = useState(null);
   const [roomId, setRoomId] = useState("");
-  const [messages, setMessages] = useState([
-    { name: "emad", message: "Hello", id: 1 },
-    { name: "khaled", message: "Hello everyone", id: 2 },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState({
     name: "",
     message: "",
@@ -32,10 +29,11 @@ const MessageBox = () => {
     }));
   };
   const handleNewMessage = (data) => {
-    const id = messages.length + 1;
-    const m = { ...data, id: id };
-    const new_message = [...messages, m];
-    setMessages(new_message);
+    setMessages((prevMessages) => {
+      const id = prevMessages.length + 1;
+      const m = { ...data, id: id };
+      return [...prevMessages, m];
+    });
   };
   const addUserInfo = () => {
     if (localStorage.getItem("user")) {
@@ -57,15 +55,15 @@ const MessageBox = () => {
     newsocket.on("newMessage", handleNewMessage);
     newsocket.emit("joinRoom", room_id);
     setSocket(newsocket);
-    return () => socket.disconnect();
+    return () => newsocket.disconnect();
   }, []);
   useEffect(() => {
     addUserInfo();
   }, []);
 
   return (
-    <>
-      <div className="messages-container">
+    <div className="messages-container flex">
+      <div className="messages">
         {messages.map((message) => {
           return (
             <div key={message.id} className="message-box">
@@ -80,9 +78,14 @@ const MessageBox = () => {
           onChange={handleInputChange}
           value={message.message}
         ></textarea>
-        <button onClick={sendMessage}>send message</button>
+        <button
+          onClick={sendMessage}
+          className="send secondary-color white-font"
+        >
+          send
+        </button>
       </div>
-    </>
+    </div>
   );
 };
 

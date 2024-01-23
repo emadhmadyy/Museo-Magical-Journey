@@ -3,10 +3,20 @@
 }
 
 .messages-container {
-    height: 90vh;
+    width: 20vw;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+}
+.messages{
+    height: 80vh;
+}
+.send-message{
+   gap: 10px;
 }
 
-.send-message{
+.send{
     padding: 10px;
+    border-radius: 50px;
+    border: none;
 }

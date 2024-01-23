@@ -7,6 +7,7 @@ import Tour from "./pages/tour";
 import TimeTravelMenu from "./pages/timeTravelMenu";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Museum from "./pages/museum";
+import MessageBox from "./components/messagebox";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/tour" element={<Tour />} />
           <Route path="/time-travel" element={<TimeTravelMenu />} />
           <Route path="/museum" element={<Museum />} />
+          <Route path="/message" element={<MessageBox />} />
           {/* <Route path="/scene/:data" element={<Scene />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
