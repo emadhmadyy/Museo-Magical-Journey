@@ -23,7 +23,7 @@ const Museum = () => {
         <Experience />
       </Canvas>
       <MessageBox />
-      <button className="exit-btn secondary-color white-font">Quit</button>
+      <button className="exit-btn secondary-color white-font">End Tour</button>
     </Suspense>
   );
 };
