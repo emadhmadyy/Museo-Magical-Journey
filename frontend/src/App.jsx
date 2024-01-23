@@ -7,8 +7,6 @@ import Tour from "./pages/tour";
 import TimeTravelMenu from "./pages/timeTravelMenu";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Museum from "./pages/museum";
-import MessageBox from "./components/messagebox";
-import LoadingSpinner from "./components/spinner";
 function App() {
   return (
     <>

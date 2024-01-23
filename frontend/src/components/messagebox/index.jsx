@@ -66,10 +66,10 @@ const MessageBox = () => {
   return (
     <div className="messages-container flex">
       <p className="messages-title">Messages</p>
-      <div className="messages">
+      <div className="messages flex">
         {messages.map((message) => {
           return (
-            <div key={message.id} className="message-box">
+            <div key={message.id} className="message-box flex">
               <p className="sender-name">{message.name}</p>
               <p className="message">{message.message}</p>
             </div>

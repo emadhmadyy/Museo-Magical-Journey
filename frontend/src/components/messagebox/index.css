@@ -17,10 +17,16 @@
     top: 0;
     right: 2px;
 }
+.message-box{
+    flex-direction: column;
+    gap: 3px;
+}
 .messages{
+    flex-direction: column;
     min-height: 300px;
     height: 60vh;
     overflow-y: auto;
+    gap: 10px;
 }
 .messages-title{
     font-size: 20px;
