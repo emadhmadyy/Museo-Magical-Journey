@@ -15,11 +15,13 @@ const MessageBox = () => {
   });
 
   const sendMessage = () => {
-    socket.emit("newMessage", roomId, message);
-    setMessage((prevData) => ({
-      ...prevData,
-      message: "",
-    }));
+    if (message.message != "") {
+      socket.emit("newMessage", roomId, message);
+      setMessage((prevData) => ({
+        ...prevData,
+        message: "",
+      }));
+    }
   };
   const handleInputChange = (e) => {
     const new_message = e.target.value;
