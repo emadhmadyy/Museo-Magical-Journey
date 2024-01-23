@@ -4,5 +4,5 @@ const Zeus = (props) => {
   const { scene } = useGLTF("./zeus/scene.gltf");
   return <primitive object={scene} {...props} />;
 };
-useGLTF.preload("./zeus/scene.gltf");
+// useGLTF.preload("./zeus/scene.gltf");
 export default Zeus;

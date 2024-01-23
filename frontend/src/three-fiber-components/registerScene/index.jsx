@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unknown-property */
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 //import { useGLTF } from "@react-three/drei";
 import { MeshReflectorMaterial } from "@react-three/drei";
-import { Suspense, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Model from "../model";
 import LoadingIndicator from "../loadingIndicator";
 const RegisterScene = () => {
   const register_model_ref = useRef();
   useFrame((state, delta) => {
     if (register_model_ref.current) {
-      register_model_ref.current.rotation.y += delta;
+      register_model_ref.current.rotation.y += delta / 2;
     }
   });
   return (
@@ -32,7 +32,7 @@ const RegisterScene = () => {
         scale={0.6}
       ></primitive> */}
       <mesh
-        scale={[4.6, 5, 4]}
+        scale={[3.5, 5, 4]}
         rotation-x={-Math.PI * 0.5}
         position={[0, -2, 0]}
       >

@@ -9,14 +9,15 @@ const LoginScene = () => {
   const login_model_ref = useRef();
   useFrame((state, delta) => {
     if (login_model_ref.current) {
-      login_model_ref.current.rotation.y += delta;
+      login_model_ref.current.rotation.y += delta / 2;
+      console.log(login_model_ref.current);
     }
   });
   return (
     <>
       <directionalLight intensity={9} position={[0, 0, 1]} />
       <ambientLight position={[0, 0, 2]} intensity={9} />
-      {/* <Suspense
+      <Suspense
         fallback={
           <LoadingIndicator />
           //   <mesh position={[0, 0, 1]} scale={[1, 3, 2]}>
@@ -26,11 +27,12 @@ const LoginScene = () => {
         }
       >
         <Model
-          url="./statue_of_edward_snowden/scene.gltf"
+          url="./bust_of_marcus_aurelius/scene.gltf"
           ref={login_model_ref}
-          scale={0.62}
+          scale={3.1}
+          position={[0, -3.2, 0]}
         />
-      </Suspense> */}
+      </Suspense>
 
       {/* <primitive
         object={login_model.scene}

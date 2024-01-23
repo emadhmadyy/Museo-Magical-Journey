@@ -128,7 +128,7 @@ const Experience = () => {
         <meshBasicMaterial side={DoubleSide} />
       </mesh>
       <axesHelper />
-      <Zeus position={[0, 0, -6]} />
+      {/* <Zeus position={[0, 0, -6]} /> */}
       <Temple scale={0.3} position={[0, 0, 0]} />
       <Pillar />
       <Nike
@@ -139,7 +139,11 @@ const Experience = () => {
       <Hermes rotation={[0, -Math.PI * 0.5, 0]} position={[39.3, 33.5, 0]} />
       {/* <HerculesGiambologna position={[0, -0.5, 0]} scale={0.04} /> */}
       {/* <Rope /> */}
-      {/* <Hera position={[0, 42, 0]} /> */}
+      <Hera
+        scale={0.05}
+        position={[3.69, 1.65, 2.6]}
+        rotation={[0, -Math.PI * 0.75, 0]}
+      />
       <Fights rotation={[0, Math.PI * 0.5, 0]} position={[-7.5, 1.5, 0]} />
       <BustZeus
         scale={0.06}
@@ -151,10 +155,10 @@ const Experience = () => {
         position={[-3.63, 1.44, -2.45]}
         rotation={[-Math.PI * 0.095, -Math.PI * 0.75, -Math.PI * 0.08]}
       />
-      <BustGorgon
+      {/* <BustGorgon
         position={[3.8, 0.62, 2.26]}
         rotation={[0, Math.PI * 0.3, 0]}
-      />
+      /> */}
       <BustPerikles
         position={[-0.01 + 3.2, 1.175, -2]}
         rotation={[0, Math.PI * 0.75, -Math.PI * 0.015]}
