@@ -24,6 +24,10 @@ const Museum = () => {
       </Canvas>
       <MessageBox />
       <button className="exit-btn secondary-color white-font">End Tour</button>
+      <button id="lock" className="lock-btn secondary-color white-font">
+        {" "}
+        Lock
+      </button>
     </Suspense>
   );
 };

@@ -67,3 +67,14 @@ button{
     width: 25vw;
     cursor: pointer;
 }
+.lock-btn{
+    position:fixed;
+    bottom:5px;
+    right: 50vw;
+    padding: 10px;
+    border-radius: 50px;
+    width: 10vw;
+    cursor: pointer;
+    border: none;
+    opacity: 0.3;
+}

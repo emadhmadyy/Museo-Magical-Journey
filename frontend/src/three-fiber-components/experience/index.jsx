@@ -107,10 +107,14 @@ const Experience = () => {
       setPlayerRotation([angleX, -angleY, angleZ]);
     }
   };
+
   useEffect(() => {
     controls.current.camera.position.y = 1.8;
     document.addEventListener("keypress", handleKeyPress);
     document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("dblclick", () => {
+      console.log(controls.current);
+    });
     return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
   const controls = useRef();
@@ -149,7 +153,7 @@ const Experience = () => {
   }, []);
   return (
     <>
-      <PointerLockControls ref={controls} />
+      <PointerLockControls ref={controls} selector="#lock" />
       <Character player={playerPosition} rotation={playerRotation} />
       <pointLight
         intensity={20}
