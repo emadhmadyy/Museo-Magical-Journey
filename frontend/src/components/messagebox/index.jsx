@@ -81,7 +81,7 @@ const MessageBox = () => {
           className="message-textArea"
           onChange={handleInputChange}
           value={message.message}
-          rows={3}
+          rows={1}
           cols={30}
           placeholder="send a message"
         ></textarea>
