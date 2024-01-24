@@ -192,6 +192,59 @@ const SoloExperience = () => {
           side={DoubleSide}
         />
       </mesh>
+      <Temple scale={0.3} position={[0, 0, 0]} />
+      <Pillar />
+      <Nike
+        scale={0.06}
+        position={[0, -0.06, 5.5]}
+        rotation-y={Math.PI * 0.1}
+      />
+      <Hermes rotation={[0, -Math.PI * 0.5, 0]} position={[39.3, 33.5, 0]} />
+      {/* <Rope /> */}
+      <Hera
+        scale={0.05}
+        position={[3.69, 1.65, 2.6]}
+        rotation={[0, -Math.PI * 0.75, 0]}
+      />
+      <Fights rotation={[0, Math.PI * 0.5, 0]} position={[-7.5, 1.5, 0]} />
+      <BustZeus
+        scale={0.06}
+        position={[-3.2, 1, 2]}
+        rotation-y={-Math.PI * 0.25}
+      />
+      <BustRhetorician
+        scale={0.05}
+        position={[-3.63, 1.44, -2.45]}
+        rotation={[-Math.PI * 0.095, -Math.PI * 0.75, -Math.PI * 0.08]}
+      />
+      <BustPerikles
+        position={[-0.01 + 3.2, 1.175, -2]}
+        rotation={[0, Math.PI * 0.75, -Math.PI * 0.015]}
+        scale={0.7}
+      />
+      <Apollo
+        scale={0.1}
+        rotation={[0, -Math.PI * 0.7, 0]}
+        position={[8, 1.1, 6.4]}
+      />
+      <group>
+        <primitive
+          object={spotlight}
+          position={[8 / 1.1, 5, 6.4 / 1.1]}
+          intensity={100}
+          penumbra={0.5}
+          angle={Math.PI / 15}
+        />
+        <primitive
+          object={spotlight.target}
+          position={[8 / 1.1, 0, 6.4 / 1.1]}
+        />
+      </group>
+      <Achilles
+        scale={15}
+        position={[6.5, 0.5, -6]}
+        rotation={[0, -Math.PI * 0.25, 0]}
+      />
     </>
   );
 };
