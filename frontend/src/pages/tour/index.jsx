@@ -15,7 +15,7 @@ const Tour = () => {
   }, []);
   const [openPopup, setOpenPopup] = useState(false);
   const navigateToSoloVirtualTour = () => {
-    console.log("Navigating to Solo Virtual Tour");
+    navigate("/solo-museum");
   };
   const openGroupTourPopUp = () => {
     setOpenPopup(true);
