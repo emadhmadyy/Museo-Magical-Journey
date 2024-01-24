@@ -8,6 +8,7 @@ import TimeTravelMenu from "./pages/timeTravelMenu";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Museum from "./pages/museum";
 import SoloTour from "./pages/soloTour";
+import JoinGroupTour from "./pages/joinGroupTour";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/time-travel" element={<TimeTravelMenu />} />
           <Route path="/museum" element={<Museum />} />
           <Route path="solo-museum" element={<SoloTour />} />
+          <Route path="join-group-tour" element={<JoinGroupTour />} />
           {/* <Route path="/scene/:data" element={<Scene />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

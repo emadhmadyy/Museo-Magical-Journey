@@ -57,7 +57,7 @@ const Popup = ({ onClickClosePopup }) => {
         });
         if (response.status == 200) {
           localStorage.setItem("room_id", response.data.room_id);
-          navigate("/museum");
+          navigate("/join-group-tour");
         }
       } catch (e) {
         if (e.response.status == 400) {

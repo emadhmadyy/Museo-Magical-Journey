@@ -1,9 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import Experience from "../../three-fiber-components/experience";
 import { Suspense, useEffect } from "react";
 import MessageBox from "../../components/messagebox";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../../components/spinner";
+import JoinGroupTourExperience from "../../three-fiber-components/joinGroupTourExperience";
 const JoinGroupTour = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -16,13 +16,21 @@ const JoinGroupTour = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const handleQuitTour = () => {
+    navigate("/options");
+  };
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <Canvas>
-        <Experience />
+        <JoinGroupTourExperience />
       </Canvas>
       <MessageBox />
-      <button className="exit-btn secondary-color white-font">Quit</button>
+      <button
+        className="exit-btn secondary-color white-font"
+        onClick={handleQuitTour}
+      >
+        Quit
+      </button>
     </Suspense>
   );
 };
