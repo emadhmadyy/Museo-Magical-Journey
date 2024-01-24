@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { PointerLockControls, useTexture } from "@react-three/drei";
-import Character from "../character";
-import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import Temple from "../models/temple";
 import Pillar from "../models/pillar";
 import Nike from "../models/nike";
@@ -66,7 +64,9 @@ const SoloExperience = () => {
   useEffect(() => {
     controls.current.camera.position.y = 1.8;
     document.addEventListener("keypress", handleKeyPress);
-    return () => document.removeEventListener("keypress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
   }, []);
   return (
     <>

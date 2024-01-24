@@ -12,12 +12,20 @@ const SoloTour = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const handleEndTour = () => {
+    navigate("/options");
+  };
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <Canvas>
         <SoloExperience />
       </Canvas>
-      <button className="exit-btn secondary-color white-font">End Tour</button>
+      <button
+        className="exit-btn secondary-color white-font"
+        onClick={handleEndTour}
+      >
+        End Tour
+      </button>
     </Suspense>
   );
 };
