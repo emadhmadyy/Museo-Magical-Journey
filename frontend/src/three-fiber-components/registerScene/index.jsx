@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unknown-property */
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 //import { useGLTF } from "@react-three/drei";
 import { MeshReflectorMaterial } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useRef } from "react";
 import Model from "../model";
 import LoadingIndicator from "../loadingIndicator";
 const RegisterScene = () => {

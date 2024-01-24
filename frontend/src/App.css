@@ -58,12 +58,3 @@ button{
     font: inherit;
 }
 
-.exit-btn{
-    position:fixed;
-    bottom: 5px;
-    right: 2px;
-    padding: 20px;
-    border-radius: 50px;
-    width: 25vw;
-    cursor: pointer;
-}
