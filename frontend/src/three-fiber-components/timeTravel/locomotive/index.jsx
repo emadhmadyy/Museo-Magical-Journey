@@ -33,7 +33,6 @@ const Locomotive = ({ position_y }) => {
           position={[1.5, 0, 0]}
         />
       </TransformControls>
-
       <Float floatIntensity={1}>
         <Text
           font="./fonts/Kavoon/Kavoon-Regular.ttf"
@@ -44,6 +43,40 @@ const Locomotive = ({ position_y }) => {
           textAlign="center"
         >
           Steam Locomotive 1829
+        </Text>
+      </Float>
+      {/* Diesel Locomotive */}
+      <TransformControls mode="rotate" position={[0, -10, 0]} size={0.5}>
+        <Model
+          url="./diesel_locomotive/scene.gltf"
+          scale={0.4}
+          position={[0, -1, 0]}
+          rotation={[0, Math.PI * 0.5, 0]}
+        />
+      </TransformControls>
+      <mesh
+        scale={3}
+        rotation={[-Math.PI * 0.5, 0, 0]}
+        position={[0, -11.2, 0]}
+      >
+        <circleGeometry />
+        <MeshReflectorMaterial
+          resolution={512}
+          blur={[1000, 1000]}
+          mixBlur={0.5}
+          mirror={0.75}
+        />
+      </mesh>
+      <Float floatIntensity={1}>
+        <Text
+          font="./fonts/Kavoon/Kavoon-Regular.ttf"
+          maxWidth={2}
+          position={[-4.5, -8.5, 0]}
+          fontSize={0.5}
+          color="Salmon"
+          textAlign="center"
+        >
+          Diesel Locomotive 1925
         </Text>
       </Float>
       <mesh scale={3} rotation={[-Math.PI * 0.5, 0, 0]} position={[0, -1.2, 0]}>
