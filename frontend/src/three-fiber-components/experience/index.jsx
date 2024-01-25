@@ -56,7 +56,7 @@ const Experience = () => {
     controls.current.camera.position.z = updatedPlayers[socket.id].position[2];
   };
   const [players, setPlayers] = useState(null);
-  const [roomId, setRoomId] = useState("");
+  const [roomId, setRoomId] = useState(localStorage.getItem("room_id"));
   const handleKeyPress = (event) => {
     if (controls.current.isLocked == true) {
       switch (event.code) {
@@ -86,9 +86,9 @@ const Experience = () => {
   //   }
   // };
   useEffect(() => {
-    socket.connect();
     const room_id = localStorage.getItem("room_id");
     setRoomId(room_id);
+    socket.connect();
     socket.emit("joinRoom", room_id);
     socket.on("updateState", handleUpdateState);
     return () => {

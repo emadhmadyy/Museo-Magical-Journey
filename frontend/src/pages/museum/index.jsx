@@ -17,13 +17,21 @@ const Museum = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const handleEndTour = () => {
+    navigate("/options");
+  };
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <Canvas>
         <Experience />
       </Canvas>
-      {/* <MessageBox /> */}
-      <button className="exit-btn secondary-color white-font">End Tour</button>
+      <MessageBox />
+      <button
+        className="exit-btn secondary-color white-font"
+        onClick={handleEndTour}
+      >
+        End Tour
+      </button>
       <button id="lock" className="lock-btn secondary-color white-font">
         {" "}
         Lock

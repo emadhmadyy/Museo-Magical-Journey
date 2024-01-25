@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unknown-property */
 import { PointerLockControls, useTexture } from "@react-three/drei";
 import Character from "../character";
-import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Temple from "../models/temple";
 import Pillar from "../models/pillar";
@@ -20,12 +20,6 @@ import { SpotLight } from "three";
 import { io } from "socket.io-client";
 
 const JoinGroupTourExperience = () => {
-  // const floorTextures = useTexture([
-  //   "laminate-flooring-brown/laminate-flooring-brown_albedo.png",
-  //   "laminate-flooring-brown/laminate-flooring-brown_ao.png",
-  //   "laminate-flooring-brown/laminate-flooring-brown_normal-ogl.png",
-  //   "laminate-flooring-brown/laminate-flooring-brown_metallic.png",
-  // ]);
   const floorTextures = useTexture([
     "floor2/white marble_Albedo.jpg",
     "floor2/white marble_Occlusion.jpg",
@@ -47,9 +41,24 @@ const JoinGroupTourExperience = () => {
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set(10, 10);
   });
-  const [socket, setSocket] = useState(null);
+  const controls = useRef();
+  const floor = useRef();
+  const pointlight = useRef();
+  const spotlight = useMemo(() => new SpotLight("#fff"), []);
+  const pointLightIntensity = 10;
+
+  const socket = io("http://localhost:3001", {
+    autoConnect: false,
+  });
+  const handleUpdateState = (updatedPlayers) => {
+    setPlayers(updatedPlayers);
+    controls.current.camera.position.x = updatedPlayers[socket.id].position[0];
+    controls.current.camera.position.z = updatedPlayers[socket.id].position[2];
+  };
+  const [players, setPlayers] = useState(null);
+  const [roomId, setRoomId] = useState(localStorage.getItem("room_id"));
   const handleKeyPress = (event) => {
-    if (controls.current.isLocked) {
+    if (controls.current.isLocked == true) {
       switch (event.code) {
         case "KeyW":
           controls.current.moveForward(0.1);
@@ -65,92 +74,44 @@ const JoinGroupTourExperience = () => {
           break;
       }
       const position = controls.current.camera.position;
-      setPlayerPosition([position.x, 0, position.z]);
-      // socket.emit("keydown", position);
+      socket.emit("keypress", roomId, [position.x, 0, position.z]);
     }
   };
-  const handleMouseMove = () => {
-    if (controls.current.isLocked == true) {
-      let vector = new THREE.Vector3();
-      controls.current.camera.getWorldDirection(vector);
-      let v = new THREE.Vector3(vector.x, 0, vector.z);
-      let up = new THREE.Vector3(0, 1, 0);
-      let w = new THREE.Vector3();
-      w.crossVectors(up, v);
-      v.normalize();
-      up.normalize();
-      w.normalize();
-      let m = new THREE.Matrix4(
-        w.x,
-        up.x,
-        v.x,
-        0,
-        w.y,
-        up.y,
-        v.y,
-        0,
-        w.z,
-        up.z,
-        v.z,
-        0,
-        0,
-        0,
-        0,
-        0
-      );
-      const angleX = Math.atan2(m.elements[9], m.elements[10]);
-      const angleY = Math.atan2(
-        -m.elements[8],
-        Math.sqrt(m.elements[9] ** 2 + m.elements[10] ** 2)
-      );
-      const angleZ = Math.atan2(m.elements[4], m.elements[0]);
-      setPlayerRotation([angleX, -angleY, angleZ]);
-    }
-  };
+
+  // const handleMouseMove = () => {
+  //   if (controls.current.isLocked == true) {
+  //     let vector = new THREE.Vector3();
+  //     controls.current.camera.getWorldDirection(vector);
+  //     socket.emit("mousemove", vector);
+  //   }
+  // };
+  useEffect(() => {
+    const room_id = localStorage.getItem("room_id");
+    setRoomId(room_id);
+    socket.connect();
+    socket.emit("joinRoom", room_id);
+    socket.on("updateState", handleUpdateState);
+    return () => {
+      socket.disconnect();
+      socket.off("updateState", handleUpdateState);
+    };
+  }, []);
   useEffect(() => {
     controls.current.camera.position.y = 1.8;
     document.addEventListener("keypress", handleKeyPress);
-    document.addEventListener("mousemove", handleMouseMove);
+    // document.addEventListener("mousemove", handleMouseMove);
     return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
-  const controls = useRef();
-  const floor = useRef();
-  const pointlight = useRef();
-  const spotlight = useMemo(() => new SpotLight("#fff"), []);
-  const pointLightIntensity = 10;
 
-  useFrame(() => {
-    // updateState();
-    // console.log(controls.current.camera.position);
-    // console.log(spotlight.current);
-    // console.log(floor.current);
-  });
-  const { scene, gl } = useThree();
-  const updateState = () => {
-    scene.children.forEach((child) => {
-      if (child.name == "character") {
-        scene.remove(child);
-      }
-    });
-  };
-  const [playerPosition, setPlayerPosition] = useState([2, 0, 2]);
-  const [playerRotation, setPlayerRotation] = useState([0, 0, 0]);
-  const [roomId, setRoomId] = useState("");
-  useEffect(() => {
-    controls.current.camera.position.x = playerPosition[0];
-    controls.current.camera.position.z = playerPosition[2];
-    const room_id = localStorage.getItem("room_id");
-    setRoomId(room_id);
-    const newsocket = io.connect("http://localhost:3001");
-    newsocket.emit("joinRoom", room_id);
-    setSocket(newsocket);
-    return () => newsocket.disconnect();
-    // socket.emit("addUser")
-  }, []);
   return (
     <>
       <PointerLockControls ref={controls} selector="#lock" />
-      <Character player={playerPosition} rotation={playerRotation} />
+      {players
+        ? Object.keys(players).map((key) => {
+            return <Character key={key} position={players[key].position} />;
+          })
+        : null}
+      <Character players={players} />
       <pointLight
         intensity={20}
         position={[0, 3, 0]}
@@ -326,8 +287,6 @@ const JoinGroupTourExperience = () => {
         position={[6.5, 0.5, -6]}
         rotation={[0, -Math.PI * 0.25, 0]}
       />
-
-      {/* <Character position={playerPosition} /> */}
     </>
   );
 };
