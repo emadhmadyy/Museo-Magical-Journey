@@ -22,7 +22,7 @@ const Features = () => {
       icon: chat,
       title: " Real-time Chat",
       description:
-        "Connect with your group through our real-time chat feature. Share thoughts, insights, and reactions as you explore the virtual galleries together. Experience the joy of art in a dynamic and interactive community.",
+        "Connect with your group through our real-time chat feature. Share thoughts, insights, and reactions as you explore the virtual gallery together. Experience the joy of art in a dynamic and interactive community.",
     },
     {
       icon: time,
