@@ -110,3 +110,18 @@ button{
     background-color: #C5D7E6;
     color: #333333;
 }
+
+.museum-label > div {
+    background-color: #00000088;
+    color: white;
+    font-family: Halvetica, Arial;
+    padding: 5px;
+    overflow: hidden;
+    user-select: none;
+    word-wrap: break-word;
+    font-size: 3px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
