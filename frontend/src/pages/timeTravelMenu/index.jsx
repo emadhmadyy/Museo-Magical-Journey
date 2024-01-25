@@ -18,46 +18,19 @@ const TimeTravelMenu = () => {
   }, []);
   const info = [
     {
-      icon: statue,
-      title: "3D Masterpieces",
+      icon: "./icons8-locomotive-96.png",
+      title: "Locomotive",
       description:
-        "Immerse yourself in an extraordinary collection of 3D artworks that transcend time and space. Explore meticulously crafted sculptures and paintings, each brought to life in stunning detail within our digital museum",
+        "Locomotives, marvels of transportation, have shaped societies since the 19th century. From steam giants to sleek marvels, they connect worlds, symbolizing progress and innovation.",
+      handleclick: () => {
+        navigate("/locomotive");
+      },
     },
     {
-      icon: team,
-      title: "Group Virtual Tours",
+      icon: "./icons8-telephone-96.png",
+      title: "Telephone",
       description:
-        "Embark on shared adventures with friends, family, or fellow art enthusiasts through our group virtual tours. Navigate the museum's diverse exhibits together, fostering a sense of community and shared exploration in the world of art.",
-    },
-    {
-      icon: chat,
-      title: " Real-time Chat",
-      description:
-        "Connect with your group through our real-time chat feature. Share thoughts, insights, and reactions as you explore the virtual galleries together. Experience the joy of art in a dynamic and interactive community.",
-    },
-    {
-      icon: time,
-      title: "Time Travel",
-      description:
-        "Unleash the magic of time travel with our unique time machine. Witness the evolution of art across different eras as you scroll through captivating scenes. Experience the seamless blend of history and innovation in an enchanting visual journey.",
-    },
-    {
-      icon: statue,
-      title: "3D Masterpieces",
-      description:
-        "Immerse yourself in an extraordinary collection of 3D artworks that transcend time and space. Explore meticulously crafted sculptures and paintings, each brought to life in stunning detail within our digital museum",
-    },
-    {
-      icon: team,
-      title: "Group Virtual Tours",
-      description:
-        "Embark on shared adventures with friends, family, or fellow art enthusiasts through our group virtual tours. Navigate the museum's diverse exhibits together, fostering a sense of community and shared exploration in the world of art.",
-    },
-    {
-      icon: chat,
-      title: " Real-time Chat",
-      description:
-        "Connect with your group through our real-time chat feature. Share thoughts, insights, and reactions as you explore the virtual galleries together. Experience the joy of art in a dynamic and interactive community.",
+        "Telephones, transformative inventions, revolutionized communication since the 19th century. From rotary to smartphones, they connect people, shaping modern societies.",
     },
   ];
   return (
@@ -75,9 +48,7 @@ const TimeTravelMenu = () => {
                 title={i.title}
                 description={i.description}
                 isClickable={true}
-                onClick={() => {
-                  console.log("clicked");
-                }}
+                onClick={i.handleclick}
               />
             );
           })}
