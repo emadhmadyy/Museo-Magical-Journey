@@ -49,7 +49,7 @@ const Locomotive = ({ position_y }) => {
           maxWidth={2}
           position={[-4.5, 1.5, 0]}
           fontSize={0.5}
-          color="Salmon"
+          color="#E77974"
           textAlign="center"
         >
           Steam Locomotive 1829
@@ -58,10 +58,9 @@ const Locomotive = ({ position_y }) => {
       {/* Electric Locomotive */}
       <TransformControls mode="rotate" position={[0, -10, 0]} size={0.5}>
         <Model
-          url="./diesel_locomotive/scene.gltf"
-          scale={0.4}
-          position={[0, -1, 0]}
-          rotation={[0, Math.PI * 0.5, 0]}
+          url="./electric_locomotive9/scene.gltf"
+          scale={0.007}
+          position={[-3, -0.5, 0]}
         />
       </TransformControls>
       <mesh
@@ -83,14 +82,15 @@ const Locomotive = ({ position_y }) => {
           maxWidth={2}
           position={[-4.5, -8.5, 0]}
           fontSize={0.5}
-          color="Salmon"
+          color="#FF8B56"
           textAlign="center"
         >
           Electric Locomotive 1879
         </Text>
+      </Float>
 
       {/* Diesel Locomotive */}
-      <TransformControls mode="rotate" position={[0, -10, 0]} size={0.5}>
+      <TransformControls mode="rotate" position={[0, -20, 0]} size={0.5}>
         <Model
           url="./diesel_locomotive/scene.gltf"
           scale={0.4}
@@ -101,7 +101,7 @@ const Locomotive = ({ position_y }) => {
       <mesh
         scale={3}
         rotation={[-Math.PI * 0.5, 0, 0]}
-        position={[0, -11.2, 0]}
+        position={[0, -21.2, 0]}
       >
         <circleGeometry />
         <MeshReflectorMaterial
@@ -111,16 +111,16 @@ const Locomotive = ({ position_y }) => {
           mirror={0.75}
         />
       </mesh>
-      <Float floatIntensity={1}>
+      <Float rotationIntensity={0.3} floatIntensity={1} floatingRange={[-1, 1]}>
         <Text
           font="./fonts/Kavoon/Kavoon-Regular.ttf"
           maxWidth={2}
-          position={[-4.5, -8.5, 0]}
+          position={[-4.5, -18.5, 0]}
           fontSize={0.5}
           color="Salmon"
           textAlign="center"
         >
-          Diesel Locomotive 1925 
+          Diesel Locomotive 1925
         </Text>
       </Float>
       {/* Hybrid Locomotive */}
@@ -145,17 +145,13 @@ const Locomotive = ({ position_y }) => {
           mirror={0.75}
         />
       </mesh>
-      <Float
-        rotationIntensity={0.3} // XYZ rotation intensity, defaults to 1
-        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-        floatingRange={[-1, 1]}
-      >
+      <Float rotationIntensity={0.3} floatIntensity={1} floatingRange={[-1, 1]}>
         <Text
           font="./fonts/Kavoon/Kavoon-Regular.ttf"
           maxWidth={2}
           position={[-4.5, -28.5, -1]}
           fontSize={0.5}
-          color="Salmon"
+          color="#575757"
           textAlign="center"
         >
           Hybrid Locomotive 2005
