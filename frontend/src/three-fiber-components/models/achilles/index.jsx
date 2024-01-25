@@ -4,7 +4,7 @@ const Achilles = (props) => {
   const { scene } = useGLTF("./achilles_heel/scene.gltf");
   return (
     <primitive object={scene} {...props}>
-      <Html
+      {/* <Html
         position={[0, 0.23, 0]}
         wrapperClass="museum-label"
         occlude
@@ -20,7 +20,7 @@ const Achilles = (props) => {
           He was the son of Peleus, king of the Myrmidons, and Thetis, a sea
           nymph.
         </p>
-      </Html>
+      </Html> */}
     </primitive>
   );
 };

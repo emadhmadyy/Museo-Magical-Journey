@@ -4,7 +4,7 @@ const Nike = (props) => {
   const { scene } = useGLTF("./statue_bust_of_nike/scene.gltf");
   return (
     <primitive object={scene} {...props}>
-      <Html
+      {/* <Html
         position={[10, 70, 20]}
         wrapperClass="museum-label"
         occlude
@@ -29,7 +29,7 @@ const Nike = (props) => {
           created to commemorate a naval victory, the exact battle or the
           identity of the sculptor has not been definitively established.
         </p>
-      </Html>
+      </Html> */}
     </primitive>
   );
 };

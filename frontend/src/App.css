@@ -129,6 +129,16 @@ button{
 .lock-text{
     position: fixed;
     bottom: 45px;
-    right: 49.5vw;
+    right: 50.9vw;
     opacity: 0.5;
+    font-size: 12px;
+}
+
+.roomid-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    background-color: #ffffff55;
+    
 }

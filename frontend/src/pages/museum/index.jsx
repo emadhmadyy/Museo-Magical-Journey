@@ -37,6 +37,9 @@ const Museum = () => {
         {" "}
         Lock
       </button>
+      <p className="roomid-container">
+        room id: {localStorage.getItem("room_id")}
+      </p>
     </Suspense>
   );
 };

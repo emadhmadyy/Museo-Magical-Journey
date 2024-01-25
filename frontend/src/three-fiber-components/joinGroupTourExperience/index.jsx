@@ -51,6 +51,59 @@ const JoinGroupTourExperience = () => {
     autoConnect: false,
   });
   const handleUpdateState = (updatedPlayers) => {
+    Object.keys(updatedPlayers).map((key) => {
+      let v = new THREE.Vector3(
+        updatedPlayers[key].rotation[0],
+        updatedPlayers[key].rotation[1],
+        updatedPlayers[key].rotation[2]
+      );
+      let up = new THREE.Vector3(0, 1, 0);
+      let w = new THREE.Vector3();
+      w.crossVectors(up, v);
+      v.normalize();
+      up.normalize();
+      w.normalize();
+      let m = new THREE.Matrix4(
+        w.x,
+        up.x,
+        v.x,
+        0,
+        w.y,
+        up.y,
+        v.y,
+        0,
+        w.z,
+        up.z,
+        v.z,
+        0,
+        0,
+        0,
+        0,
+        0
+      );
+      let angleX, angleY, angleZ;
+      if (m.elements[8] != 1 && m.elements[8] != -1) {
+        angleX = -Math.asin(m.elements[8]);
+        angleY = Math.atan2(
+          m.elements[9] / Math.cos(angleX),
+          m.elements[10] / Math.cos(angleX)
+        );
+        angleZ = Math.atan2(
+          m.elements[4] / Math.cos(angleX),
+          m.elements[0] / Math.cos(angleX)
+        );
+      } else {
+        angleZ = 0;
+        if (m.elements[8] == -1) {
+          angleX = Math.PI / 2;
+          angleY = Math.atan2(m.elements[1], m.elements[2]);
+        } else {
+          angleX = -Math.PI / 2;
+          angleY = Math.atan2(-m.elements[1], -m.elements[2]);
+        }
+      }
+      updatedPlayers[key].rotation = [angleY, -angleX, angleZ];
+    });
     setPlayers(updatedPlayers);
     controls.current.camera.position.x = updatedPlayers[socket.id].position[0];
     controls.current.camera.position.z = updatedPlayers[socket.id].position[2];
@@ -78,13 +131,13 @@ const JoinGroupTourExperience = () => {
     }
   };
 
-  // const handleMouseMove = () => {
-  //   if (controls.current.isLocked == true) {
-  //     let vector = new THREE.Vector3();
-  //     controls.current.camera.getWorldDirection(vector);
-  //     socket.emit("mousemove", vector);
-  //   }
-  // };
+  const handleMouseMove = () => {
+    if (controls.current.isLocked == true) {
+      let vector = new THREE.Vector3();
+      controls.current.camera.getWorldDirection(vector);
+      socket.emit("mousemove", roomId, vector);
+    }
+  };
   useEffect(() => {
     const room_id = localStorage.getItem("room_id");
     setRoomId(room_id);
@@ -99,8 +152,11 @@ const JoinGroupTourExperience = () => {
   useEffect(() => {
     controls.current.camera.position.y = 1.8;
     document.addEventListener("keypress", handleKeyPress);
-    // document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("keypress", handleKeyPress);
+    document.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
@@ -108,10 +164,15 @@ const JoinGroupTourExperience = () => {
       <PointerLockControls ref={controls} selector="#lock" />
       {players
         ? Object.keys(players).map((key) => {
-            return <Character key={key} position={players[key].position} />;
+            return (
+              <Character
+                key={key}
+                position={players[key].position}
+                rotation={players[key].rotation}
+              />
+            );
           })
         : null}
-      <Character players={players} />
       <pointLight
         intensity={20}
         position={[0, 3, 0]}
