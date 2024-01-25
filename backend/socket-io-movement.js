@@ -23,12 +23,6 @@ const players = {};
 io.on("connection", (socket) => {
   console.log(`A user connected with id: ${socket.id}`);
 
-  // players[socket.id] = {
-  //   position: [Math.random() * 10 - 5, 0, Math.random() * 10 - 5],
-  //   rotation: [0, 0, 0],
-  // };
-  // io.emit("updateState", players);
-
   socket.on("joinRoom", (id) => {
     socket.join(id);
     if (!players[id]) {
