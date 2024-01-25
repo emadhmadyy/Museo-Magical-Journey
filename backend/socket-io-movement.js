@@ -42,9 +42,9 @@ io.on("connection", (socket) => {
     io.to(id).emit("updateState", players[id]);
   });
 
-  socket.on("keypress", (position) => {
-    players[socket.id].position = position;
-    io.emit("updateState", players);
+  socket.on("keypress", (id, pos) => {
+    players[id][socket.id].position = pos;
+    io.to(id).emit("updateState", players[id]);
   });
 
   // socket.on("mousemove", (v) => {
@@ -68,8 +68,14 @@ io.on("connection", (socket) => {
   // Listen for disconnection
   socket.on("disconnect", () => {
     console.log("A user disconnected");
-    delete players[socket.id];
-    io.emit("updateState", players);
+    for (const roomId in players) {
+      if (players[roomId][socket.id]) {
+        delete players[roomId][socket.id];
+        io.to(roomId).emit("updateState", players[roomId]);
+        break;
+      }
+    }
+    console.log(players);
   });
 });
 
