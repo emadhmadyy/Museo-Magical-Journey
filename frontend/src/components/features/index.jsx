@@ -10,7 +10,7 @@ const Features = () => {
       icon: statue,
       title: "3D Masterpieces",
       description:
-        "Immerse yourself in an extraordinary collection of 3D artworks that transcend time and space. Explore meticulously crafted sculptures , each brought to life in stunning detail within our digital museum",
+        "Immerse yourself in an extraordinary collection of 3D artworks that transcend time and space. Explore meticulously crafted sculptures, each brought to life in stunning detail within our digital museum.",
     },
     {
       icon: team,
