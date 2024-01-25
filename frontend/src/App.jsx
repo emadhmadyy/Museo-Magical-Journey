@@ -9,6 +9,7 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Museum from "./pages/museum";
 import SoloTour from "./pages/soloTour";
 import JoinGroupTour from "./pages/joinGroupTour";
+import Locomotive from "./three-fiber-components/timeTravel/locomotive";
 function App() {
   return (
     <>
@@ -21,8 +22,9 @@ function App() {
           <Route path="/tour" element={<Tour />} />
           <Route path="/time-travel" element={<TimeTravelMenu />} />
           <Route path="/museum" element={<Museum />} />
-          <Route path="solo-museum" element={<SoloTour />} />
-          <Route path="join-group-tour" element={<JoinGroupTour />} />
+          <Route path="/solo-museum" element={<SoloTour />} />
+          <Route path="/join-group-tour" element={<JoinGroupTour />} />
+          <Route path="/locomotive" element={<Locomotive />} />
           {/* <Route path="/scene/:data" element={<Scene />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
