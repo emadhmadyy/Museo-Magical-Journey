@@ -58,11 +58,10 @@ const Experience = () => {
   });
   const handleUpdateState = (updatedPlayers) => {
     setPlayers(updatedPlayers);
-    console.log(updatedPlayers);
     controls.current.camera.position.x = updatedPlayers[socket.id].position[0];
     controls.current.camera.position.z = updatedPlayers[socket.id].position[2];
   };
-  const [players, setPlayers] = useState({});
+  const [players, setPlayers] = useState(null);
   const [roomId, setRoomId] = useState("");
   const handleKeyPress = (event) => {
     if (controls.current.isLocked == true) {
@@ -86,44 +85,13 @@ const Experience = () => {
     }
   };
 
-  const handleMouseMove = () => {
-    if (controls.current.isLocked == true) {
-      let vector = new THREE.Vector3();
-      controls.current.camera.getWorldDirection(vector);
-      let v = new THREE.Vector3(vector.x, 0, vector.z);
-      let up = new THREE.Vector3(0, 1, 0);
-      let w = new THREE.Vector3();
-      w.crossVectors(up, v);
-      v.normalize();
-      up.normalize();
-      w.normalize();
-      let m = new THREE.Matrix4(
-        w.x,
-        up.x,
-        v.x,
-        0,
-        w.y,
-        up.y,
-        v.y,
-        0,
-        w.z,
-        up.z,
-        v.z,
-        0,
-        0,
-        0,
-        0,
-        0
-      );
-      const angleX = Math.atan2(m.elements[9], m.elements[10]);
-      const angleY = Math.atan2(
-        -m.elements[8],
-        Math.sqrt(m.elements[9] ** 2 + m.elements[10] ** 2)
-      );
-      const angleZ = Math.atan2(m.elements[4], m.elements[0]);
-      socket.emit("mousemove", [angleX, -angleY, angleZ]);
-    }
-  };
+  // const handleMouseMove = () => {
+  //   if (controls.current.isLocked == true) {
+  //     let vector = new THREE.Vector3();
+  //     controls.current.camera.getWorldDirection(vector);
+  //     socket.emit("mousemove", vector);
+  //   }
+  // };
   useEffect(() => {
     socket.connect();
     socket.on("updateState", handleUpdateState);
@@ -135,13 +103,18 @@ const Experience = () => {
   useEffect(() => {
     controls.current.camera.position.y = 1.8;
     document.addEventListener("keypress", handleKeyPress);
-    document.addEventListener("mousemove", handleMouseMove);
+    // document.addEventListener("mousemove", handleMouseMove);
     return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
 
   return (
     <>
-      <PointerLockControls ref={controls} />
+      <PointerLockControls ref={controls} selector="#lock" />
+      {players
+        ? Object.keys(players).map((key) => {
+            return <Character key={key} position={players[key].position} />;
+          })
+        : null}
       <Character players={players} />
       <pointLight
         intensity={20}

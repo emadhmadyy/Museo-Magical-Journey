@@ -18,7 +18,7 @@ const Locomotive = ({ position_y }) => {
   //     setPosition([0, -10, 5]);
   //   };
   useFrame((state) => {
-    state.camera.position.lerp(new THREE.Vector3(0, position_y, 5), 0.1);
+    state.camera.position.lerp(new THREE.Vector3(0, position_y, 5), 0.05);
     state.camera.updateProjectionMatrix();
   });
   return (
