@@ -10,6 +10,7 @@ import Museum from "./pages/museum";
 import SoloTour from "./pages/soloTour";
 import JoinGroupTour from "./pages/joinGroupTour";
 import LocomotiveCanvas from "./pages/locomotiveCanvas";
+import TelephoneCanvas from "./pages/telephoneCanvas";
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/solo-museum" element={<SoloTour />} />
           <Route path="/join-group-tour" element={<JoinGroupTour />} />
           <Route path="/locomotive" element={<LocomotiveCanvas />} />
+          <Route path="/telephone" element={<TelephoneCanvas />} />
           {/* <Route path="/scene/:data" element={<Scene />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

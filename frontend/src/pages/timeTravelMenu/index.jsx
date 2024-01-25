@@ -2,10 +2,6 @@ import "./index.css";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import InfoCard from "../../components/infoCard";
-import statue from "../../assets/images/icons8-statue.png";
-import team from "../../assets/images/icons8-team.png";
-import chat from "../../assets/images/icons8-chat.png";
-import time from "../../assets/images/icons8-time-machine.png";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 const TimeTravelMenu = () => {
