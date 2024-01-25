@@ -27,6 +27,9 @@ const TimeTravelMenu = () => {
       title: "Telephone",
       description:
         "Telephones, transformative inventions, revolutionized communication since the 19th century. From rotary to smartphones, they connect people, shaping modern societies.",
+      handleclick: () => {
+        navigate("/telephone");
+      },
     },
   ];
   return (
