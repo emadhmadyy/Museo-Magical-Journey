@@ -23,15 +23,24 @@ const players = {};
 io.on("connection", (socket) => {
   console.log(`A user connected with id: ${socket.id}`);
 
-  players[socket.id] = {
-    position: [Math.random() * 10 - 5, 0, Math.random() * 10 - 5],
-    rotation: [0, 0, 0],
-  };
-  io.emit("updateState", players);
+  // players[socket.id] = {
+  //   position: [Math.random() * 10 - 5, 0, Math.random() * 10 - 5],
+  //   rotation: [0, 0, 0],
+  // };
+  // io.emit("updateState", players);
 
-  // socket.on("joinRoom", (id) => {
-  //   socket.join(id);
-  // });
+  socket.on("joinRoom", (id) => {
+    socket.join(id);
+    if (!players[id]) {
+      players[id] = {};
+    }
+    players[id][socket.id] = {
+      position: [Math.random() * 10 - 5, 0, Math.random() * 10 - 5],
+      rotation: [0, 0, 0],
+    };
+    console.log(players);
+    io.to(id).emit("updateState", players[id]);
+  });
 
   socket.on("keypress", (position) => {
     players[socket.id].position = position;
