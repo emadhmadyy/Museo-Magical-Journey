@@ -13,48 +13,54 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://admin.socket.io"], // front-end URL
+    origin: ["http://localhost:5173", "https://admin.socket.io"],
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
 
-const cubes = {}; // Store user cubes
-
+const players = {};
 io.on("connection", (socket) => {
   console.log(`A user connected with id: ${socket.id}`);
 
-  // Create a cube for the new user
-  cubes[socket.id] = {
-    x: Math.random() * 10 - 5,
-    z: Math.random() * 10 - 5,
-    rotationX: 0,
-    rotationY: 0,
-    rotationZ: 0,
+  players[socket.id] = {
+    position: [Math.random() * 10 - 5, 0, Math.random() * 10 - 5],
+    rotation: [0, 0, 0],
   };
-  // Broadcast to all users
-  io.emit("updateState", cubes);
+  io.emit("updateState", players);
 
-  socket.on("keydown", (position) => {
-    cubes[socket.id].x = position.x;
-    cubes[socket.id].z = position.z;
-    io.emit("updateState", cubes);
+  // socket.on("joinRoom", (id) => {
+  //   socket.join(id);
+  // });
+
+  socket.on("keypress", (position) => {
+    players[socket.id].position = position;
+    io.emit("updateState", players);
   });
 
-  socket.on("mousemove", (v) => {
-    let a = Math.asin(v.y);
-    a = Math.cos(a);
-    cubes[socket.id].rotationX = v.x / a;
-    cubes[socket.id].rotationY = 0;
-    cubes[socket.id].rotationZ = v.z / a;
-    io.emit("updateState", cubes);
-  });
+  // socket.on("mousemove", (v) => {
+  //   // players[socket.id].rotation = rotation;
+  //   let a = Math.asin(v.y);
+  //   a = Math.cos(a);
+  //   players[socket.id].rotation[0] = v.x / a;
+  //   players[socket.id].rotation[1] = 0;
+  //   players[socket.id].rotation[2] = v.z / a;
+  //   io.emit("updateState", players);
+  // });
+  // socket.on("mousemove", (v) => {
+  //   let a = Math.asin(v.y);
+  //   a = Math.cos(a);
+  //   players[socket.id].rotationX = v.x / a;
+  //   players[socket.id].rotationY = 0;
+  //   players[socket.id].rotationZ = v.z / a;
+  //   io.emit("updateState", players);
+  // });
 
   // Listen for disconnection
   socket.on("disconnect", () => {
     console.log("A user disconnected");
-    delete cubes[socket.id];
-    io.emit("updateState", cubes);
+    delete players[socket.id];
+    io.emit("updateState", players);
   });
 });
 
