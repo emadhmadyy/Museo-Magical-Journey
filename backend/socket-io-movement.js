@@ -38,7 +38,6 @@ io.on("connection", (socket) => {
       position: [Math.random() * 10 - 5, 0, Math.random() * 10 - 5],
       rotation: [0, 0, 0],
     };
-    console.log(players);
     io.to(id).emit("updateState", players[id]);
   });
 
@@ -47,23 +46,14 @@ io.on("connection", (socket) => {
     io.to(id).emit("updateState", players[id]);
   });
 
-  // socket.on("mousemove", (v) => {
-  //   // players[socket.id].rotation = rotation;
-  //   let a = Math.asin(v.y);
-  //   a = Math.cos(a);
-  //   players[socket.id].rotation[0] = v.x / a;
-  //   players[socket.id].rotation[1] = 0;
-  //   players[socket.id].rotation[2] = v.z / a;
-  //   io.emit("updateState", players);
-  // });
-  // socket.on("mousemove", (v) => {
-  //   let a = Math.asin(v.y);
-  //   a = Math.cos(a);
-  //   players[socket.id].rotationX = v.x / a;
-  //   players[socket.id].rotationY = 0;
-  //   players[socket.id].rotationZ = v.z / a;
-  //   io.emit("updateState", players);
-  // });
+  socket.on("mousemove", (id, v) => {
+    let a = Math.asin(v.y);
+    a = Math.cos(a);
+    players[id][socket.id].rotation[0] = v.x / a;
+    players[id][socket.id].rotation[1] = 0;
+    players[id][socket.id].rotation[2] = v.z / a;
+    io.to(id).emit("updateState", players[id]);
+  });
 
   // Listen for disconnection
   socket.on("disconnect", () => {
@@ -75,7 +65,6 @@ io.on("connection", (socket) => {
         break;
       }
     }
-    console.log(players);
   });
 });
 
