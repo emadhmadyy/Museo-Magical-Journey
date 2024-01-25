@@ -70,7 +70,7 @@ const SoloExperience = () => {
   }, []);
   return (
     <>
-      <PointerLockControls ref={controls} />
+      <PointerLockControls ref={controls} selector="#lock" />
       <pointLight
         intensity={20}
         position={[0, 3, 0]}

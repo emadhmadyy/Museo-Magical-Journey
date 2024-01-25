@@ -149,7 +149,7 @@ const JoinGroupTourExperience = () => {
   }, []);
   return (
     <>
-      <PointerLockControls ref={controls} />
+      <PointerLockControls ref={controls} selector="#lock" />
       <Character player={playerPosition} rotation={playerRotation} />
       <pointLight
         intensity={20}

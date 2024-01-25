@@ -47,9 +47,25 @@ const Experience = () => {
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     texture.repeat.set(10, 10);
   });
-  const [socket, setSocket] = useState(null);
+  const controls = useRef();
+  const floor = useRef();
+  const pointlight = useRef();
+  const spotlight = useMemo(() => new SpotLight("#fff"), []);
+  const pointLightIntensity = 10;
+
+  const socket = io("http://localhost:3001", {
+    autoConnect: false,
+  });
+  const handleUpdateState = (updatedPlayers) => {
+    setPlayers(updatedPlayers);
+    console.log(updatedPlayers);
+    controls.current.camera.position.x = updatedPlayers[socket.id].position[0];
+    controls.current.camera.position.z = updatedPlayers[socket.id].position[2];
+  };
+  const [players, setPlayers] = useState({});
+  const [roomId, setRoomId] = useState("");
   const handleKeyPress = (event) => {
-    if (controls.current.isLocked) {
+    if (controls.current.isLocked == true) {
       switch (event.code) {
         case "KeyW":
           controls.current.moveForward(0.1);
@@ -65,10 +81,11 @@ const Experience = () => {
           break;
       }
       const position = controls.current.camera.position;
-      setPlayerPosition([position.x, 0, position.z]);
-      // socket.emit("keydown", position);
+      socket.emit("keypress", [position.x, 0, position.z]);
+      // setPlayerPosition([position.x, 0, position.z]);
     }
   };
+
   const handleMouseMove = () => {
     if (controls.current.isLocked == true) {
       let vector = new THREE.Vector3();
@@ -104,57 +121,28 @@ const Experience = () => {
         Math.sqrt(m.elements[9] ** 2 + m.elements[10] ** 2)
       );
       const angleZ = Math.atan2(m.elements[4], m.elements[0]);
-      setPlayerRotation([angleX, -angleY, angleZ]);
+      socket.emit("mousemove", [angleX, -angleY, angleZ]);
     }
   };
-
+  useEffect(() => {
+    socket.connect();
+    socket.on("updateState", handleUpdateState);
+    return () => {
+      socket.disconnect();
+      socket.off("updateState", handleUpdateState);
+    };
+  }, []);
   useEffect(() => {
     controls.current.camera.position.y = 1.8;
     document.addEventListener("keypress", handleKeyPress);
     document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("dblclick", () => {
-      console.log(controls.current);
-    });
     return () => document.removeEventListener("keypress", handleKeyPress);
   }, []);
-  const controls = useRef();
-  const floor = useRef();
-  const pointlight = useRef();
-  const spotlight = useMemo(() => new SpotLight("#fff"), []);
-  const pointLightIntensity = 10;
 
-  useFrame(() => {
-    // updateState();
-    // console.log(controls.current.camera.position);
-    // console.log(spotlight.current);
-    // console.log(floor.current);
-  });
-  const { scene, gl } = useThree();
-  const updateState = () => {
-    scene.children.forEach((child) => {
-      if (child.name == "character") {
-        scene.remove(child);
-      }
-    });
-  };
-  const [playerPosition, setPlayerPosition] = useState([2, 0, 2]);
-  const [playerRotation, setPlayerRotation] = useState([0, 0, 0]);
-  const [roomId, setRoomId] = useState("");
-  useEffect(() => {
-    controls.current.camera.position.x = playerPosition[0];
-    controls.current.camera.position.z = playerPosition[2];
-    const room_id = localStorage.getItem("room_id");
-    setRoomId(room_id);
-    const newsocket = io.connect("http://localhost:3001");
-    newsocket.emit("joinRoom", room_id);
-    setSocket(newsocket);
-    return () => newsocket.disconnect();
-    // socket.emit("addUser")
-  }, []);
   return (
     <>
-      <PointerLockControls ref={controls} selector="#lock" />
-      <Character player={playerPosition} rotation={playerRotation} />
+      <PointerLockControls ref={controls} />
+      <Character players={players} />
       <pointLight
         intensity={20}
         position={[0, 3, 0]}

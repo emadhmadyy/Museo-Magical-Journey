@@ -13,26 +13,23 @@ const Character = (props) => {
     // const action = animations.actions["Armature|Walk"];
     // action.play();
   }, []);
-  return (
-    <primitive
-      object={character_model.scene}
-      position={props.player}
-      rotation={props.rotation}
-    />
-  );
-  // if (!props.players || props.players.length === 0) {
-  //   return null;
-  // }
-  // return props.players.map((player) => {
-  //   return (
-  //     <Clone
-  //       key={player.socket_id}
-  //       name="character"
-  //       object={character_model.scene}
-  //       position={[player.position_x, 0, player.position_z]}
-  //     />
-  //   );
-  // });
+
+  if (!props.players || props.players.length === 0) {
+    return null;
+  }
+  const playersArray = Object.entries(props.players);
+  return playersArray.map((player) => {
+    console.log("triggered");
+    return (
+      <Clone
+        key={player[0]}
+        name="character"
+        object={character_model.scene}
+        position={player[1].position}
+        rotation={player[1].rotation}
+      />
+    );
+  });
 };
 useGLTF.preload("./male_avatar_voxel/scene.gltf");
 export default Character;
