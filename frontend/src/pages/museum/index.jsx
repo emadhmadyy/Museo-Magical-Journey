@@ -32,6 +32,7 @@ const Museum = () => {
       >
         End Tour
       </button>
+      <p className="lock-text">Press lock to move</p>
       <button id="lock" className="lock-btn secondary-color white-font">
         {" "}
         Lock
