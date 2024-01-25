@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unknown-property */
 import { PointerLockControls, useTexture } from "@react-three/drei";
 import Character from "../character";
-import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Temple from "../models/temple";
 import Pillar from "../models/pillar";
@@ -20,12 +20,6 @@ import { SpotLight } from "three";
 import { io } from "socket.io-client";
 
 const Experience = () => {
-  // const floorTextures = useTexture([
-  //   "laminate-flooring-brown/laminate-flooring-brown_albedo.png",
-  //   "laminate-flooring-brown/laminate-flooring-brown_ao.png",
-  //   "laminate-flooring-brown/laminate-flooring-brown_normal-ogl.png",
-  //   "laminate-flooring-brown/laminate-flooring-brown_metallic.png",
-  // ]);
   const floorTextures = useTexture([
     "floor2/white marble_Albedo.jpg",
     "floor2/white marble_Occlusion.jpg",
@@ -80,8 +74,7 @@ const Experience = () => {
           break;
       }
       const position = controls.current.camera.position;
-      socket.emit("keypress", [position.x, 0, position.z]);
-      // setPlayerPosition([position.x, 0, position.z]);
+      socket.emit("keypress", roomId, [position.x, 0, position.z]);
     }
   };
 
@@ -94,6 +87,9 @@ const Experience = () => {
   // };
   useEffect(() => {
     socket.connect();
+    const room_id = localStorage.getItem("room_id");
+    setRoomId(room_id);
+    socket.emit("joinRoom", room_id);
     socket.on("updateState", handleUpdateState);
     return () => {
       socket.disconnect();
@@ -291,8 +287,6 @@ const Experience = () => {
         position={[6.5, 0.5, -6]}
         rotation={[0, -Math.PI * 0.25, 0]}
       />
-
-      {/* <Character position={playerPosition} /> */}
     </>
   );
 };
