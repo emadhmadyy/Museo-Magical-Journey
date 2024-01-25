@@ -7,10 +7,6 @@ const Character = (props) => {
   const { nodes, materials } = useGLTF("./character_walk/scene.gltf");
   useEffect(() => {}, []);
   return (
-    // <mesh {...props}>
-    //   <boxGeometry />
-    //   <meshBasicMaterial color="blue" />
-    // </mesh>
     <mesh
       {...props}
       geometry={nodes.Object_66.geometry}
