@@ -28,7 +28,7 @@ const Features = () => {
       icon: time,
       title: "Time Travel",
       description:
-        "Unleash the magic of time travel with our unique time machine. Witness the evolution of art across different eras as you scroll through captivating scenes. Experience the seamless blend of history and innovation in an enchanting visual journey.",
+        "Unleash the magic of time travel with our unique time machine. Witness the evolution of innovations across different eras as you scroll through captivating scenes. Experience the seamless blend of history and innovation in an enchanting visual journey.",
     },
   ];
   return (
