@@ -9,14 +9,9 @@ import {
   Sky,
 } from "@react-three/drei";
 import Model from "../../model";
-import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 const Locomotive = ({ position_y }) => {
-  //   const [position, setPosition] = useState([0, 0, 5]);
-  //   const handleClick = () => {
-  //     setPosition([0, -10, 5]);
-  //   };
   useFrame((state) => {
     state.camera.position.lerp(new THREE.Vector3(0, position_y, 5), 0.05);
     state.camera.updateProjectionMatrix();

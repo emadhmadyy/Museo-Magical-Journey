@@ -97,3 +97,16 @@ button{
     cursor: pointer;
     opacity: 0.5;
 }
+
+.exit-time-travel-btn{
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    width: 15vw;
+    position: fixed;
+    bottom: 15px;
+    right: 5px;
+    cursor: pointer;
+    background-color: #C5D7E6;
+    color: #333333;
+}

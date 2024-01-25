@@ -37,9 +37,22 @@ const LocomotiveCanvas = () => {
           className="down-arrow"
           onClick={moveDown}
           src="./down.png"
-          alt=""
+          alt="down-icon"
         />
-        <img className="up-arrow" onClick={moveUp} src="./upload.png" alt="" />
+        <img
+          className="up-arrow"
+          onClick={moveUp}
+          src="./upload.png"
+          alt="up-icon"
+        />
+        <button
+          className="exit-time-travel-btn"
+          onClick={() => {
+            navigate("/options");
+          }}
+        >
+          Exit
+        </button>
       </Suspense>
     </>
   );

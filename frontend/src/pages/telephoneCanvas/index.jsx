@@ -45,6 +45,14 @@ const TelephoneCanvas = () => {
           src="./upload.png"
           alt="move-up-icon"
         />
+        <button
+          className="exit-time-travel-btn "
+          onClick={() => {
+            navigate("/options");
+          }}
+        >
+          Exit
+        </button>
       </Suspense>
     </>
   );

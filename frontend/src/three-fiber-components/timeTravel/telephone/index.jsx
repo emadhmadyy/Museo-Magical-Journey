@@ -9,7 +9,6 @@ import {
   Sky,
 } from "@react-three/drei";
 import Model from "../../model";
-import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 const Telephone = ({ position_y }) => {
