@@ -23,9 +23,9 @@ const addInquiry = async (req, res) => {
 const getAllInquires = async (req, res) => {
   try {
     const inquires = await Inquiry.find();
-    res.status(200).send({ inquires: inquires });
+    return res.status(200).send({ inquires: inquires });
   } catch (e) {
-    res.status(400).send({ message: "server error" });
+    return res.status(400).send({ message: "server error", error: e });
   }
 };
 

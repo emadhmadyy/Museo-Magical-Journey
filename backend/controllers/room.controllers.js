@@ -59,7 +59,7 @@ const joinRoom = async (req, res) => {
 const leaveRoom = async (req, res) => {
   const { room_id } = req.body;
   if (!room_id) {
-    res.status(400).send({ message: "All fields are required" });
+    return res.status(400).send({ message: "All fields are required" });
   }
   if (!ObjectId.isValid(room_id)) {
     return res.status(400).send({ message: "Room doesn't exist" });
@@ -70,11 +70,11 @@ const leaveRoom = async (req, res) => {
       $pull: { users: { user: req.user._id } },
     });
     if (!existingRoom) {
-      res.status(400).send({ message: "Room doesn't exist" });
+      return res.status(400).send({ message: "Room doesn't exist" });
     }
-    res.status(200).send({ message: "User removed successfully" });
+    return res.status(200).send({ message: "User removed successfully" });
   } catch (e) {
-    res.status(500).send({ message: "Server error", error: e });
+    return res.status(500).send({ message: "Server error", error: e });
   }
 };
 
@@ -94,7 +94,7 @@ const endRoom = async (req, res) => {
     if (!existingRoom) {
       return res.status(400).send({ message: "Room doesn't exist" });
     }
-    res.status(200).send({ message: "Room has ended" });
+    return res.status(200).send({ message: "Room has ended" });
   } catch (e) {
     return res.status(400).send({ message: "Server error", error: e });
   }
