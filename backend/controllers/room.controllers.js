@@ -77,6 +77,24 @@ const leaveRoom = async (req, res) => {
     res.status(500).send({ message: "Server error", error: e });
   }
 };
+
+const endRoom = async (req, res) => {
+  const { room_id } = req;
+  if (!room_id) {
+    res.status(400).send({ message: "All fields are required" });
+  }
+  if (!ObjectId.isValid(room_id)) {
+    return res.status(400).send({ message: "Room doesn't exist" });
+  }
+  try {
+    await Room.findByIdAndUpdate(room_id, {
+      status: "Closed",
+    });
+    res.status(200).send({ message: "Room has ended" });
+  } catch (e) {
+    res.status(400).send({ message: "Server error", Error: e });
+  }
+};
 module.exports = {
   createRoom,
   joinRoom,
