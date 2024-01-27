@@ -29,4 +29,4 @@ const getAllInquires = async (req, res) => {
   }
 };
 
-module.exports = addInquiry;
+module.exports = { addInquiry, getAllInquires };
