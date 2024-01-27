@@ -29,6 +29,11 @@ const inquirySchema = new mongoose.Schema({
     required: true,
     minlength: 10,
   },
+  status: {
+    type: String,
+    default: "Pending",
+    enum: ["Pending", "Resolved"],
+  },
 });
 
 const Inquiry = mongoose.model("Inquiry", inquirySchema);
