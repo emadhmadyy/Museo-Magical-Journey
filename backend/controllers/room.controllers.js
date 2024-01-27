@@ -79,7 +79,7 @@ const leaveRoom = async (req, res) => {
 };
 
 const endRoom = async (req, res) => {
-  const { room_id } = req;
+  const { room_id } = req.body;
   if (!room_id) {
     return res.status(400).send({ message: "All fields are required" });
   }
@@ -88,7 +88,7 @@ const endRoom = async (req, res) => {
   }
   try {
     const roomId = new ObjectId(room_id);
-    await Room.findByIdAndUpdate(roomId, {
+    const existingRoom = await Room.findByIdAndUpdate(roomId, {
       status: "Closed",
     });
     if (!existingRoom) {
@@ -96,7 +96,7 @@ const endRoom = async (req, res) => {
     }
     res.status(200).send({ message: "Room has ended" });
   } catch (e) {
-    return res.status(400).send({ message: "Server error", Error: e });
+    return res.status(400).send({ message: "Server error", error: e });
   }
 };
 module.exports = {
