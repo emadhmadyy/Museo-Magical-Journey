@@ -1,6 +1,5 @@
 const Room = require("../models/room.model");
 const User = require("../models/user.model");
-const Character = require("../models/character.model");
 const { ObjectId } = require("mongoose").Types;
 
 const createRoom = async (req, res) => {
