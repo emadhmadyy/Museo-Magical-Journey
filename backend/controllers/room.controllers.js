@@ -81,22 +81,27 @@ const leaveRoom = async (req, res) => {
 const endRoom = async (req, res) => {
   const { room_id } = req;
   if (!room_id) {
-    res.status(400).send({ message: "All fields are required" });
+    return res.status(400).send({ message: "All fields are required" });
   }
   if (!ObjectId.isValid(room_id)) {
     return res.status(400).send({ message: "Room doesn't exist" });
   }
   try {
-    await Room.findByIdAndUpdate(room_id, {
+    const roomId = new ObjectId(room_id);
+    await Room.findByIdAndUpdate(roomId, {
       status: "Closed",
     });
+    if (!existingRoom) {
+      return res.status(400).send({ message: "Room doesn't exist" });
+    }
     res.status(200).send({ message: "Room has ended" });
   } catch (e) {
-    res.status(400).send({ message: "Server error", Error: e });
+    return res.status(400).send({ message: "Server error", Error: e });
   }
 };
 module.exports = {
   createRoom,
   joinRoom,
   leaveRoom,
+  endRoom,
 };
