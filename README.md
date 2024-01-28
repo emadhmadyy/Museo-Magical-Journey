@@ -96,7 +96,21 @@ User:
 | Rooms screen                                            | Room Details Screen                                           | Events Screen                                                     |
 | ![Rooms](./readme/demo/admin-screens/Rooms.png)         | ![Room Details](./readme/demo/admin-screens/Room-details.png) | ![Events](./readme/demo/admin-screens/Events.png)                 |
 
-> To set up Coffee Express locally, follow these steps:
+<br><br>
+
+<!-- Prompt Engineering -->
+<img src="./readme/title7.svg"/>
+<br><br>
+<!-- AWS Deployment -->
+<img src="./readme/title8.svg"/>
+<br><br>
+<!-- Unit Testing -->
+<img src="./readme/title9.svg"/>
+<br><br>
+<!-- How to Run -->
+<img src="./readme/title10.svg"/>
+
+> To set up Museo locally, follow these steps:
 
 ### Prerequisites
 
@@ -111,32 +125,35 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
+1.  Clone the repo git clone [github](https://github.com/emadhmadyy/Museo-Magical-Journey.git)
+
+> cd backend
+
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
+3. Change `.env.example` file name that is inside backend folder and make it `.env`
+4. Enter your MongoDb connection string followed by a new database name in `.env`
+   ```sh
+   MONGODB_URL= "MongoDb_connection_string/Database_name";
+   ```
+5. Enter your secret key in `.env`
+
+   ```sh
+   SECRET_KEY= "ENTER SECRET KEY";
    ```
 
-Now, you should be able to run Coffee Express locally and explore its features.
+> cd frontend
 
-<br><br>
+6. Install NPM packages
+   ```sh
+   npm install
+   ```
+7. Change `.env.example` file name that is inside frontend folder and make it `.env`
+8. Enter backend base url in `.env`
+   ```sh
+   VITE_BASE_URL = "ENTER URL";
+   ```
 
-<!-- Prompt Engineering -->
-<img src="./readme/title7.svg"/>
-<br><br>
-<!-- AWS Deployment -->
-<img src="./readme/title8.svg"/>
-<br><br>
-<!-- Unit Testing -->
-<img src="./readme/title9.svg"/>
-<br><br>
-<!-- How to Run -->
-<img src="./readme/title10.svg"/>
+Now, you should be able to run Museo locally and explore its features.
