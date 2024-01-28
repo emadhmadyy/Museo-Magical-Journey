@@ -5,7 +5,7 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> A website that aims to provide users with a unique , three dimensional journey to explore and appreciate various artworks.
+> A website that aims to provide users with a three-dimensional, unique and interactive ways to explore and appreciate artifacts.
 
 ### User Stories
 
