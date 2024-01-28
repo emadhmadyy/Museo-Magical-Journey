@@ -23,7 +23,7 @@ const Popup = ({ onClickClosePopup }) => {
   const hostTour = async () => {
     try {
       const response = await axios.request({
-        url: "http://localhost:8000/room/create",
+        url: `http://${import.meta.env.VITE_BASE_URL}/room/create`,
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Popup = ({ onClickClosePopup }) => {
     if (validateId()) {
       try {
         const response = await axios.request({
-          url: "http://localhost:8000/room/join",
+          url: `http://${import.meta.env.VITE_BASE_URL}/room/join`,
           method: "post",
           headers: {
             "Content-Type": "application/json",

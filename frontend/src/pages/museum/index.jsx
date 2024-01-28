@@ -32,10 +32,9 @@ const Museum = () => {
       >
         End Tour
       </button>
-      <p className="lock-text">Press lock to move</p>
+      <p className="lock-text">Click to move</p>
       <button id="lock" className="lock-btn secondary-color white-font">
-        {" "}
-        Lock
+        Move
       </button>
       <p className="roomid-container">
         room id: {localStorage.getItem("room_id")}
