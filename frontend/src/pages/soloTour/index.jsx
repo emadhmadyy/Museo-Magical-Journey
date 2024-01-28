@@ -26,6 +26,7 @@ const SoloTour = () => {
       >
         End Tour
       </button>
+      <p className="lock-text">Click to move</p>
       <button id="lock" className="lock-btn secondary-color white-font">
         Move
       </button>

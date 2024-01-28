@@ -57,26 +57,22 @@ User:
 <!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
-### Coffee Express is built using the following technologies:
+### Architecting Data Excellence: Innovative Database Design Strategies:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+- Insert ER Diagram here
 
 <br><br>
 
 <!-- Implementation -->
 <img src="./readme/title6.svg"/>
 
-### User Screens (Mobile)
+### User Screens (Web)
 
-| Login screen                              | Register screen                         | Landing screen                          | Loading screen                          |
-| ----------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen                               | Menu Screen                             | Order Screen                            | Checkout Screen                         |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
+| Login screen                                         | Solo Tour Screen                        | Group Tour screen                       | Time Travel screen                            |
+| ---------------------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------------- |
+| ![Login](./readme/demo/user-screens/Museo-login.gif) | ![Solo](https://placehold.co/900x1600)  | ![Group](https://placehold.co/900x1600) | ![Time Travel](https://placehold.co/900x1600) |
+| Home screen                                          | Menu Screen                             | Order Screen                            | Checkout Screen                               |
+| ![Landing](https://placehold.co/900x1600)            | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600)       |
 
 ### Admin Screens (Web)
 
@@ -117,11 +113,16 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Now, you should be able to run Coffee Express locally and explore its features.
 
+<br><br>
+
 <!-- Prompt Engineering -->
 <img src="./readme/title7.svg"/>
+<br><br>
 <!-- AWS Deployment -->
 <img src="./readme/title8.svg"/>
+<br><br>
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
+<br><br>
 <!-- How to Run -->
 <img src="./readme/title10.svg"/>
