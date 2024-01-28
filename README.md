@@ -11,9 +11,11 @@
 
 Admin:
 
-- As an admin, I want to track user interactions with other users within rooms.
+- As an admin, I want to have an overview of the servers and the clients that are currently connected.
 
-- As an admin, I want to monitor the number of users interacting with the server.
+- As an admin, I want to check the details of each socket instance, the details of each room, and the details of every event emitted or received by the server.
+
+- As an admin, I want to receive feedback from users and mark them as resolved.
 
 User:
 
