@@ -116,14 +116,9 @@ User:
 
 This is an example of how to list things you need to use the software and how to install them.
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- Download and install [NodeJs](https://nodejs.org/en/download)
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1.  Clone the repo git clone [github](https://github.com/emadhmadyy/Museo-Magical-Journey.git)
 
@@ -136,12 +131,12 @@ _Below is an example of how you can instruct your audience on installing and set
 3. Change `.env.example` file name that is inside backend folder and make it `.env`
 4. Enter your MongoDb connection string followed by a new database name in `.env`
    ```sh
-   MONGODB_URL= "MongoDb_connection_string/Database_name";
+   MONGODB_URL= "MongoDb_connection_string/Database_name"
    ```
 5. Enter your secret key in `.env`
 
    ```sh
-   SECRET_KEY= "ENTER SECRET KEY";
+   SECRET_KEY= "ENTER SECRET KEY"
    ```
 
 > cd frontend
@@ -153,7 +148,7 @@ _Below is an example of how you can instruct your audience on installing and set
 7. Change `.env.example` file name that is inside frontend folder and make it `.env`
 8. Enter backend base url in `.env`
    ```sh
-   VITE_BASE_URL = "ENTER URL";
+   VITE_BASE_URL = "ENTER URL"
    ```
 
 Now, you should be able to run Museo locally and explore its features.
