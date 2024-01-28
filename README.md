@@ -94,7 +94,6 @@ User:
 | ------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
 | ![Dashboard](./readme/demo/admin-screens/Dashboard.png) | ![Sockets](./readme/demo/admin-screens/Sockets.png)           | ![Socket Details](./readme/demo/admin-screens/Socket-details.png) |
 | Rooms screen                                            | Room Details Screen                                           | Events Screen                                                     |
-| ------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
 | ![Rooms](./readme/demo/admin-screens/Rooms.png)         | ![Room Details](./readme/demo/admin-screens/Room-details.png) | ![Events](./readme/demo/admin-screens/Events.png)                 |
 
 > To set up Coffee Express locally, follow these steps:
