@@ -76,20 +76,17 @@ User:
 | -------------------------------------------------- |
 | ![Solo](./readme/demo/user-screens/Museo-solo.gif) |
 
-| Group Tour Screen                                         |
-| --------------------------------------------------------- |
-| ![Solo](./readme/demo/user-screens/Museo-time-travel.gif) |
+| Group Tour Screen                                          |
+| ---------------------------------------------------------- |
+| ![Group](./readme/demo/user-screens/Museo-time-travel.gif) |
 
 | Chat Screen                                               |
 | --------------------------------------------------------- |
-| ![Solo](./readme/demo/user-screens/Museo-time-travel.gif) |
+| ![Chat](./readme/demo/user-screens/Museo-time-travel.gif) |
 
-| Time Travel screen                                        |
-| --------------------------------------------------------- |
-| ![Solo](./readme/demo/user-screens/Museo-time-travel.gif) |
-
-| Home screen | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
+| Time Travel screen                                               |
+| ---------------------------------------------------------------- |
+| ![Time Travel](./readme/demo/user-screens/Museo-time-travel.gif) |
 
 ### Admin Screens (Web)
 
