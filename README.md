@@ -68,11 +68,28 @@ User:
 
 ### User Screens (Web)
 
-| Login screen                                         | Solo Tour Screen                        | Group Tour screen                       | Time Travel screen                            |
-| ---------------------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------------- |
-| ![Login](./readme/demo/user-screens/Museo-login.gif) | ![Solo](https://placehold.co/900x1600)  | ![Group](https://placehold.co/900x1600) | ![Time Travel](https://placehold.co/900x1600) |
-| Home screen                                          | Menu Screen                             | Order Screen                            | Checkout Screen                               |
-| ![Landing](https://placehold.co/900x1600)            | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600)       |
+| Login screen                                         |
+| ---------------------------------------------------- |
+| ![Login](./readme/demo/user-screens/Museo-login.gif) |
+
+| Solo Tour Screen                                   |
+| -------------------------------------------------- |
+| ![Solo](./readme/demo/user-screens/Museo-solo.gif) |
+
+| Group Tour Screen                                         |
+| --------------------------------------------------------- |
+| ![Solo](./readme/demo/user-screens/Museo-time-travel.gif) |
+
+| Chat Screen                                               |
+| --------------------------------------------------------- |
+| ![Solo](./readme/demo/user-screens/Museo-time-travel.gif) |
+
+| Time Travel screen                                        |
+| --------------------------------------------------------- |
+| ![Solo](./readme/demo/user-screens/Museo-time-travel.gif) |
+
+| Home screen | Menu Screen | Order Screen | Checkout Screen |
+| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
 
 ### Admin Screens (Web)
 
