@@ -27,7 +27,7 @@ User:
 
 <br><br>
 
-<!-- Prototyping -->
+<!-- Tech Stacks -->
 <img src="./readme/title3.svg"/>
 
 > We designed Coffee Express using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
@@ -46,7 +46,7 @@ User:
 
 <br><br>
 
-<!-- Implementation -->
+<!-- UI/UX -->
 <img src="./readme/title4.svg"/>
 
 > Using the wireframes and mockups as a guide, we implemented the Coffee Express app with the following features:
@@ -69,7 +69,7 @@ User:
 
 <br><br>
 
-<!-- Tech stack -->
+<!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
 ### Coffee Express is built using the following technologies:
@@ -82,7 +82,7 @@ User:
 
 <br><br>
 
-<!-- How to run -->
+<!-- Implementation -->
 <img src="./readme/title6.svg"/>
 
 > To set up Coffee Express locally, follow these steps:
@@ -115,3 +115,12 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 
 Now, you should be able to run Coffee Express locally and explore its features.
+
+<!-- Prompt Engineering -->
+<img src="./readme/title7.svg"/>
+<!-- AWS Deployment -->
+<img src="./readme/title8.svg"/>
+<!-- Unit Testing -->
+<img src="./readme/title9.svg"/>
+<!-- How to Run -->
+<img src="./readme/title10.svg"/>
