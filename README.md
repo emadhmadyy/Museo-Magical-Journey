@@ -19,11 +19,11 @@ Admin:
 
 User:
 
-- As an educator, I am looking for interactive exhibits that I can integrate into my lessons. It would be helpful to have virtual tours to engage my students in the subject matter.
+- As a user, I want to browse through a variety of 3D artifacts and know more about each one without interruptions or distractions.
 
-- As an art enthusiast, I want to explore the virtual galleries of the museum to discover and appreciate various art movements and styles. I hope to find detailed information about the artists and their creative processes.
+- As a user, I desire a shared artifact browsing experience including instant chat with family and friends, each with a character in the tour.
 
-- As a historian, I am eager to delve into the virtual exhibits that showcase historical artifacts and cultural heritage. I want a fun experience where I can learn about different time periods and civilizations.
+- As a user, I want to delve into the evolution of human innovations, interact with them, and view them from all angles.
 
 <br><br>
 
