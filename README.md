@@ -44,25 +44,13 @@ User:
 
 ### Mockups
 
-| Home screen                                        | Login Screen                                   | Register Screen                                    | Options screen                                     | Tours Screen                                        | Popup screen                               | Time Travel screen                                         |
-| -------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------- |
-| ![Landing](./readme/demo/mockups/Landing-page.png) | ![Login](./readme/demo/mockups/Login-page.png) | ![Register](./readme/demo/mockups/Signup-page.png) | ![Options](./readme/demo/mockups/Options-page.png) | ![Tours](./readme/demo/mockups/Solo-Group-Tour.png) | ![Popup](./readme/demo/mockups/Pop-up.png) | ![Time Travel](./readme/demo/mockups/Time-Travel-Menu.png) |
+| Home screen                                        | Login Screen                                   | Register Screen                                    |
+| -------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- |
+| ![Landing](./readme/demo/mockups/Landing-page.png) | ![Login](./readme/demo/mockups/Login-page.png) | ![Register](./readme/demo/mockups/Signup-page.png) |
 
-### User Screens (Mobile)
-
-| Login screen                              | Register screen                         | Landing screen                          | Loading screen                          |
-| ----------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen                               | Menu Screen                             | Order Screen                            | Checkout Screen                         |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-
-### Admin Screens (Web)
-
-| Login screen                            | Register screen                       | Landing screen                        |
-| --------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-| Home screen                             | Menu Screen                           | Order Screen                          |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| Options screen                                     | Tours Screen                                        | Popup screen                               | Time Travel screen                                         |
+| -------------------------------------------------- | --------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| ![Options](./readme/demo/mockups/Options-page.png) | ![Tours](./readme/demo/mockups/Solo-Group-Tour.png) | ![Popup](./readme/demo/mockups/Pop-up.png) | ![Time Travel](./readme/demo/mockups/Time-Travel-Menu.png) |
 
 <br><br>
 
@@ -81,6 +69,22 @@ User:
 
 <!-- Implementation -->
 <img src="./readme/title6.svg"/>
+
+### User Screens (Mobile)
+
+| Login screen                              | Register screen                         | Landing screen                          | Loading screen                          |
+| ----------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
+| Home screen                               | Menu Screen                             | Order Screen                            | Checkout Screen                         |
+| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
+
+### Admin Screens (Web)
+
+| Login screen                            | Register screen                       | Landing screen                        |
+| --------------------------------------- | ------------------------------------- | ------------------------------------- |
+| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| Home screen                             | Menu Screen                           | Order Screen                          |
+| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
 > To set up Coffee Express locally, follow these steps:
 
