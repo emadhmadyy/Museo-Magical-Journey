@@ -79,7 +79,7 @@ const Login = () => {
     if (validateForm()) {
       try {
         const response = await axios.request({
-          url: `${import.meta.env.VITE_BASE_URL}/user/login`,
+          url: `http://${import.meta.env.VITE_BASE_URL}/user/login`,
           method: "post",
           data: formData,
           headers: {

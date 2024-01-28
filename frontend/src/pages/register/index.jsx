@@ -87,7 +87,7 @@ const Register = () => {
     if (validateForm()) {
       try {
         const response = await axios.request({
-          url: "http://localhost:8000/user/register",
+          url: `http://${import.meta.env.VITE_BASE_URL}/user/register`,
           method: "post",
           headers: {
             "Content-Type": "application/json",
