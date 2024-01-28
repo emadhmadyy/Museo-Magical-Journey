@@ -44,9 +44,9 @@ User:
 
 ### Mockups
 
-| Home screen                                        | Login Screen                                   | Register Screen                                    |
-| -------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- |
-| ![Landing](./readme/demo/mockups/Landing-page.png) | ![Login](./readme/demo/mockups/Login-page.png) | ![Register](./readme/demo/mockups/Signup-page.png) |
+| Home screen                                        | Login Screen                                   | Register Screen                                    | Options screen                                     | Tours Screen                                    | Popup screen                               | Time Travel Menu screen                                    |
+| -------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------- |
+| ![Landing](./readme/demo/mockups/Landing-page.png) | ![Login](./readme/demo/mockups/Login-page.png) | ![Register](./readme/demo/mockups/Signup-page.png) | ![Options](./readme/demo/mockups/Options-page.png) | ![Tours](./readme/demo/mockups/Signup-page.png) | ![Popup](./readme/demo/mockups/Pop-up.png) | ![Time Travel](./readme/demo/mockups/Time-Travel-Menu.png) |
 
 ### User Screens (Mobile)
 
