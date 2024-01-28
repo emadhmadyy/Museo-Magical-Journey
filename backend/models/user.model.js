@@ -5,10 +5,14 @@ const userschema = new mongoose.Schema({
   first_name: {
     type: String,
     required: true,
+    minlength: 2,
+    maxlength: 10,
   },
   last_name: {
     type: String,
     required: true,
+    minlength: 2,
+    maxlength: 10,
   },
   email: {
     type: String,
@@ -22,6 +26,7 @@ const userschema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 8,
+    maxlength: 15,
   },
   user_type: {
     type: Number,
