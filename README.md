@@ -44,9 +44,9 @@ User:
 
 ### Mockups
 
-| Home screen                                        | Menu Screen                           | Order Screen                          |
-| -------------------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/demo/mockups/Landing-page.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| Home screen                                        | Login Screen                                   | Register Screen                                    |
+| -------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- |
+| ![Landing](./readme/demo/mockups/Landing-page.png) | ![Login](./readme/demo/mockups/Login-page.png) | ![Register](./readme/demo/mockups/Signup-page.png) |
 
 ### User Screens (Mobile)
 
