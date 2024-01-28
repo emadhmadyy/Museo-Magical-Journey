@@ -4,6 +4,7 @@ import MessageBox from "../../components/messagebox";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../../components/spinner";
 import JoinGroupTourExperience from "../../three-fiber-components/joinGroupTourExperience";
+import axios from "axios";
 const JoinGroupTour = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -16,8 +17,26 @@ const JoinGroupTour = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const handleQuitTour = () => {
-    navigate("/options");
+  const handleQuitTour = async () => {
+    try {
+      const response = await axios.request({
+        url: `http://${import.meta.env.VITE_BASE_URL}/room/leave`,
+        method: "post",
+        data: {
+          room_id: localStorage.getItem("room_id"),
+        },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.status == 200) {
+        localStorage.removeItem("room_id");
+        navigate("/options");
+      }
+    } catch (e) {
+      console.log(e.response);
+    }
   };
   return (
     <Suspense fallback={<LoadingSpinner />}>
@@ -32,7 +51,7 @@ const JoinGroupTour = () => {
         Quit
       </button>
       <button id="lock" className="lock-btn secondary-color white-font">
-        Lock
+        Move
       </button>
     </Suspense>
   );
