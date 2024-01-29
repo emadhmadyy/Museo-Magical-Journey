@@ -113,7 +113,7 @@ User:
 
 ### The following are the commands used to deploy this project on an EC2 server
 
-> install MongoDb
+> Install MongoDb.
 
 - Create a `/etc/yum.repos.d/mongodb-org-7.0.repo`
 
@@ -123,15 +123,48 @@ User:
   vi mongodb-org-7.0.repo
 ```
 
-- Paste the below text to it
+- Paste the below text to it.
 
 ```sh
- [mongodb-org-7.0]
+   [mongodb-org-7.0]
    name=MongoDB Repository
    baseurl=https://repo.mongodb.org/yum/amazon/2023/mongodb-org/7.0/x86_64/
    gpgcheck=1
    enabled=1
    gpgkey=https://pgp.mongodb.com/server-7.0.asc
+```
+
+- Install MongoDB packages.
+
+```sh
+   sudo yum install -y mongodb-org
+
+```
+
+- Start MongoDB.
+
+```sh
+   sudo systemctl start mongod
+```
+
+> Install Node.js
+
+- Install node version manager.
+
+```sh
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+```
+
+- Activate nvm.
+
+```sh
+   . ~/.nvm/nvm.sh
+```
+
+- Install the latest LTS version of Node.js
+
+```sh
+   nvm install --lts
 ```
 
 <br><br>
