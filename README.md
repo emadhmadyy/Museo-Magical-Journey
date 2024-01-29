@@ -105,9 +105,6 @@ User:
 
 <br><br>
 
-<!-- Prompt Engineering -->
-<img src="./readme/title7.svg"/>
-<br><br>
 <!-- AWS Deployment -->
 <img src="./readme/title8.svg"/>
 
