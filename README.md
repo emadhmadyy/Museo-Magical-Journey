@@ -111,9 +111,11 @@ User:
 
 - This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
   <img src="./readme/demo/unit-tests.png">
-  <br><br>
-  <!-- How to Run -->
-  <img src="./readme/title10.svg"/>
+
+<br><br>
+
+<!-- How to Run -->
+<img src="./readme/title10.svg"/>
 
 > To set up Museo locally, follow these steps:
 
