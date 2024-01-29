@@ -42,15 +42,11 @@ User:
 
 - Project Figma design [figma](https://www.figma.com/file/D1ah8vUMAvImz9FAW7y3wc/Museo?type=design&t=PzdPzF7ZU5f5jKX9-6)
 
-### Mockups
+### Mockups Examples
 
-| Home screen                                        | Login Screen                                   | Register Screen                                    |
+| Home screen                                        | Login Screen                                   | Options screen                                     |
 | -------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------- |
-| ![Landing](./readme/demo/mockups/Landing-page.png) | ![Login](./readme/demo/mockups/Login-page.png) | ![Register](./readme/demo/mockups/Signup-page.png) |
-
-| Options screen                                     | Tours Screen                                        | Popup screen                               | Time Travel screen                                         |
-| -------------------------------------------------- | --------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------- |
-| ![Options](./readme/demo/mockups/Options-page.png) | ![Tours](./readme/demo/mockups/Solo-Group-Tour.png) | ![Popup](./readme/demo/mockups/Pop-up.png) | ![Time Travel](./readme/demo/mockups/Time-Travel-Menu.png) |
+| ![Landing](./readme/demo/mockups/Landing-page.png) | ![Login](./readme/demo/mockups/Login-page.png) | ![Options](./readme/demo/mockups/Options-page.png) |
 
 <br><br>
 
