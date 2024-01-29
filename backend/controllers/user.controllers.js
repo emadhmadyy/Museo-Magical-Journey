@@ -5,6 +5,10 @@ const bcrypt = require("bcrypt");
 const login = async (req, res) => {
   const { email, password } = req.body;
 
+  if (!email || !password) {
+    return res.status(400).send({ message: "all fields are required" });
+  }
+
   // check if user is available in DB
   const user = await User.findOne({ email });
   if (!user) return res.status(400).send({ message: "Invalid email/password" });

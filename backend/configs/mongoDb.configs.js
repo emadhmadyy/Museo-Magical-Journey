@@ -9,6 +9,7 @@ const connectToMongoDb = () => {
   connection.once("open", () => {
     console.log("Connected to MongoDb ");
   });
+  return connection;
 };
 
 module.exports = connectToMongoDb;
