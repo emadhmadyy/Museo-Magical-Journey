@@ -31,7 +31,6 @@ User:
 - This project uses [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) which is a React renderer for [ThreeJs](https://threejs.org/docs/). ThreeJs is a cross-browser JavaScript library and application programming interface (API) used to create and display animated 3D computer graphics in a web browser using WebGL.
 - For persistent storage (database), the website uses [MongoDb](https://www.mongodb.com/) which is a cross-platform, document-oriented database that uses a JSON-like format to store documents.
 - For real-time messaging and movement, the website uses [Socket.io](https://socket.io/). Socket.io is an event-driven library for real-time web applications. It enables real-time, bi-directional communication between web clients and servers.
-- The website uses the font ["Kavoon"](https://fonts.google.com/specimen/Kavoon) as its main font, and the design of the app adheres to the material design guidelines.
 
 <br><br>
 
@@ -53,8 +52,6 @@ User:
 <!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
-### Architecting Data Excellence: Innovative Database Design Strategies:
-
 - Insert ER Diagram here
 
 <br><br>
@@ -64,7 +61,7 @@ User:
 
 ### User Screens (Web)
 
-| Login screen                                         |
+| Login Screen                                         |
 | ---------------------------------------------------- |
 | ![Login](./readme/demo/user-screens/Museo-login.gif) |
 
@@ -84,6 +81,10 @@ User:
 | ---------------------------------------------------------------- |
 | ![Time Travel](./readme/demo/user-screens/Museo-time-travel.gif) |
 
+| Solo Tour Screen                                         | Time Travel Screen                                                     | Options Screen                                          | Popup Screen                                          |
+| -------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| ![Solo](./readme/demo/user-screens/solo-tour-static.png) | ![Time Travel](./readme/demo/user-screens/time-travel-menu-static.png) | ![Options](./readme/demo/user-screens/options-menu.png) | ![Popup](./readme/demo/user-screens/popup-static.png) |
+
 ### Admin Screens (Web)
 
 | Dashboard screen                                        | Sockets screen                                                | Socket Detials screen                                             |
@@ -102,8 +103,6 @@ User:
 <br><br>
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
-
-### Precision in Development: Harnessing the Power of Unit Testing:
 
 - This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
   <img src="./readme/demo/unit-tests.png">
