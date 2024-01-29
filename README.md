@@ -110,7 +110,32 @@ User:
 <br><br>
 <!-- AWS Deployment -->
 <img src="./readme/title8.svg"/>
+
+### The following are the commands used to deploy this project on an EC2 server
+
+> install MongoDb
+
+- Create a `/etc/yum.repos.d/mongodb-org-7.0.repo`
+
+```sh
+  cd /etc/yum.repos.d
+  touch mongodb-org-7.0.repo
+  vi mongodb-org-7.0.repo
+```
+
+- Paste the below text to it
+
+```sh
+ [mongodb-org-7.0]
+   name=MongoDB Repository
+   baseurl=https://repo.mongodb.org/yum/amazon/2023/mongodb-org/7.0/x86_64/
+   gpgcheck=1
+   enabled=1
+   gpgkey=https://pgp.mongodb.com/server-7.0.asc
+```
+
 <br><br>
+
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
 
