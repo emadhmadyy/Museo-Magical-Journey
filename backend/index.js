@@ -35,3 +35,5 @@ app.listen(8000, () => {
 });
 
 connectToMongoDb();
+
+module.exports = { app };
