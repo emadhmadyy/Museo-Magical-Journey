@@ -81,17 +81,27 @@ User:
 | ---------------------------------------------------------------- |
 | ![Time Travel](./readme/demo/user-screens/Museo-time-travel.gif) |
 
-| Solo Tour Screen                                         | Time Travel Screen                                                     | Options Screen                                          | Popup Screen                                          |
-| -------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
-| ![Solo](./readme/demo/user-screens/solo-tour-static.png) | ![Time Travel](./readme/demo/user-screens/time-travel-menu-static.png) | ![Options](./readme/demo/user-screens/options-menu.png) | ![Popup](./readme/demo/user-screens/popup-static.png) |
+| Solo Tour Screen                                         | Time Travel Screen                                                     |
+| -------------------------------------------------------- | ---------------------------------------------------------------------- |
+| ![Solo](./readme/demo/user-screens/solo-tour-static.png) | ![Time Travel](./readme/demo/user-screens/time-travel-menu-static.png) |
+
+| Options Screen                                          | Popup Screen                                          |
+| ------------------------------------------------------- | ----------------------------------------------------- |
+| ![Options](./readme/demo/user-screens/options-menu.png) | ![Popup](./readme/demo/user-screens/popup-static.png) |
 
 ### Admin Screens (Web)
 
-| Dashboard screen                                        | Sockets screen                                                | Socket Detials screen                                             |
-| ------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
-| ![Dashboard](./readme/demo/admin-screens/Dashboard.png) | ![Sockets](./readme/demo/admin-screens/Sockets.png)           | ![Socket Details](./readme/demo/admin-screens/Socket-details.png) |
-| Rooms screen                                            | Room Details Screen                                           | Events Screen                                                     |
-| ![Rooms](./readme/demo/admin-screens/Rooms.png)         | ![Room Details](./readme/demo/admin-screens/Room-details.png) | ![Events](./readme/demo/admin-screens/Events.png)                 |
+| Dashboard screen                                        | Sockets screen                                      |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| ![Dashboard](./readme/demo/admin-screens/Dashboard.png) | ![Sockets](./readme/demo/admin-screens/Sockets.png) |
+
+| Socket Detials screen                                             | Rooms screen                                    |
+| ----------------------------------------------------------------- | ----------------------------------------------- |
+| ![Socket Details](./readme/demo/admin-screens/Socket-details.png) | ![Rooms](./readme/demo/admin-screens/Rooms.png) |
+
+| Room Details Screen                                           | Events Screen                                     |
+| ------------------------------------------------------------- | ------------------------------------------------- |
+| ![Room Details](./readme/demo/admin-screens/Room-details.png) | ![Events](./readme/demo/admin-screens/Events.png) |
 
 <br><br>
 
