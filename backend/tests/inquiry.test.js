@@ -1,7 +1,7 @@
 const request = require("supertest");
 const { app } = require("../index");
 
-describe("post", () => {
+describe("post new inquiry to database", () => {
   it("should add an inquiry successfully with a status code 200", async () => {
     const response = await request(app).post("/inquiry").send({
       email: "test@example.com",
@@ -32,5 +32,13 @@ describe("post", () => {
 
     expect(response.status).toBe(400);
     expect(response.body).toEqual({ message: "All fields are required" });
+  });
+});
+
+describe("get all inquiries from the database", () => {
+  it("should return all inquiries in the database with a status code of 200", async () => {
+    const response = await request(app).get("/inquiry/all");
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty("inquires");
   });
 });
