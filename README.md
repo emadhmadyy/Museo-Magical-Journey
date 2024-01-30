@@ -61,17 +61,18 @@ User
 
 ### User Screens (Web)
 
-| Login Screen                                                         |
-| -------------------------------------------------------------------- |
-| <img src="./readme/demo/user-screens/Museo-login.gif" width="100%" > |
+| Login Screen |
+| ------------ |
 
-| Solo Tour Screen                                  |
-| ------------------------------------------------- | ---------- |
-| ![Solo](./readme/demo/user-screens/Museo-solo.gif | width=100) |
+ <img src="./readme/demo/user-screens/Museo-login.gif" width="100%">
 
-| Group Tour Screen                                    |
-| ---------------------------------------------------- |
-| ![Group](./readme/demo/user-screens/Museo-group.gif) |
+| Solo Tour Screen                                                  |
+| ----------------------------------------------------------------- |
+| <img src="./readme/demo/user-screens/Museo-solo.gif" width="100"> |
+
+| Group Tour Screen                                                  |
+| ------------------------------------------------------------------ |
+| <img src="./readme/demo/user-screens/Museo-group.gif" width="100"> |
 
 | Chat Screen                                        |
 | -------------------------------------------------- |
