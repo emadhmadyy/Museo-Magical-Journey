@@ -61,6 +61,10 @@ User
 
 ### User Screens (Web)
 
+| Demo Video                                                                                       |
+| ------------------------------------------------------------------------------------------------ |
+| [![Demo Video](./readme/demo/user-screens/solo-tour-static.png)](./readme/demo/museo-video1.mp4) |
+
 | Login Screen                                         |
 | ---------------------------------------------------- |
 | ![Login](./readme/demo/user-screens/Museo-login.gif) |
