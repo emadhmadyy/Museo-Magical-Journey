@@ -9,13 +9,13 @@
 
 ### User Stories
 
-Admin:
+Admin
 
 - As an admin, I want to have an overview of the servers and the clients that are currently connected.
 - As an admin, I want to check the details of each socket instance, the details of each room, and the details of every event emitted or received by the server.
 - As an admin, I want to receive feedback from users and mark them as resolved.
 
-User:
+User
 
 - As a user, I want to browse through a variety of 3D artifacts and know more about each one without interruptions or distractions.
 - As a user, I desire a shared artifact browsing experience including instant chat with family and friends, each with a character in the tour.
@@ -28,7 +28,7 @@ User:
 
 ### Museo is built using the following technologies:
 
-- This project uses [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) which is a React renderer for [ThreeJs](https://threejs.org/docs/). ThreeJs is a cross-browser JavaScript library and application programming interface (API) used to create and display animated 3D computer graphics in a web browser using WebGL.
+- This project uses [React-three-fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) which is a React renderer for [Three.js](https://threejs.org/docs/). Three.js is a cross-browser JavaScript library and application programming interface (API) used to create and display animated 3D computer graphics in a web browser using WebGL.
 - For persistent storage (database), the website uses [MongoDb](https://www.mongodb.com/) which is a cross-platform, document-oriented database that uses a JSON-like format to store documents.
 - For real-time messaging and movement, the website uses [Socket.io](https://socket.io/). Socket.io is an event-driven library for real-time web applications. It enables real-time, bi-directional communication between web clients and servers.
 
@@ -61,9 +61,9 @@ User:
 
 ### User Screens (Web)
 
-| Login Screen                                         |
-| ---------------------------------------------------- |
-| ![Login](./readme/demo/user-screens/Museo-login.gif) |
+| Login Screen                                                        |
+| ------------------------------------------------------------------- |
+| <img src="./readme/demo/user-screens/Museo-login.gif" width="100%"> |
 
 | Solo Tour Screen                                   |
 | -------------------------------------------------- |
