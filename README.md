@@ -61,13 +61,13 @@ User
 
 ### User Screens (Web)
 
-| Login Screen                                                        |
-| ------------------------------------------------------------------- |
-| <img src="./readme/demo/user-screens/Museo-login.gif" width="100%"> |
+| Login Screen                                                         |
+| -------------------------------------------------------------------- |
+| <img src="./readme/demo/user-screens/Museo-login.gif" width="100%" > |
 
-| Solo Tour Screen                                   |
-| -------------------------------------------------- |
-| ![Solo](./readme/demo/user-screens/Museo-solo.gif) |
+| Solo Tour Screen                                  |
+| ------------------------------------------------- | ---------- |
+| ![Solo](./readme/demo/user-screens/Museo-solo.gif | width=100) |
 
 | Group Tour Screen                                    |
 | ---------------------------------------------------- |
