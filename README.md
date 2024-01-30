@@ -61,30 +61,21 @@ User
 
 ### User Screens (Web)
 
-| Login Screen                                         |
-| ---------------------------------------------------- |
-| ![Login](./readme/demo/user-screens/Museo-login.gif) |
-| :--:                                                 |
-
-| Solo Tour Screen                                   |
-| -------------------------------------------------- |
-| ![Solo](./readme/demo/user-screens/Museo-solo.gif) |
-| :--:                                               |
-
-| Group Tour Screen                                    |
-| ---------------------------------------------------- |
-| ![Group](./readme/demo/user-screens/Museo-group.gif) |
-| :--:                                                 |
-
-| Chat Screen                                        |
-| -------------------------------------------------- |
-| ![Chat](./readme/demo/user-screens/Museo-chat.gif) |
-| :--:                                               |
-
-| Time Travel screen                                               |
-| ---------------------------------------------------------------- |
-| ![Time Travel](./readme/demo/user-screens/Museo-time-travel.gif) |
-| :--:                                                             |
+| Login Screen                                                      |
+| ----------------------------------------------------------------- |
+| ![Login](./readme/demo/user-screens/Museo-login.gif)              |
+| Solo Tour Screen                                                  |
+| ----------------------------------------------------------------  |
+| ![Solo](./readme/demo/user-screens/Museo-solo.gif)                |
+| Group Tour Screen                                                 |
+| ----------------------------------------------------------------- |
+| ![Group](./readme/demo/user-screens/Museo-group.gif)              |
+| Chat Screen                                                       |
+| ----------------------------------------------------------------- |
+| ![Chat](./readme/demo/user-screens/Museo-chat.gif)                |
+| Time Travel screen                                                |
+| ----------------------------------------------------------------- |
+| ![Time Travel](./readme/demo/user-screens/Museo-time-travel.gif)  |
 
 | Solo Tour Screen                                         | Time Travel Screen                                                     |
 | -------------------------------------------------------- | ---------------------------------------------------------------------- |
