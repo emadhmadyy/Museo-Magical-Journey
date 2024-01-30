@@ -70,9 +70,9 @@ User
 | ----------------------------------------------------------------- |
 | <img src="./readme/demo/user-screens/Museo-solo.gif" width="100"> |
 
-| Group Tour Screen                                                  |
-| ------------------------------------------------------------------ |
-| <img src="./readme/demo/user-screens/Museo-group.gif" width="100"> |
+| Group Tour Screen                                                   |
+| ------------------------------------------------------------------- |
+| <img src="./readme/demo/user-screens/Museo-group.gif" width="110%"> |
 
 | Chat Screen                                        |
 | -------------------------------------------------- |
